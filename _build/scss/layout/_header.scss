@@ -1,0 +1,23 @@
+#header {
+	> .wrap {
+		max-width: $desktop-width;
+		margin: 0 auto;
+	}
+}
+
+//* Colors
+#header {
+	background-color: $color-primary;
+	color: $color-primary-contrast;
+
+	a {
+		@include a-reset;
+		color: $color-primary-contrast;
+	}
+}
+
+#header {
+	.site-title {
+		margin: 0;
+	}
+}

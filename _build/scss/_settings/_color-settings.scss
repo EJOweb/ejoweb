@@ -1,0 +1,24 @@
+//* Colors
+$color-primary: #777;
+$color-secondary: #EEE;
+$color-ui: #999999;
+$color-light: #fff;
+
+//* Contrasted colors
+$color-primary-contrast: #fff;
+$color-secondary-contrast: #333;
+$color-ui-contrast: #cccccc;
+
+//* Active
+$color-primary-active: darken( $color-primary, 5% );
+
+//* Font
+$base-font-color: #333;
+$heading-font-color: #333;
+
+//* Action / Links
+$action-color: $color-primary;
+$action-color-alt: #fff;
+
+//* Body
+$body-background-color: $color-light;

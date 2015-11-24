@@ -1,0 +1,20 @@
+#footer {
+	> .wrap {
+		max-width: $desktop-width;
+		margin: 0 auto;
+	}
+}
+
+//* Colors
+#footer {
+	>.wrap {
+		background-color: $color-secondary;
+		color: $color-secondary-contrast;
+	}
+	
+	a {
+		@include a-reset;
+		color: $color-secondary-contrast;
+	}
+}
+
