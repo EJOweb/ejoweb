@@ -1,3 +1,21 @@
+/** 
+ * Description: Load font-awesome icons, mixins and functions
+ * Version: 1.0
+ */
+
+@mixin icon($icon_name: 'no-icon') {
+	display: inline-block;
+	font: normal normal normal 1rem/1 FontAwesome; // shortening font declaration
+	font-size: inherit; // can't have font-size inherit on line above, so need to override
+	text-rendering: auto; // optimizelegibility throws things off #1094
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@if $icon_name != 'no-icon' {
+		content: map-get( $icons, $icon_name );
+	}
+}
+
 //* Fontawesome mapping - Font-awesome 4.4.0 
 $icons: (	
 	fa-500px: "\f26e",
@@ -675,7 +693,6 @@ $icons: (
 	fa-youtube-play: "\f16a",
 	fa-youtube-square: "\f166"
 );
-
 
 //* Variables - Font-awesome 4.4.0 
 $fa-var-500px: "\f26e";

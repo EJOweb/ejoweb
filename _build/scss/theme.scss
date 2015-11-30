@@ -1,44 +1,43 @@
-//* Bourbon frameworks
-@import "helpers/bourbon/bourbon";
-@import "helpers/bourbon-edit/strip-unit";
+/* ==========================================================================
+   Theme configuration for sass files
+   ========================================================================== */
 
-//* Helpers
-@import "helpers/ejo-toolkit/responsiveness/media-query";
-@import "helpers/ejo-toolkit/icons/core";
-@import "helpers/ejo-toolkit/icons/icons";
-@import "helpers/ejo-toolkit/social-media/colors";
+/**
+ * TODO: 
+ */  
 
-//* settings
-@import "_settings/typography-settings";
-@import "_settings/color-settings";
-@import "_settings/path-settings";
-@import "_settings/form-settings";
-@import "_settings/border-settings";
-@import "_settings/grid-settings";
+//* Vendors
+@import "vendors/bourbon/bourbon";
+@import "vendors/icons";
+@import "vendors/social-media";
+
+//* Theme Mixins
+@import "mixins";
+
+//* Theme Variables
+@import "variables";
 
 //* Reset
-@import "helpers/ejo-toolkit/reset/reset";
+@import "vendors/normalize";
 
-//* Core styles
+//* Theme Core styles
 @import "core/typography";
-@import "core/images";
+@import "core/images"; // Samensmelten met common/general?
 @import "core/tables";
 @import "core/lists";
 @import "core/forms";
-@import "core/buttons";
-@import "core/common";
+@import "core/buttons"; // Veranderen naar _ui.scss?
+@import "core/common"; // Veranderen naar general?
 
-//* Layout
+//* Theme Layout
+@import "layout/grid";
 @import "layout/body";
 @import "layout/header";
 @import "layout/navigation";
 @import "layout/main";
 @import "layout/sidebar";
 @import "layout/footer";
-@import "layout/entry";
-@import "layout/widget";
-@import "layout/responsiveness";
 
 //* Plugins
-@import "helpers/ejo-toolkit/gravity-forms/gravity-forms";
+@import "vendors/gravity-forms/setup";
 

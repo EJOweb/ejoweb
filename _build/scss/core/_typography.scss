@@ -2,14 +2,14 @@
 Main typography
 -------------------------------------------------------------------*/
 html {
-    font-size: $root-font-size;
+    font-size: $ejo-font-size / 16px * 100%;
 }
 
 body {
     -webkit-font-smoothing: antialiased;
-    font-family: $base-font-family;
-    color: $base-font-color;
-    line-height: $base-line-height;
+    font-family: $font-family;
+    color: $font-color;
+    line-height: $line-height;
     font-weight: $normal-weight;
 }
 
@@ -83,8 +83,8 @@ Headings
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $heading-font-family;
-    font-weight: $heading-bold-weight;
-    color: $heading-font-color;
+    font-weight: $normal-weight;
+    color: $font-color;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -105,8 +105,8 @@ h3 {
 }
 
 h4,h5,h6 {
-    font-size: $base-font-size;
-    line-height: $base-line-height;
+    font-size: $font-size;
+    line-height: $line-height;
 }
 
 

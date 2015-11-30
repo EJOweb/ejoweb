@@ -1,62 +1,61 @@
-/* EJO Reset
-   v0.3.1 | 20151004
-*/
-html {
-  box-sizing: border-box;
-}
-
-*, *::after, *::before {
-  box-sizing: inherit;
-}
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-input, textarea, select, button,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-main, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
-}
-
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/* ==========================================================================
+   Theme configuration for sass files
+   ========================================================================== */
+/**
+ * TODO: 
+ */
+/** 
+ * Description: Load font-awesome icons, mixins and functions
+ * Version: 1.0
+ */
+/** 
+ * Description: Load social-media colors, mixins and functions
+ * Version: 1.0
+ */
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+/**
+ * Setup all variables in one place. It should fit in one place.
+ *
+ * TODO: Clean-up / remove all redundant variables
+ */
+/* Grid
+   ========================================================================== */
+/* Column widths */
+/* Typography
+   ========================================================================== */
+/**
+ * Configure default font-sizes and line-heights
+ */
+/* Em-base variable for use of bourbon functions */
+/**
+ * Heading font-sizes and line-heights
+ */
+/* Typography */
+/* Font Weights */
+/**
+ * Process font-sizes and line-heights
+ */
+/* Colors
+   ========================================================================== */
+/* Colors */
+/* Color contrasts */
+/* Background color */
+/* Font */
+/* Action / Links */
+/* Borders
+   ========================================================================== */
+/* Forms
+   ========================================================================== */
+/* Paths
+   ========================================================================== */
+/* Paths */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
- * 2. Prevent iOS and IE text size adjust after device orientation change,
- *    without disabling user zoom.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
  */
 html {
   font-family: sans-serif;
@@ -77,6 +76,42 @@ body {
 /* HTML5 display definitions
    ========================================================================== */
 /**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
@@ -87,7 +122,7 @@ audio:not([controls]) {
 
 /**
  * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
 [hidden],
 template {
@@ -98,15 +133,13 @@ template {
    ========================================================================== */
 /**
  * Remove the gray background color from active links in IE 10.
- * Remove default text-decoration underline
  */
 a {
   background-color: transparent;
 }
 
 /**
- * Improve readability of focused elements when they are also in an
- * active/hover state.
+ * Improve readability when focused and also mouse hovered in all browsers.
  */
 a:active,
 a:hover {
@@ -123,10 +156,27 @@ abbr[title] {
 }
 
 /**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
  * Address styling not present in Safari and Chrome.
  */
 dfn {
   font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
 /**
@@ -166,6 +216,13 @@ sub {
 /* Embedded content
    ========================================================================== */
 /**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+
+/**
  * Correct overflow not hidden in IE 9/10/11.
  */
 svg:not(:root) {
@@ -175,9 +232,17 @@ svg:not(:root) {
 /* Grouping content
    ========================================================================== */
 /**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
  * Address differences between Firefox and other browsers.
  */
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -197,6 +262,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
+  font-size: 1em;
 }
 
 /* Forms
@@ -208,6 +274,8 @@ samp {
 /**
  * 1. Correct color not being inherited.
  *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
 button,
 input,
@@ -216,6 +284,10 @@ select,
 textarea {
   color: inherit;
   /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
 }
 
 /**
@@ -249,7 +321,6 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
-  -webkit-font-smoothing: antialiased;
   cursor: pointer;
   /* 3 */
 }
@@ -280,6 +351,21 @@ input {
 }
 
 /**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
  * Fix the cursor style for Chrome's increment/decrement buttons. For certain
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
@@ -291,13 +377,16 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /**
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
  */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   /* 2 */
+  box-sizing: content-box;
 }
 
 /**
@@ -308,6 +397,26 @@ input[type="search"] {
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -325,159 +434,19 @@ optgroup {
   font-weight: bold;
 }
 
-/*------------------------------------------------------------------
-Media
--------------------------------------------------------------------*/
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-audio,
-video,
-object,
-embed,
-iframe {
-  max-width: 100%;
-}
-
-/*------------------------------------------------------------------
-Links
--------------------------------------------------------------------*/
-a {
-  text-decoration: none;
-}
-
-/*------------------------------------------------------------------
-Tables
--------------------------------------------------------------------*/
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  table-layout: fixed;
-  width: 100%;
 }
 
-th {
-  text-align: left;
-}
-
-tr,
 td,
 th {
-  vertical-align: middle;
-}
-
-/*------------------------------------------------------------------
-Forms
--------------------------------------------------------------------*/
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline;
-  width: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-input,
-textarea,
-select {
-  max-width: 100%;
-}
-
-/*------------------------------------------------------------------
-Buttons
--------------------------------------------------------------------*/
-button,
-.button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  text-decoration: none;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  display: inline-block;
-  line-height: 1;
-}
-
-/*------------------------------------------------------------------
-Lists
--------------------------------------------------------------------*/
-ul,
-ol {
-  list-style-type: none;
-  margin-left: 0;
-}
-
-/*------------------------------------------------------------------
-Quotes
--------------------------------------------------------------------*/
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-/*------------------------------------------------------------------
-Uncommon typography
--------------------------------------------------------------------*/
-abbr[title],
-acronym[title],
-time[title] {
-  cursor: help;
-}
-
-acronym {
-  text-transform: uppercase;
-}
-
-address {
-  font-style: italic;
-}
-
-pre {
-  word-wrap: normal;
-  font-family: monospace;
-}
-
-code {
-  direction: ltr;
-  text-align: left;
-  font-family: monospace;
-}
-
-del,
-s,
-strike {
-  text-decoration: line-through;
-}
-
-/*------------------------------------------------------------------
-Helpers
--------------------------------------------------------------------*/
-.clear {
-  clear: both;
-}
-
-.hide,
-.hidden {
-  display: none;
-}
-
-.show-if-js {
-  display: none;
-}
-
-.screen-reader-text {
-  display: none;
+  padding: 0;
 }
 
 /*------------------------------------------------------------------
@@ -489,7 +458,7 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: "Droid Serif", georgia, serif;
+  font-family: georgia, serif;
   color: #333;
   line-height: 1.625;
   font-weight: 400;
@@ -538,7 +507,7 @@ a:hover {
 Headings
 -------------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Oswald", georgia, serif;
+  font-family: verdana, serif;
   font-weight: 400;
   color: #333;
   margin-top: 1rem;
@@ -611,26 +580,26 @@ td {
   border-bottom: 1px solid #ccc;
 }
 
-.entry-content ul, .textwidget ul {
+ul {
   list-style-type: disc;
   margin-left: 2.5rem;
 }
 
-.entry-content ul li, .textwidget ul li {
+ul li {
   margin-bottom: 2px;
 }
 
-.entry-content ol, .textwidget ol {
+ol {
   list-style-type: decimal;
   margin-left: 2.5rem;
 }
 
-.entry-content ol li, .textwidget ol li {
+ol li {
   margin-bottom: 2px;
 }
 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
-select[multiple=multiple],
+select,
 textarea {
   border: 1px solid #ccc;
   background-color: #fff;
@@ -638,13 +607,13 @@ textarea {
 }
 
 input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
-select[multiple=multiple]:hover,
+select:hover,
 textarea:hover {
   border-color: #b3b3b3;
 }
 
 input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
-select[multiple=multiple]:focus,
+select:focus,
 textarea:focus {
   border-color: #777;
 }
@@ -671,7 +640,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   background-color: #777;
-  color: #fff;
+  color: #FFF;
   display: inline-block;
   width: auto;
   font-weight: 700;
@@ -768,24 +737,29 @@ img.emoji {
   max-height: 0.9em;
 }
 
+#header > .wrap,
+#main > .wrap,
+#footer > .wrap {
+  margin: 0 auto;
+  padding: 0 36px;
+  width: 100%;
+  max-width: 1032px;
+  min-width: 288px;
+}
+
 body {
   background-color: #fff;
 }
 
-#header > .wrap {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
 #header {
   background-color: #777;
-  color: #fff;
+  color: #FFF;
 }
 
 #header a {
   color: inherit;
   border-bottom: none;
-  color: #fff;
+  color: #FFF;
 }
 
 #header a:hover {
@@ -796,43 +770,25 @@ body {
   margin: 0;
 }
 
-#main > .wrap {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
 #main {
   background-color: #fff;
 }
 
 #footer > .wrap {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-#footer > .wrap {
   background-color: #EEE;
-  color: #333;
+  color: #666;
 }
 
 #footer a {
   color: inherit;
   border-bottom: none;
-  color: #333;
+  color: #666;
 }
 
 #footer a:hover {
   border-bottom: none;
 }
 
-.entry h2.entry-title a {
-  color: #333;
-}
-
-/**
- * Gravity Forms structure sass
- * Version: 0.9.4
- **/
 /* Reset */
 body .gform_wrapper form ol,
 body .gform_wrapper form ul {

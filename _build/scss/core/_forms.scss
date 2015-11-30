@@ -1,12 +1,12 @@
 #{$all-text-inputs},
-select[multiple=multiple],
+select,
 textarea {
-	border: $base-border;
-	background-color: $color-light;
+	border: $border;
+	background-color: #fff;
 	box-shadow: $form-box-shadow;
 
 	&:hover {
-		border-color: darken($base-border-color, 10%);
+		border-color: darken($border-color, 10%);
 	}
 
 	&:focus {

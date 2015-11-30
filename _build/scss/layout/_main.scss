@@ -1,12 +1,5 @@
-#main {
-	> .wrap {
-		max-width: $desktop-width;
-		margin: 0 auto;
-	}
-}
-
 //* Colors
 #main {
-	background-color: $color-light;
+	background-color: $bg-color;
 }
 

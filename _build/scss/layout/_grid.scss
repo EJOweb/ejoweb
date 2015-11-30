@@ -1,0 +1,12 @@
+#header,
+#main,
+#footer {
+	> .wrap {
+		margin: 0 auto;
+		padding: 0 $gutter; // Kan geen percentage, want is relatief ten opziche van parent
+		width: 100%;
+		max-width: $max-width + ($gutter * 2);
+		min-width: $min-width;
+	}
+}
+
