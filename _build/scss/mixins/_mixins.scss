@@ -1,0 +1,25 @@
+//* Breakpoint query
+@mixin media($width, $min-max: 'max-width', $device: 'screen') {
+
+	//* Check for breakpoint names
+	@if $width == tablet {
+		$breakpoint_width: $width__breakpoint-tablet;
+	}
+	@else if $width == phablet {
+		$breakpoint_width: $width__breakpoint-phablet;
+	}
+	@else if $width == smartphone {
+		$breakpoint_width: $width__breakpoint-smartphone;
+	}
+	@else if $width == barebones {
+		$breakpoint_width: $width__breakpoint-barebones;
+	}
+	@else {
+		$breakpoint_width: $width;
+	}
+
+	//* Output media query
+	@media #{$device} and (#{$min-max}: #{$breakpoint_width}) {
+		@content;
+	}
+}

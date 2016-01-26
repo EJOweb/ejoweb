@@ -1,2 +1,1 @@
-# ejoweb
-Theme for EJOweb website
+# EJOweb
