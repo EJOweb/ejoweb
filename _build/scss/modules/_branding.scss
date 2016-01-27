@@ -1,8 +1,23 @@
+/* Reset */
 .site-branding {
-	margin: 1rem 0;
-
-	/* Reset */
 	p, h1 {
 		margin: 0;
+	}
+}
+
+/* Layout */
+.site-branding {
+	position: relative;
+	padding: 58px 0 22px;
+
+	#site-title {
+		width: 150px;
+		height: 79px;
+		margin: 0 auto;
+	}
+
+	#site-title a,
+	#site-title img {
+		display: block;
 	}
 }

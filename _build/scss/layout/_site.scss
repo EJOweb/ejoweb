@@ -1,0 +1,16 @@
+#container {
+	background: palette(white, dark) url($path__images + 'body-bg.jpg') repeat 0 0;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	min-height: 100%;
+}
+
+#footer {
+	flex: 1 1 auto;
+}
+
+@import "layout/header";
+@import "layout/main";
+@import "layout/content";
+@import "layout/footer";

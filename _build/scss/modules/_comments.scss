@@ -1,24 +1,29 @@
+//* Reset 
+.comment-list,
+.comment-list .children {
+	@include reset-list-style;
+}
+
 //* Structure
+#comments-template {
+	margin-bottom: $vertical__space;
+}
+
+.comment-respond {
+	margin-bottom: $vertical__space;
+}
+
 #comments .comment article,
 .comment-respond {
 	padding-left: 2rem;
 	padding-top: 2rem;
-	padding-bottom: 2rem;
-
-	@include media($barebones) {
-		padding-left: 1rem;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
-	}
+	padding-bottom: 2rem - $vertical__space;
 }
 
 //* Nesting
 #comments .children,
 #comments .comment-respond {
 	margin-left: 2rem;
-	@include media($smartphone) {
-		margin-left: 1rem;
-	}
 }	
 
 //*comments
@@ -26,11 +31,11 @@
 	position: relative;
 
 	.comments-title {
-		font-size: $small-font-size;
+		font-size: $font__size-small;
 		text-transform: uppercase;
-		font-family: $base-font-family;
-		line-height: $base-line-height;
-		font-weight: $normal-weight;
+		font-family: $font__family;
+		line-height: $font__line-height;
+		font-weight: $font__weight-normal;
 		margin-bottom: 2px;
 		float: right;
 	}
@@ -41,9 +46,9 @@
 
 	.comment {
 		article {
-			border-left: $base-border;
-			border-top: $base-border;
-			border-bottom: $base-border;
+			border-left: 1px solid palette(grey);
+			border-top: 1px solid palette(grey);
+			border-bottom: 1px solid palette(grey);
 			margin-bottom: -1px;
 		}
 		
@@ -53,9 +58,9 @@
 			line-height: 1;
 
 			.comment-author {
-				font-size: $base-font-size;
-				font-family: $heading-font-family;
-				font-weight: $bold-weight;
+				font-size: $font__family;
+				font-family: $font__family-heading;
+				font-weight: $font__weight-bold;
 				font-style: normal;
 				margin-right: 1px;
 			}
@@ -66,15 +71,12 @@
 
 			.comment-reply-link {
 				margin: 0 1px;
-				&:before {
-					// @include icon('fa-reply');
-					// padding-right: 4px;
-				}
+				&:before {}
 			}
 		}
 
 		.comment-content {
-			font-size: $small-font-size;
+			font-size: $font__size-small;
 			line-height: 1.625;
 
 			p:not(:last-child) {
@@ -84,14 +86,13 @@
 
 		//* Simple edit textarea
 		textarea {
-			box-sizing: border-box;
-			border-bottom: $base-border;
+			border-bottom: 1px solid palette(grey);
 			padding: rem(5) 0;
 			display:block;
 
 			&:focus {
 				border-bottom-width: 2px;
-				border-color: $color-primary;
+				border-color: palette(primary);
 				margin-bottom: -1px;
 			}
 		}
@@ -100,9 +101,9 @@
 
 //* Reply styling
 .comment-respond {
-	border-left: $base-border;
-	border-top: $base-border;
-	border-bottom: $base-border;
+	border-left: 1px solid palette(grey);
+	border-top: 1px solid palette(grey);
+	border-bottom: 1px solid palette(grey);
 	margin-bottom: -1px;
 	position: relative;
 
@@ -111,17 +112,18 @@
 	}
 
 	#cancel-comment-reply-link {
-		font-family: $base-font-family;
-		font-weight: $bold-weight;
+		font-family: $font__family;
+		font-weight: $font__weight-bold;
 		position: absolute;
 		right: 0;
 		margin-top: 2px;
 
 		.fa:hover {
-			color: $color-primary-active;
+			color: palette(primary);;
 		}
 	}
 
+	.comment-form-comment,
 	.comment-form-legit,
 	.comment-form-author,
 	.comment-form-email {
@@ -134,17 +136,10 @@
 		display: none;
 	}
 
-	.comment-form-comment {
-		position: relative;
-		margin-bottom: 1.5rem;
-	}
-
-	.form-submit {
-		margin-bottom: 0;
-	}
+	.form-submit {}
 
 	label {
-		color: $color-ui;
+		color: palette(grey, dark);
 		position:absolute;
 		pointer-events: none;
 		left: 0px;
@@ -157,22 +152,20 @@
 		.show-if-no-js & {
 			top: - rem(18);
 			font-size: rem(14);
-			// color: inherit;
-			// font-weight: $bold-weight;
 		}
 	}
 }
 
 #{$all-text-inputs},
 textarea {
-	box-sizing: border-box;
-	border-bottom: $base-border;
+	border: none;
+	border-bottom: 1px solid palette(grey);
 	padding: rem(5) 0;
 	display:block;
 
 	&:focus {
 		border-bottom-width: 2px;
-		border-color: $color-primary;
+		border-color: palette(primary);
 		margin-bottom: -1px;
 	}
 }

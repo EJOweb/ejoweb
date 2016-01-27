@@ -33,3 +33,12 @@
 .gallery-columns-6 .gallery-item {
 	flex-basis: 16.6666%;
 }
+
+.gallery .gallery-item {
+	@include media($breakpoint__smedium) {
+		flex-basis: 50%;
+	}
+	@include media($breakpoint__small) {
+		flex-basis: 100%;
+	}
+}

@@ -31,11 +31,7 @@
 
 /* Structure
 ============================================================================ */
-@import "structure/site";
-@import "structure/header";
-@import "structure/content";
-@import "structure/sidebar-primary";
-@import "structure/footer";
+@import "layout/site";
 
 /* Other
 ============================================================================ */
@@ -44,6 +40,8 @@
 @import "modules/navigation";
 @import "modules/navigation-mobile";
 @import "modules/breadcrumbs";
+@import "modules/pagination";
+// @import "modules/comments";
 @import "modules/social-media";
 @import "vendors/gravity-forms/setup";
 

@@ -192,6 +192,7 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -332,6 +333,8 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -501,15 +504,12 @@ blockquote {
 /* Links
 -------------------------------------------------------------------*/
 a {
-  color: #263238;
-}
-
-a:visited {
-  color: #263238;
+  color: #2c96e3;
 }
 
 a:hover, a:focus, a:active {
-  color: #263238;
+  color: #1a7bc2;
+  text-decoration: underline;
 }
 
 a:focus {
@@ -528,11 +528,16 @@ a.image-wrap {
 
 a.image-wrap img {
   display: block;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
 a.image-wrap:hover img {
   -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
   transform: scale(1.1);
 }
 
@@ -606,13 +611,13 @@ hr {
   margin-right: auto;
   border: 0;
   height: 2px;
-  background-color: #ccc;
+  background-color: #c5c5d0;
 }
 
 /* Blockquotes
 -------------------------------------------------------------------*/
 blockquote {
-  border-left: 6px solid #ccc;
+  border-left: 6px solid #c5c5d0;
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 0 0 0 1.5rem;
@@ -650,24 +655,24 @@ i i, i em, i mark, i cite, em i, em em, em mark, em cite, mark i, mark em, mark 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 select,
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
+  color: #4e454b;
+  border: 1px solid #c5c5d0;
   border-radius: 3px;
   padding: 0.25rem 0.5rem;
-  background-color: #fff;
+  background-color: #fffefc;
 }
 
 input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
 select:hover,
 textarea:hover {
-  border-color: #ccc;
+  border-color: #a9a9b9;
 }
 
 input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
 select:focus,
 textarea:focus {
-  color: #111;
-  border-color: #ccc;
+  color: #332d31;
+  border-color: #2c96e3;
 }
 
 select {
@@ -694,10 +699,10 @@ a.button, button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  background-color: #546e7a;
-  color: #fff;
+  background-color: #2c96e3;
+  color: #fffefc;
   padding: 10px 15px 12px;
-  font-family: Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: 400;
   display: inline-block;
   line-height: 1;
@@ -707,22 +712,7 @@ a.button:hover, button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background-color: #4a606b;
-}
-
-a.button.alt, button.alt,
-input.alt[type="button"],
-input.alt[type="reset"],
-input.alt[type="submit"] {
-  background-color: #546e7a;
-  color: #fff;
-}
-
-a.button.alt:hover, button.alt:hover,
-input.alt[type="button"]:hover,
-input.alt[type="reset"]:hover,
-input.alt[type="submit"]:hover {
-  background-color: #4e6671;
+  background-color: #1a7bc2;
 }
 
 /* Alignment
@@ -752,7 +742,7 @@ input.alt[type="submit"]:hover {
   margin-right: auto;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 540px) {
   .alignleft,
   .alignright {
     display: block;
@@ -780,23 +770,23 @@ textarea {
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 400;
-  color: #263238;
+  color: #332d31;
 }
 
 /*------------------------------------------------------------------
 Headings
 -------------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
-  font-family: Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: 400;
-  color: #263238;
+  color: #332d31;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.375rem;
   line-height: 1.125;
   margin-top: 1.25em;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.5em;
 }
 
 h2 {
@@ -824,16 +814,16 @@ h4, h5, h6 {
 Headings
 -------------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
-  font-family: Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: 400;
-  color: #263238;
+  color: #332d31;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.375rem;
   line-height: 1.125;
   margin-top: 1.25em;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.5em;
 }
 
 h2 {

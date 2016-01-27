@@ -1,0 +1,35 @@
+#footer {
+	padding-left: $width__site-padding;
+	padding-right: $width__site-padding;
+	background-color: palette(black, transparent);
+	color: palette(black, light);
+	a {	color: inherit;	}
+
+	margin-top: -46px;
+}
+
+#footer > .wrap {
+	max-width: $width__footer-max;
+	margin: 46px auto 0;
+	padding: 1rem 0 1.5rem;
+	text-align: center;
+}
+
+#footer {
+	#toTop {
+		font-weight: $font__weight-bold;
+		cursor: pointer;
+		
+		&:before {
+			@include icon( 'fa-arrow-circle-up' );
+			padding-right: rem(6);
+		}
+	}
+}
+
+#footer {
+	@include media($breakpoint__small) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

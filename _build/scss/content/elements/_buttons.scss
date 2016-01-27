@@ -1,7 +1,7 @@
 /* Button link */
 a.button {
-    background-color: $color__background-button;
-    color: $color__text-button;
+    background-color: palette(primary);
+    color: palette(white);
     padding: 10px 15px 12px;
     font-family: $font__family-button;
     font-weight: $font__weight-normal;
@@ -9,16 +9,7 @@ a.button {
     line-height: 1;
 
     &:hover {
-        background-color: darken($color__background-button, 5%);
-    }
-}
-
-a.button.alt {
-    background-color: $color__background-button-alt;
-    color: $color__text-button-alt;
-
-    &:hover {
-        background-color: darken($color__background-button-alt, 3%);
+        background-color: palette(primary, dark);
     }
 }
 

@@ -4,6 +4,12 @@
 
 	<?php hybrid_get_menu( 'breadcrumbs' ); // Loads the menu/breadcrumbs.php template. ?>	
 
+	<?php if ( hybrid_is_plural() ) : ?>
+
+		<?php locate_template( array( 'misc/archive-header.php' ), true ); // Loads the misc/archive-header.php template. ?>
+
+	<?php endif; ?>
+
 	<?php if ( have_posts() ) : // Checks if any posts were found. ?>
 
 		<?php while ( have_posts() ) : // Begins the loop through found posts. ?>

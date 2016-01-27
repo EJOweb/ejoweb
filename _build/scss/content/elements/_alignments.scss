@@ -23,7 +23,7 @@
     margin-right: auto;
 }
 
-@include media(smartphone) {
+@include media($breakpoint__small) {
     .alignleft,
     .alignright {
         display: block;

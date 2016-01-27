@@ -13,9 +13,9 @@
 @mixin reset-table-style() {
 }
 
-// Remove link styling
 @mixin reset-link-style() {
-	color: $color__text;
+	text-decoration: none;
+	color: palette(black);
 }
 
 // Remove heading styling

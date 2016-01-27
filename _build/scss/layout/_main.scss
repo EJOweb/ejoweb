@@ -1,0 +1,26 @@
+#main {
+	padding-left: $width__site-padding;
+	padding-right: $width__site-padding;
+}
+
+#main > .wrap {
+	position: relative;
+	margin: 0 auto;
+	max-width: $width__main-max;
+	padding: 2.75rem 3rem (2.75rem - $vertical__space);
+	background-color: palette(white);
+	box-shadow: $box__shadow;	
+}
+
+#main {
+	@include media($breakpoint__small) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	@include media($breakpoint__tiny) {
+		> .wrap {
+			padding: 2rem 2.25rem (2rem - $vertical__space);
+		}
+	}
+}

@@ -1,9 +1,72 @@
+// http://erskinedesign.com/blog/setting-typographic-scale-with-sass-maps/
+// https://github.com/ultimate-package/tools.font-scale
+
+// FONT-FAMILY SETTINGS
+$font-primary: (
+	stack: "Georgia, serif",
+  
+	x-small: (
+		font-size: 13,
+		line-height: 16
+	),
+
+	small: (
+		font-size: 14,
+		line-height: 20
+	),
+
+	base: (
+		font-size: 16,
+		line-height: 18
+	),
+
+	mid: (
+		font-size: 18,
+		line-height: 22
+	),
+
+	mid-large: (
+		font-size: 20,
+		line-height: 26
+	),
+
+	large: (
+		font-size: 25,
+		line-height: 30
+	),
+
+	x-large: (
+		font-size: 45,
+		line-height: 47
+	)
+);
+
+$font-secondary: (
+	stack: "Verdana, sans-serif", 
+
+	x-small: (
+		font-size: 12,
+		line-height: 16
+	)
+);
+
+// $font-default: $font-georgia;
+
+
+// input: 
+// font-scale(base, secondary)
+
+// output:
+// font-size: xx
+// line-height: xx
+
+
 // Font sizes
 $em-base: 16px; // For bourbon rem function
 $font__size: rem($em-base); 
 $font__size-small: rem(14px); 
 $font__size-large: rem(18px); 
-$font__size-heading-1: rem(40px);
+$font__size-heading-1: rem(38px);
 $font__size-heading-2: rem(28px);
 $font__size-heading-3: rem(23px);
 $font__size-heading-4: rem(18px);
@@ -15,14 +78,14 @@ $font__line-height-heading-1: 1.125;
 $font__line-height-heading-2: 1.125;
 $font__line-height-heading-3: 1.125;
 $font__line-height-heading-4: 1.125;
-$font__line-height-menu: 1.2;
+$font__line-height-menu: 1;
 $font__line-height-pre: 1.6;
 
 $font__residu: ($font__line-height - 1) * $font__size;
 
 // Font Family
 $font__family: Georgia, serif;
-$font__family-heading: Verdana, sans-serif;
+$font__family-heading: Arial, sans-serif;
 $font__family-menu: $font__family-heading;
 $font__family-button: $font__family-heading;
 $font__family-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;

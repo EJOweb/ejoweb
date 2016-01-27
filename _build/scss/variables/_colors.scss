@@ -1,50 +1,30 @@
-// Backgrounds
-$color__background-body: #eceff1;
-$color__background-header: #ffffff;
-$color__background-main: #ffffff;
-$color__background-footer: #eceff1;
-$color__background-button: #546e7a;
-$color__background-button-hover: darken($color__background-button, 5%);
-$color__background-button-alt: $color__background-button;
-$color__background-button-alt-hover: $color__background-button-hover;
-$color__background-form-field: #fff;
-$color__background-hr: #ccc;
-$color__background-screenreader: #f1f1f1;
+// Theme colors
+$color__primary: #2c96e3;
+$color__white: color(white);
+$color__grey: color(cloud);
+$color__black: color(iron);
 
-// Font colors
-$color__text: #263238;
-$color__text-header: #263238;
-$color__text-footer: #263238;
-$color__text-button: #fff;
-$color__text-button-alt: #fff;
-$color__text-form-field: #666;
-$color__text-form-field-focus: #111;
-$color__text-screenreader: #21759b;
-$color__link: #263238;
-$color__link-visited: #263238;
-$color__link-hover: #263238;
-
-// Borders
-$color__border: #ccc;
-$color__border-menu: #607d8b;
-$color__border-form-field: #ccc;
-$color__border-form-field-hover: #ccc;
-$color__border-form-field-focus: #ccc;
-
-// Menu
-$color__background-menu: #546e7a;
-$color__background-menu-item: transparent;
-$color__background-menu-item-hover: #455a64;
-$color__background-menu-item-selected: #455a64;
-$color__background-submenu: #455a64;
-$color__background-submenu-item: transparent;
-$color__background-submenu-item-hover: #607d8b;
-$color__background-submenu-item-selected: #607d8b;
-$color__text-menu: #fff;
-$color__text-menu-item: #fff;
-$color__text-menu-item-hover: #fff;
-$color__text-menu-item-selected: #fff;
-$color__text-submenu: #fff;
-$color__text-submenu-item: #fff;
-$color__text-submenu-item-hover: #fff;
-$color__text-submenu-item-selected: #fff;
+$palettes: (
+    primary: (
+        base:  $color__primary,
+        light: lighten($color__primary, 10%),
+        dark:  darken($color__primary, 10%)
+    ),
+    grey: (
+        base:  $color__grey,
+        light: lighten($color__grey, 10%),
+        dark:  darken($color__grey, 10%),
+    ),
+    white: (
+        base:  $color__white,
+        light: lighten($color__white, 100%),
+        dark:  shade($color__white, 4%),
+        transparent: rgba($color__white, 0.4),
+    ),
+    black: (
+        base:  $color__black,
+        light: lighten($color__black, 10%),
+        dark:  darken($color__black, 10%),
+        transparent: rgba($color__black, 0.05),
+    ),
+);

@@ -1,7 +1,9 @@
 /* EJOweb gulpfile
- * v20160122
+ * v20160127
  *
  * npm install gulp gulp-util gulp-rename gulp-concat gulp-sass gulp-autoprefixer gulp-uglify gulp-jshint --save-dev
+ * 
+ * gulp-postcss overwegen: https://github.com/postcss/gulp-postcss
  */
 
 //* Package variables
@@ -18,6 +20,9 @@ var jshint = require('gulp-jshint');
 var sass_dir = './_build/scss/';
 var js_dir = './_build/js/';
 
+//* Autoprefixer browser support
+var browser_support = 'last 2 version'; 
+
 //* Create expanded and minified stylesheet at the same time (performance is fast using libsass)
 //* In case of error, show it only once
 gulp.task('sass', function () {
@@ -27,7 +32,7 @@ gulp.task('sass', function () {
         .pipe(sass({
             outputStyle: 'expanded'
         }))
-        .pipe(autoprefixer({browsers:['last 2 version']}))
+        .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
         .on('error', gutil.log) // On error: show log and continue
         .pipe(gulp.dest('./assets/css/'));
 
@@ -36,7 +41,7 @@ gulp.task('sass', function () {
         .pipe(sass({
             outputStyle: 'compressed'
         }))
-        .pipe(autoprefixer({browsers:['last 2 version']}))
+        .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
         .on('error', gutil.noop) // On error: just continue because log is already shown above
         .pipe(rename({
             suffix: '.min'
@@ -53,7 +58,7 @@ gulp.task('sass-editor', function () {
         .pipe(sass({
             outputStyle: 'expanded'
         }))
-        .pipe(autoprefixer({browsers:['last 2 version']}))
+        .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
         .on('error', gutil.log) // On error: show log and continue
         .pipe(gulp.dest('./assets/css/'));
 
@@ -62,7 +67,7 @@ gulp.task('sass-editor', function () {
         .pipe(sass({
             outputStyle: 'compressed'
         }))
-        .pipe(autoprefixer({browsers:['last 2 version']}))
+        .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
         .on('error', gutil.noop) // On error: just continue because log is already shown above
         .pipe(rename({
             suffix: '.min'

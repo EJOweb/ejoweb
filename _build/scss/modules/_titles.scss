@@ -2,7 +2,8 @@
 .entry-title,
 .archive-title,
 .widget-title,
-.gsection_title {
+.gsection_title,
+.comment-reply-title {
 	margin-top: 0;
 	a {	color: inherit;	}
 }
@@ -13,7 +14,8 @@ h1.entry-title,
 }
 
 h2.entry-title {
-	margin-bottom: 1.25rem;
+	margin-bottom: 0;
+	font-size: rem(24px);
 }
 
 .widget-title {

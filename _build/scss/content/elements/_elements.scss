@@ -1,15 +1,15 @@
 /* Links
 -------------------------------------------------------------------*/
 a {
-    color: $color__link;
+    color: palette(primary);
 
     &:visited {
-        color: $color__link-visited;
     }
     &:hover,
     &:focus,
     &:active {
-        color: $color__link-hover;
+        color: palette(primary, dark);
+        text-decoration: underline;
     }
     &:focus {
         outline: thin dotted;
@@ -114,14 +114,14 @@ hr {
     margin-right: auto;
     border: 0;
     height: 2px;
-    background-color: $color__border;
+    background-color: palette(grey);
 }
 
 /* Blockquotes
 -------------------------------------------------------------------*/
 
 blockquote {
-    border-left: 6px solid $color__border;
+    border-left: 6px solid palette(grey);
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding: 0 0 0 1.5rem;

@@ -1,39 +1,65 @@
 /* Responsiveness */
 #menu-primary-mobile {
 	display: none;
-	@include media(tablet) {
+	@include media($breakpoint__smedium) {
 		display: block;
 	}
 }
 
 /* Toggle */
 .menu-toggle {
-	text-transform: uppercase;
-	padding: rem(15) rem(20) rem(15);
-	line-height: 1;
-	text-align: center;
-	cursor: pointer;
-	font-size: rem(20);
+	span { 
+		padding: rem(11px) rem(12px) rem(12px); 
+		color: palette(white);
+		text-transform: capitalize;
+		cursor: pointer;
 
-	&:before { 
-		@include icon('fa-navicon');
-		padding-right: 5px;
+		&:hover {
+			color: palette(white, dark);
+			text-decoration: underline;
+		}
+
+		font-size: $font__size-large;
+		font-family: $font__family-menu;
+		line-height: $font__line-height-menu;
+		text-align: center;
+
+		&:before { 
+			@include icon('fa-navicon');
+			font-size: $font__size-large;
+			padding-right: 5px;
+		}
 	}
 
 	&.expanded {
-		&:before { 
+		span:before { 
 			content: $fa-var-remove; 
 			padding-right: 6px;
 		}
 	}
 
-	background-color: $color__background-menu;
-	color: $color__text-menu-item;
 
-	&:hover {
-		background-color: $color__background-menu-item-hover;
-		color: $color__text-menu-item-hover;
+	@include flex-row(center);
+
+
+	&:before {
+		content: '';
+		pointer-events: none;
+		height: 8px;
+		border-color: #fff;
+		border-style: solid;
+		border-width: 8px 0 0 0;
+		-webkit-border-image: url($path__images + 'border.png') 8 round;
+		   -moz-border-image: url($path__images + 'border.png') 8 round;
+		     -o-border-image: url($path__images + 'border.png') 8 round;
+		        border-image: url($path__images + 'border.png') 8 round;
+
+		@include flex(1 1 auto);
+		margin-right: 0;
+		width: auto;	
 	}
+
+	
 }
 
 /* Reset */
@@ -48,23 +74,34 @@
 
 /* Structure */
 #menu-primary-mobile {
-	.menu-items {
-		display: none;
-		text-align: center;
+    .menu-items {
+    	display: none;
+    }
 
-		@include media(barebones) {
-			text-align: left;
-		}
+    @include media($breakpoint__small) {
+		padding-left: 54px;
 	}
 }
 
-/* Structure */
+/* Style */
 #menu-primary-mobile {
-	background-color: $color__background-menu;
-	&, a { color: $color__text-menu; }
+	position: relative;
 
 	.menu-items {
-		border-top: 1px solid $color__border-menu;
+		background-color: palette(grey);
+		color: palette(black);
+		
+		a {
+			color: inherit;
+		}
+
+		border-top: 1px solid palette(grey, dark);
+		position: absolute;
+		top: 100%;
+		right: 0;
+		z-index: 99;
+		width: 100%;
+		max-width: 320px;
 	}
 
 	.menu-item {
@@ -77,30 +114,32 @@
 
 	/* Top level */
 	.menu-items > .menu-item {
-		background-color: $color__background-menu-item;
-		border-bottom: 1px solid $color__border-menu;
+		border-bottom: 1px solid palette(grey, dark);
 		position: relative;
 
 		> a {
 			padding: 15px 20px;
 
 			&:hover {
-				background-color: $color__background-menu-item-hover;
-				color: $color__text-menu-item-hover;
+				background-color: palette(grey, dark);
+				text-decoration: underline;
+
+				.fa {
+					text-decoration: underline;
+				}
 			}
 		}
 
 		&.current-menu-ancestor > a,
 		&.current-menu-item > a {
-			background-color: $color__background-menu-item-selected;
-			color: $color__text-menu-item-selected;
+			background-color: palette(grey, dark);
 		}
 
 		&.expanded {
 
 			a {
 				&:hover {
-					background-color: $color__background-menu-item-hover;
+					background-color: palette(grey, dark);
 				}
 			}
 		}
@@ -118,14 +157,12 @@
 				font-size: rem(14px);
 
 				&:hover {
-					background-color: $color__background-submenu-item-hover;
-					color: $color__text-submenu-item-hover;
+					background-color: palette(grey, light);
 				}
 			}		
 
 			&.current-menu-item { 
-				background-color: $color__background-submenu-item-selected; 
-				color: $color__text-submenu-item-selected;
+				font-weight: $font__weight-bold;
 			}
 		}
 	}
@@ -137,11 +174,11 @@
 		text-align: center;
 		cursor: pointer;
 		padding: 15px 20px;
-		background-color: rgba(black, 0.2);
-		color: #fff;
+		// background-color: rgba(palette(black), 0.2);
+		color: palette(white);
 
 		&:hover {
-			background-color: rgba(black, 0.3);
+			// background-color: rgba(palette(black), 0.35);
 		}
 	}
 }

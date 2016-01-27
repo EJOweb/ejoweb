@@ -1,14 +1,36 @@
 $width__site-max: 720px;
 $width__site-min: 300px;
 
-$width__breakpoint-tablet: 720px;
-$width__breakpoint-phablet: 720px;
-$width__breakpoint-smartphone: 600px;
-$width__breakpoint-barebones: 480px;
+$width__header-max: 720px;
+$width__main-max: 720px;
+$width__footer-max: 720px;
 
-$width__gutter: 36px;
+$height__header: 320px;
+
+$width__site-padding: 24px;
+
+$breakpoint__large: 900px;
+$breakpoint__medium: 820px;
+$breakpoint__smedium: 680px;
+$breakpoint__small: 540px;
+$breakpoint__tiny: 460px;
+
+// Large
+// Medium
+// Smedium
+// Small
+// Tiny
+
+// desktop
+// laptop
+// tablet
+// phablet
+// smartphone
+// featurephone
+
+$width__gutter: 48px;
 $width__gutter-pct: ( $width__gutter / $width__site-max ) * 100%;
-$width__gutter-smartphone: 24px;
+$width__gutter-smartphone: 32px;
 
 // Column widths
 $width__column-one-half: (100% - ($width__gutter-pct * 1)) / 2;

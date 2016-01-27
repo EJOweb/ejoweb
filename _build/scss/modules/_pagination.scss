@@ -1,0 +1,11 @@
+.pagination {
+	text-align: center;
+
+	.page-numbers {
+		margin-right: 4px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

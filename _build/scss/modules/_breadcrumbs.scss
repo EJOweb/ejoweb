@@ -1,19 +1,18 @@
 .breadcrumbs {
+	margin-top: -4px;
 	margin-bottom: 0;
-
-	& {
-		color: lighten($color__text, 30%);
-	}
+	color: palette(grey);
 
 	a {
-		color: lighten($color__text, 15%);
+		color: inherit;
 		&:hover {
-			// color: $color__text;
+			color: palette(primary);
 			text-decoration: underline;
 		}
 	}
 
 	.breadcrumb_last {
+		color: palette(grey);
 		font-style: italic;
 	}
 }
