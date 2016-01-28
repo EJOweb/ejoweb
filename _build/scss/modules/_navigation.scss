@@ -6,7 +6,7 @@
 
 /* Layout */
 #menu-primary {
-	padding: 14px $width__site-padding;
+	padding: 10px $width__site-padding;
 	color: palette(white);
 	a {	color: inherit;	}
 
@@ -24,7 +24,7 @@
 	.menu-items > .menu-item {
 		display: block;
 		padding-bottom: 2px;
-		margin: 0 3px;
+		margin: 4px 3px;
 
 		> a {
 			display: block;
@@ -49,7 +49,9 @@
 		/* Active */
 		&.current-menu-item,
 		&.current-menu-parent,
-		&.current-menu-ancestor {
+		&.current-menu-ancestor,
+		&.current-post-ancestor,
+		&.current-category-ancestor {
 			> a:after {
 				background: palette(white, transparent);
 				width: 100%;

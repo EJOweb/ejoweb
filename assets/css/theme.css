@@ -873,6 +873,7 @@ pre {
       -ms-flex-align: stretch;
           align-items: stretch;
   min-height: 100%;
+  overflow: hidden;
 }
 
 #footer {
@@ -1083,7 +1084,7 @@ h2.entry-title {
 
 /* Layout */
 #menu-primary {
-  padding: 14px 24px;
+  padding: 10px 24px;
   color: #fffefc;
   font-family: Arial, sans-serif;
   line-height: 1;
@@ -1113,7 +1114,7 @@ h2.entry-title {
 #menu-primary .menu-items > .menu-item {
   display: block;
   padding-bottom: 2px;
-  margin: 0 3px;
+  margin: 4px 3px;
   /* Active */
   /* On hover */
 }
@@ -1138,7 +1139,7 @@ h2.entry-title {
   transition: all 200ms ease-in-out 0s;
 }
 
-#menu-primary .menu-items > .menu-item.current-menu-item > a:after, #menu-primary .menu-items > .menu-item.current-menu-parent > a:after, #menu-primary .menu-items > .menu-item.current-menu-ancestor > a:after {
+#menu-primary .menu-items > .menu-item.current-menu-item > a:after, #menu-primary .menu-items > .menu-item.current-menu-parent > a:after, #menu-primary .menu-items > .menu-item.current-menu-ancestor > a:after, #menu-primary .menu-items > .menu-item.current-post-ancestor > a:after, #menu-primary .menu-items > .menu-item.current-category-ancestor > a:after {
   background: rgba(255, 254, 252, 0.4);
   width: 100%;
 }
