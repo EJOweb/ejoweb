@@ -15,7 +15,7 @@
 			<div class="wrap">
 
 				<div <?php hybrid_attr( 'branding' ); ?>>
-					<?php $logo = '<img itemprop="logo" alt="EJOweb" src="' . THEME_IMG_URI . 'logo.png">'; ?>
+					<?php $logo = '<img itemprop="logo" alt="' . get_bloginfo( 'name' ) . '" src="' . THEME_IMG_URI . 'logo.png">'; ?>
 					<?php printf( '<h1 %s><a href="%s" rel="home">%s</a></h1>', hybrid_get_attr( 'site-title' ), esc_url( home_url() ), $logo ); ?>
 					<span class="screen-reader-text" itemprop="name"><?php bloginfo( 'name' ); ?></span>
 				</div><!-- #branding -->

@@ -786,7 +786,7 @@ h1 {
   font-size: 2.375rem;
   line-height: 1.125;
   margin-top: 1.25em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.6em;
 }
 
 h2 {
@@ -823,7 +823,7 @@ h1 {
   font-size: 2.375rem;
   line-height: 1.125;
   margin-top: 1.25em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.6em;
 }
 
 h2 {
@@ -943,19 +943,19 @@ pre {
 }
 
 /* Plural styles */
-.plural #content .entry {
+.plural:not(.taxonomy-category-kennisbank) #content .entry {
   display: table;
   width: 100%;
   margin: 0;
   border-top: 1px solid #c5c5d0;
 }
 
-.plural #content .entry:last-of-type {
+.plural:not(.taxonomy-category-kennisbank) #content .entry:last-of-type {
   border-bottom: 1px solid #c5c5d0;
   margin-bottom: 1.25rem;
 }
 
-.plural #content .entry-byline {
+.plural:not(.taxonomy-category-kennisbank) #content .entry-byline {
   display: table-cell;
   vertical-align: middle;
   width: 100px;
@@ -963,14 +963,126 @@ pre {
   text-align: center;
 }
 
-.plural #content .entry-header {
+.plural:not(.taxonomy-category-kennisbank) #content .entry-header {
   display: table-cell;
   vertical-align: middle;
 }
 
-.plural #content .entry-header .entry-title a {
+.plural:not(.taxonomy-category-kennisbank) #content .entry-header .entry-title a {
   display: block;
   padding: 1.25rem 0 1.25rem 1.25rem;
+}
+
+.plural.taxonomy-category-kennisbank #content .kennisbank {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+.plural.taxonomy-category-kennisbank #content .kennisbank-category {
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+  max-width: 50%;
+  margin-bottom: 2rem;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media screen and (max-width: 680px) {
+  .plural.taxonomy-category-kennisbank #content .kennisbank-category {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+.plural.taxonomy-category-kennisbank #content .category-title {
+  margin: 0 0 0.5rem;
+}
+
+.plural.taxonomy-category-kennisbank #content .category-title:before {
+  display: inline-block;
+  font: normal normal normal 1rem/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  padding-right: 8px;
+}
+
+.plural.taxonomy-category-kennisbank #content .category-title a {
+  text-decoration: none;
+  color: #332d31;
+}
+
+.plural.taxonomy-category-kennisbank #content .kennisbank-category-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  margin-bottom: 0.75rem;
+}
+
+.plural.taxonomy-category-kennisbank #content .kennisbank-category-list li {
+  margin: 0;
+}
+
+.plural.taxonomy-category-kennisbank #content .kennisbank-category-list li {
+  position: relative;
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid #c5c5d0;
+}
+
+.plural.taxonomy-category-kennisbank #content .kennisbank-category-list li:before {
+  display: inline-block;
+  font: normal normal normal 1rem/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  display: table-cell;
+  width: 16px;
+  padding-left: 2px;
+  text-align: left;
+}
+
+.plural.taxonomy-category-kennisbank #content .kennisbank-category-list a {
+  display: table-cell;
+  padding: 0.25rem 0;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  color: inherit;
+}
+
+.plural.taxonomy-category-kennisbank #content .kennisbank-category-list a:hover {
+  color: #2c96e3;
+}
+
+.plural.taxonomy-category-kennisbank #content .read-more {
+  display: block;
+  font-size: 0.875rem;
 }
 
 #footer {
@@ -1059,6 +1171,12 @@ pre {
 h2.entry-title {
   margin-bottom: 0;
   font-size: 1.5rem;
+}
+
+h3.entry-title,
+h4.entry-title {
+  margin-bottom: 0;
+  font-size: 1rem;
 }
 
 .gsection_title {

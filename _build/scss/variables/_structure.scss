@@ -29,6 +29,7 @@ $breakpoint__tiny: 460px;
 // featurephone
 
 $width__gutter: 48px;
+$width__gutter-half: $width__gutter / 2;
 $width__gutter-pct: ( $width__gutter / $width__site-max ) * 100%;
 $width__gutter-smartphone: 32px;
 
