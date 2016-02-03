@@ -786,7 +786,7 @@ h1 {
   font-size: 2.375rem;
   line-height: 1.125;
   margin-top: 1.25em;
-  margin-bottom: 0.6em;
+  margin-bottom: 0.65em;
 }
 
 h2 {
@@ -823,7 +823,7 @@ h1 {
   font-size: 2.375rem;
   line-height: 1.125;
   margin-top: 1.25em;
-  margin-bottom: 0.6em;
+  margin-bottom: 0.65em;
 }
 
 h2 {
@@ -921,6 +921,7 @@ pre {
   margin: 0 auto;
   max-width: 720px;
   padding: 2.75rem 3rem 1.5rem;
+  padding: 3.5rem 4rem 2.25rem;
   background-color: #fffefc;
   box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.15);
 }
@@ -973,7 +974,12 @@ pre {
   padding: 1.25rem 0 1.25rem 1.25rem;
 }
 
-.plural.taxonomy-category-kennisbank #content .kennisbank {
+.taxonomy-category-kennisbank #main > .wrap {
+  max-width: 960px;
+}
+
+/* Content */
+.taxonomy-category-kennisbank #content .kennisbank {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -990,7 +996,7 @@ pre {
   margin-right: -24px;
 }
 
-.plural.taxonomy-category-kennisbank #content .kennisbank-category {
+.taxonomy-category-kennisbank #content .kennisbank-category {
   -webkit-flex-grow: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
@@ -1006,20 +1012,12 @@ pre {
   padding-right: 24px;
 }
 
-@media screen and (max-width: 680px) {
-  .plural.taxonomy-category-kennisbank #content .kennisbank-category {
-    -webkit-flex-basis: 100%;
-        -ms-flex-preferred-size: 100%;
-            flex-basis: 100%;
-    max-width: 100%;
-  }
-}
-
-.plural.taxonomy-category-kennisbank #content .category-title {
+/* Kennisbank category */
+.taxonomy-category-kennisbank #content .category-title {
   margin: 0 0 0.5rem;
 }
 
-.plural.taxonomy-category-kennisbank #content .category-title:before {
+.taxonomy-category-kennisbank #content .category-title:before {
   display: inline-block;
   font: normal normal normal 1rem/1 FontAwesome;
   font-size: inherit;
@@ -1030,30 +1028,30 @@ pre {
   padding-right: 8px;
 }
 
-.plural.taxonomy-category-kennisbank #content .category-title a {
+.taxonomy-category-kennisbank #content .category-title a {
   text-decoration: none;
   color: #332d31;
 }
 
-.plural.taxonomy-category-kennisbank #content .kennisbank-category-list {
+.taxonomy-category-kennisbank #content .kennisbank-category-list {
   padding: 0;
   margin: 0;
   list-style-type: none;
   margin-bottom: 0.75rem;
 }
 
-.plural.taxonomy-category-kennisbank #content .kennisbank-category-list li {
+.taxonomy-category-kennisbank #content .kennisbank-category-list li {
   margin: 0;
 }
 
-.plural.taxonomy-category-kennisbank #content .kennisbank-category-list li {
+.taxonomy-category-kennisbank #content .kennisbank-category-list li {
   position: relative;
   display: table;
   width: 100%;
   border-bottom: 1px solid #c5c5d0;
 }
 
-.plural.taxonomy-category-kennisbank #content .kennisbank-category-list li:before {
+.taxonomy-category-kennisbank #content .kennisbank-category-list li:before {
   display: inline-block;
   font: normal normal normal 1rem/1 FontAwesome;
   font-size: inherit;
@@ -1067,7 +1065,7 @@ pre {
   text-align: left;
 }
 
-.plural.taxonomy-category-kennisbank #content .kennisbank-category-list a {
+.taxonomy-category-kennisbank #content .kennisbank-category-list a {
   display: table-cell;
   padding: 0.25rem 0;
   text-decoration: none;
@@ -1076,13 +1074,23 @@ pre {
   color: inherit;
 }
 
-.plural.taxonomy-category-kennisbank #content .kennisbank-category-list a:hover {
+.taxonomy-category-kennisbank #content .kennisbank-category-list a:hover {
   color: #2c96e3;
 }
 
-.plural.taxonomy-category-kennisbank #content .read-more {
+.taxonomy-category-kennisbank #content .read-more {
   display: block;
   font-size: 0.875rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 820px) {
+  .taxonomy-category-kennisbank #content .kennisbank-category {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
 #footer {
@@ -1137,7 +1145,7 @@ pre {
 /* Layout */
 .site-branding {
   position: relative;
-  padding: 58px 0 22px;
+  padding: 58px 0 20px;
 }
 
 .site-branding #site-title {
@@ -1202,7 +1210,7 @@ h4.entry-title {
 
 /* Layout */
 #menu-primary {
-  padding: 10px 24px;
+  padding: 10px 24px 12px;
   color: #fffefc;
   font-family: Arial, sans-serif;
   line-height: 1;
