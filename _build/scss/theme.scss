@@ -10,6 +10,7 @@
 @import "mixins/mixins";
 @import "mixins/mixins-flexbox";
 @import "mixins/mixins-reset-styles";
+@import "mixins/functions";
 
 // Theme Variables
 @import "variables/colors";
@@ -43,6 +44,7 @@
 @import "modules/pagination";
 // @import "modules/comments";
 @import "modules/social-media";
+@import "modules/widgets";
 @import "vendors/gravity-forms/setup";
 
 /* Media

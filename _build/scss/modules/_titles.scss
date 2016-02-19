@@ -1,27 +1,19 @@
 /* Titles */
 .entry-title,
 .archive-title,
+.category-title,
 .widget-title,
 .gsection_title,
 .comment-reply-title {
 	margin-top: 0;
-	a {	color: inherit;	}
-}
+	a {	
+		color: inherit;
+		text-decoration: none;
 
-h1.entry-title,
-.archive-title {
-
-}
-
-h2.entry-title {
-	margin-bottom: 0;
-	font-size: rem(24px);
-}
-
-h3.entry-title,
-h4.entry-title {
-	margin-bottom: 0;
-	font-size: rem(16px);
+		&:hover {
+			color: palette(primary);
+		}		
+	}
 }
 
 .widget-title {

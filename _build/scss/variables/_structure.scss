@@ -3,16 +3,17 @@ $width__site-min: 300px;
 
 $width__header-max: 720px;
 $width__main-max: 720px;
-$width__main-kennisbank-max: 960px;
+$width__main-large-max: 960px;
 $width__footer-max: 720px;
 
 $height__header: 320px;
 
 $width__site-padding: 24px;
 
-$breakpoint__large: 1000px;
-$breakpoint__medium: 820px;
-$breakpoint__smedium: 680px;
+$breakpoint__huge: 1440px + $width__site-padding * 2;
+$breakpoint__large: 960px + $width__site-padding * 2;
+$breakpoint__medium: 820px + $width__site-padding * 2;
+$breakpoint__smedium: 680px + $width__site-padding * 2;
 $breakpoint__small: 540px;
 $breakpoint__tiny: 460px;
 

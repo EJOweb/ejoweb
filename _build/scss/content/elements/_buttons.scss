@@ -1,21 +1,39 @@
-/* Button link */
-a.button {
-    background-color: palette(primary);
-    color: palette(white);
-    padding: 10px 15px 12px;
+@mixin button( $style: primary ) {
+    @include reset-link-style;
+    display: inline-block;
+    padding: 7px 12px 8px;
+
     font-family: $font__family-button;
     font-weight: $font__weight-normal;
-    display: inline-block;
     line-height: 1;
 
-    &:hover {
-        background-color: palette(primary, dark);
+    @if $style == white {
+        background-color: palette(white);
+        color: palette(black);
+
+        &:hover {
+            background-color: palette(white, dark);
+        }
+    }
+    @else {
+        background-color: palette(primary);
+        color: palette(white);
+
+        &:hover {
+            background-color: palette(primary, dark);
+        }
     }
 }
 
+/* Button link */
+a.button,
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	@extend a.button;
+    @include button;
 }
+
+a.button + br + a.button {
+    margin-top: 4px;
+}   

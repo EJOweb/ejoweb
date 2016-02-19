@@ -3,7 +3,7 @@
 <main <?php hybrid_attr( 'content' ); ?>>
 
 	<?php hybrid_get_menu( 'breadcrumbs' ); // Loads the menu/breadcrumbs.php template. ?>	
-
+	
 	<?php if ( hybrid_is_plural() ) : ?>
 
 		<?php locate_template( array( 'misc/archive-header.php' ), true ); // Loads the misc/archive-header.php template. ?>

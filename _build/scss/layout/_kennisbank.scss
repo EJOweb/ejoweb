@@ -1,7 +1,7 @@
-.taxonomy-category-kennisbank { 
+.archive-knowledgebase_post { 
 
 	#main > .wrap {
-		max-width: $width__main-kennisbank-max;
+		max-width: $width__main-large-max;
 	}
 
 	.breadcrumbs,
@@ -12,7 +12,7 @@
 
 
 /* Content */
-.taxonomy-category-kennisbank #content {	
+.archive-knowledgebase_post #content {	
 
 	.kennisbank {
 		display: flex;
@@ -28,57 +28,32 @@
 		flex-shrink: 1;
 		flex-basis: 50%;
 		max-width: 50%;
-		margin-bottom: 2rem;
+		margin-bottom: $vertical__space;
 		padding-left: $width__gutter-half;
 		padding-right: $width__gutter-half;
 	}
 }
 
 /* Kennisbank category */
-.taxonomy-category-kennisbank #content {	
+.archive-knowledgebase_post #content {
 
 	.category-title {
-		margin: 0 0 0.5rem;
-		&:before {
+		margin: 0.5rem 0 0.5rem;
+		a:before {
 			@include icon(fa-folder-o);
-			padding-right: 8px;
+			padding-right: 0.25em;
 		}
 
 		a {
 			@include reset-link-style;
+			&:hover {
+				color: palette(primary);
+			}	
 		}
 	}
 
 	.kennisbank-category-list {
-		@include reset-list-style;
-		margin-bottom: 0.75rem;
-
-		li {
-			position: relative;
-			display: table;
-			width: 100%;
-			border-bottom: 1px solid palette(grey);
-
-			&:before {
-				@include icon(fa-angle-right);
-				display: table-cell;
-				width: 16px;
-				padding-left: 2px;
-				text-align: left;
-			}
-		}
-
-		a {
-			display: table-cell;
-			padding: 0.25rem 0;	
-			text-decoration: none;
-			font-family: $font__family-heading;
-			font-weight: $font__weight-normal;
-			color: inherit;
-			&:hover {
-				color: palette(primary);
-			}
-		}
+		margin-bottom: 0.5rem;
 	}
 
 	.read-more {
@@ -87,8 +62,25 @@
 	}
 }
 
+/* Kennisbank archive */
+.archive-knowledgebase_post {
+	.archive-title:before {
+		@include icon(fa-folder-open-o);
+		padding-right: 0.25em;
+	}
+}
+	
+/* Kennisbank category archive */
+.taxonomy-knowledgebase_category {
+	.archive-title:before {
+		@include icon(fa-folder-o);
+		padding-right: 0.25em;
+	}
+}
+
+
 /* Responsive */
-.taxonomy-category-kennisbank #content { 
+.archive-knowledgebase_post #content { 
 	@include media($breakpoint__medium) {
 		.kennisbank-category {
 			flex-basis: 100%;

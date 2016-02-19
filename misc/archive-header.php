@@ -2,7 +2,7 @@
 
 	<?php if (is_home()) : ?>
 
-		<h1 <?php hybrid_attr( 'archive-title' ); ?>>Laatste artikelen</h1>
+		<h1 <?php hybrid_attr( 'archive-title' ); ?>><?php the_archive_title(); ?></h1>
 
 	<?php else : ?>
 

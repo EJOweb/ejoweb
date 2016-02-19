@@ -68,4 +68,7 @@ function ejo_theme_setup()
 
 	/* Improved Visual Editor */
 	add_theme_support( 'ejo-tinymce', array('button', 'intro') );
+
+	/* EJO Knowledgebase */
+	add_theme_support( 'ejo-knowledgebase' );
 }

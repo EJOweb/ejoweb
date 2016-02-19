@@ -30,6 +30,8 @@ add_action( 'admin_init', 'ejo_add_editor_styles' );
 //* Filter excerpt_more
 add_filter( 'excerpt_more', function() { return '...'; } );
 
+//* Extensions
+include_once( THEME_LIB_DIR . 'extensions/featured-service-widget.php' );
 
 /**
  * Registers custom image sizes for the theme. 
@@ -69,6 +71,26 @@ function ejo_register_sidebars()
 			'id'          => 'sidebar-primary',
 			'name'        => 'Sidebar - Primary',
 			'description' => 'Drag widgets to here',
+		)
+	);
+
+	hybrid_register_sidebar(
+		array(
+			'id'          => 'home-blocks',
+			'name'        => 'Home - Blocks',
+			'description' => 'Drag widgets to here',
+			'before_widget' => '<article id="%1$s" class="widget %2$s"><div class="wrap">',
+			'after_widget'  => '</div></article>',
+		)
+	);
+
+	hybrid_register_sidebar(
+		array(
+			'id'          => 'home-services',
+			'name'        => 'Home - Services',
+			'description' => 'Drag widgets to here',
+			'before_widget' => '<article id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</article>',
 		)
 	);
 }

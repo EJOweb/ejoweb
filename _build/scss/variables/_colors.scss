@@ -23,7 +23,7 @@ $palettes: (
     ),
     black: (
         base:  $color__black,
-        light: lighten($color__black, 10%),
+        light: lighten($color__black, 20%),
         dark:  darken($color__black, 10%),
         transparent: rgba($color__black, 0.05),
     ),

@@ -655,7 +655,7 @@ i i, i em, i mark, i cite, em i, em em, em mark, em cite, mark i, mark em, mark 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 select,
 textarea {
-  color: #4e454b;
+  color: #695d65;
   border: 1px solid #c5c5d0;
   border-radius: 3px;
   padding: 0.25rem 0.5rem;
@@ -695,24 +695,32 @@ input:checked + label {
 }
 
 /* Button link */
-a.button, button,
+a.button,
+button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  background-color: #2c96e3;
-  color: #fffefc;
-  padding: 10px 15px 12px;
+  text-decoration: none;
+  color: #332d31;
+  display: inline-block;
+  padding: 7px 12px 8px;
   font-family: Arial, sans-serif;
   font-weight: 400;
-  display: inline-block;
   line-height: 1;
+  background-color: #2c96e3;
+  color: #fffefc;
 }
 
-a.button:hover, button:hover,
+a.button:hover,
+button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
   background-color: #1a7bc2;
+}
+
+a.button + br + a.button {
+  margin-top: 4px;
 }
 
 /* Alignment
@@ -779,7 +787,6 @@ Headings
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, sans-serif;
   font-weight: 400;
-  color: #332d31;
 }
 
 h1 {
@@ -816,7 +823,6 @@ Headings
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, sans-serif;
   font-weight: 400;
-  color: #332d31;
 }
 
 h1 {
@@ -856,6 +862,16 @@ blockquote,
 pre {
   margin-top: 0;
   margin-bottom: 1.25rem;
+}
+
+p:last-child,
+ul:last-child, ol:last-child,
+table:last-child,
+figure:last-child, audio:last-child, video:last-child, object:last-child, embed:last-child, iframe:last-child,
+hr:last-child,
+blockquote:last-child,
+pre:last-child {
+  margin-bottom: 0;
 }
 
 /* Main content styling */
