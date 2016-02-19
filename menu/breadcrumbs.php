@@ -1,5 +1,5 @@
 <?php 
-if (!is_front_page()) : // check if front-page
+// if (!is_front_page()) : // check if front-page
 
 	if ( function_exists('yoast_breadcrumb') ) {
 
@@ -9,5 +9,5 @@ if (!is_front_page()) : // check if front-page
 		);
 
 	}
-endif; // end front-page check
+// endif; // end front-page check
 ?>

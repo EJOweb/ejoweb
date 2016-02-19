@@ -1,0 +1,9 @@
+// Compose calc() formula for size of a box relative to the total blocks and border-size
+@function boxsize($total_blocks, $border_size: 1px) 
+{
+	// If there are 6 blocks, there need to be calculated space for 5 borders
+	$number_of_borders: $total_blocks - 1;
+
+	// Return the calculation formula for the size of 1 block
+	@return calc(100% / #{$total_blocks} - ((#{$number_of_borders} * #{$border_size}) / #{$total_blocks}));
+}

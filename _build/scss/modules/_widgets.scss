@@ -1,0 +1,50 @@
+
+
+.knowledgebase-widget {
+	.widget-title {
+		a:before {
+			@include icon(fa-folder-open-o);
+			padding-right: 8px;
+		}
+	}
+
+	.knowledgebase-categories {
+		margin-top: 0.75rem;
+	}
+
+	.category-title {
+		margin-bottom: 0;
+		padding: 0.5rem 0;	
+		&:not(:last-of-type) {
+			border-bottom: 1px solid palette(grey);
+		}
+		a:before {
+			@include icon(fa-folder-o);
+			padding-right: 0.3em;
+		}
+
+		a {
+			@include reset-link-style;
+			&:hover {
+				color: palette(primary);
+			}	
+		}
+	}
+
+	.read-more {
+		margin-top: 0.5rem;
+		display: block;
+		font-size: $font__size-small;
+	}
+}
+
+
+.diensten-widget,
+#black-studio-tinymce-2 {
+	.widget-title {
+		&:before {
+			@include icon(fa-magic);
+			padding-right: 8px;
+		}
+	}
+}

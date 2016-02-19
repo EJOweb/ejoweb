@@ -1,23 +1,26 @@
 #header {
-	> .wrap {
-		max-width: $desktop-width;
-		margin: 0 auto;
+	color: palette(white); 
+	a {	color: inherit;	}
+
+	position: relative;
+}
+
+#header .header-image {
+	position: absolute;
+	width: 100%;
+	height: $height__header;
+	background: palette(white) url($path__images + 'header-image-1.png') no-repeat center 0;
+
+	&:after {
+		content: "";
+		position: absolute;
+		height: $height__header;
+		width: 100%;
+		background-color: rgba(palette(primary), 0.8);
 	}
 }
 
-//* Colors
-#header {
-	background-color: $color-primary;
-	color: $color-primary-contrast;
-
-	a {
-		@include a-reset;
-		color: $color-primary-contrast;
-	}
-}
-
-#header {
-	.site-title {
-		margin: 0;
-	}
+#header > .wrap {
+	max-width: $width__header-max;
+	margin: 0 auto;
 }

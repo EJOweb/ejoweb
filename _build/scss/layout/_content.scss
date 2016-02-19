@@ -1,0 +1,107 @@
+#content {
+
+	.archive-header {
+		margin-bottom: $vertical__space;
+	}
+
+	.entry {
+		margin-bottom: $vertical__space;
+	}	
+
+	.entry-content {
+		
+	}
+
+	.entry-byline {
+		// display: none;
+	}
+
+	.entry-header {
+		
+	}
+
+	.entry-footer {
+		
+	}
+}
+
+
+/* Plural styles */
+.plural:not(.archive-knowledgebase_post):not(.taxonomy-knowledgebase_category) #content {	
+
+	.entry {
+		margin-bottom: $width__gutter-half;
+		&:not(:last-of-type) {
+			border-bottom: 1px solid palette(grey);
+			padding-bottom: $width__gutter-half;
+		}
+	}
+
+	.entry-title {
+		margin-bottom: $vertical__space;
+	}
+
+	.entry-byline {
+		color: palette(black, light);
+		font-size: $font__size-small;
+		a {
+			color: inherit;
+			&:hover {
+				color: palette(primary);
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.entry-header {
+
+	}
+
+	.entry-footer {
+		margin-top: $vertical__space;
+	}
+
+	.entry + .entry {
+	}
+}
+
+/* Plural Knowledgebase */
+.plural #content .knowledgebase_post {
+	position: relative;
+	display: table;
+	margin-bottom: 0;
+	width: 100%;
+	&:not(:last-of-type) {
+		border-bottom: 1px solid palette(grey);
+	}
+
+	&:before {
+		// @include icon(fa-angle-right);
+		@include icon(fa-file-text-o);
+		display: table-cell;
+		vertical-align: middle;
+		width: 1.75em;
+		// font-size: $font__size - rem(2);
+		font-size: 1em - em(2);
+		padding-left: 2px;
+		text-align: left;
+	}
+
+	.entry-title {
+		display: table-cell;
+		margin-bottom: 0;
+		font-family: $font__family-heading;
+		line-height: $font__line-height;
+		font-weight: $font__weight-normal;
+	}
+
+	h2.entry-title {
+		font-size: rem(24px);
+		padding: 0.5rem 0;	
+	}
+
+	h4.entry-title {
+		font-size: rem(16px);
+		padding: 0.3rem 0;	
+	}
+}

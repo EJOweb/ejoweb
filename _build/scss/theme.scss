@@ -1,44 +1,58 @@
-//* Bourbon frameworks
-@import "helpers/bourbon/bourbon";
-@import "helpers/bourbon-edit/strip-unit";
+@charset 'UTF-8';
 
-//* Helpers
-@import "helpers/ejo-toolkit/responsiveness/media-query";
-@import "helpers/ejo-toolkit/icons/core";
-@import "helpers/ejo-toolkit/icons/icons";
-@import "helpers/ejo-toolkit/social-media/colors";
+// Resources
+@import "vendors/bourbon/bourbon";
+@import "vendors/colors";
+@import "vendors/icons";
+@import "vendors/social-media";
 
-//* settings
-@import "_settings/typography-settings";
-@import "_settings/color-settings";
-@import "_settings/path-settings";
-@import "_settings/form-settings";
-@import "_settings/border-settings";
-@import "_settings/grid-settings";
+// Mixins
+@import "mixins/mixins";
+@import "mixins/mixins-flexbox";
+@import "mixins/mixins-reset-styles";
+@import "mixins/functions";
 
-//* Reset
-@import "helpers/ejo-toolkit/reset/reset";
+// Theme Variables
+@import "variables/colors";
+@import "variables/typography";
+@import "variables/structure";
+@import "variables/misc";
 
-//* Core styles
-@import "core/typography";
-@import "core/images";
-@import "core/tables";
-@import "core/lists";
-@import "core/forms";
-@import "core/buttons";
-@import "core/common";
+/* Reset
+============================================================================ */
+@import "vendors/normalize";
 
-//* Layout
-@import "layout/body";
-@import "layout/header";
-@import "layout/navigation";
-@import "layout/main";
-@import "layout/sidebar";
-@import "layout/footer";
-@import "layout/entry";
-@import "layout/widget";
-@import "layout/responsiveness";
+/* EJO Defaults
+============================================================================ */
+@import "vendors/ejo-defaults";
 
-//* Plugins
-@import "helpers/ejo-toolkit/gravity-forms/gravity-forms";
+/* Content
+============================================================================ */
+@import "content/content";
 
+/* Structure
+============================================================================ */
+@import "layout/site";
+
+/* Other
+============================================================================ */
+@import "modules/branding";
+@import "modules/titles";
+@import "modules/navigation";
+@import "modules/navigation-mobile";
+@import "modules/breadcrumbs";
+@import "modules/pagination";
+// @import "modules/comments";
+@import "modules/social-media";
+@import "modules/widgets";
+@import "vendors/gravity-forms/setup";
+
+/* Media
+============================================================================ */
+@import "modules/media/galleries";
+@import "modules/media/captions";
+@import "modules/media/smileys";
+
+/* Accessibility
+============================================================================ */
+@import "modules/accessibility";

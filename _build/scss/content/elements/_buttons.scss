@@ -1,0 +1,39 @@
+@mixin button( $style: primary ) {
+    @include reset-link-style;
+    display: inline-block;
+    padding: 7px 12px 8px;
+
+    font-family: $font__family-button;
+    font-weight: $font__weight-normal;
+    line-height: 1;
+
+    @if $style == white {
+        background-color: palette(white);
+        color: palette(black);
+
+        &:hover {
+            background-color: palette(white, dark);
+        }
+    }
+    @else {
+        background-color: palette(primary);
+        color: palette(white);
+
+        &:hover {
+            background-color: palette(primary, dark);
+        }
+    }
+}
+
+/* Button link */
+a.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    @include button;
+}
+
+a.button + br + a.button {
+    margin-top: 4px;
+}   

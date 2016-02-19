@@ -1,0 +1,176 @@
+//* Reset 
+.comment-list,
+.comment-list .children {
+	@include reset-list-style;
+}
+
+//* Structure
+#comments-template {
+	margin-bottom: $vertical__space;
+}
+
+.comment-respond {
+	margin-bottom: $vertical__space;
+}
+
+#comments .comment article,
+.comment-respond {
+	padding-left: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem - $vertical__space;
+}
+
+//* Nesting
+#comments .children,
+#comments .comment-respond {
+	margin-left: 2rem;
+}	
+
+//*comments
+#comments {
+	position: relative;
+
+	.comments-title {
+		font-size: $font__size-small;
+		text-transform: uppercase;
+		font-family: $font__family;
+		line-height: $font__line-height;
+		font-weight: $font__weight-normal;
+		margin-bottom: 2px;
+		float: right;
+	}
+
+	.comment-list {
+		clear: both;
+	}
+
+	.comment {
+		article {
+			border-left: 1px solid palette(grey);
+			border-top: 1px solid palette(grey);
+			border-bottom: 1px solid palette(grey);
+			margin-bottom: -1px;
+		}
+		
+		.comment-meta {
+			margin-bottom: 1em;
+			font-size: rem(15);
+			line-height: 1;
+
+			.comment-author {
+				font-size: $font__family;
+				font-family: $font__family-heading;
+				font-weight: $font__weight-bold;
+				font-style: normal;
+				margin-right: 1px;
+			}
+
+			.comment-published {
+				margin: 0 1px;
+			}
+
+			.comment-reply-link {
+				margin: 0 1px;
+				&:before {}
+			}
+		}
+
+		.comment-content {
+			font-size: $font__size-small;
+			line-height: 1.625;
+
+			p:not(:last-child) {
+				margin-bottom: 0.75em;
+			}
+		}
+
+		//* Simple edit textarea
+		textarea {
+			border-bottom: 1px solid palette(grey);
+			padding: rem(5) 0;
+			display:block;
+
+			&:focus {
+				border-bottom-width: 2px;
+				border-color: palette(primary);
+				margin-bottom: -1px;
+			}
+		}
+	}
+}
+
+//* Reply styling
+.comment-respond {
+	border-left: 1px solid palette(grey);
+	border-top: 1px solid palette(grey);
+	border-bottom: 1px solid palette(grey);
+	margin-bottom: -1px;
+	position: relative;
+
+	.comment-reply-title {
+		margin-bottom: 2rem;
+	}
+
+	#cancel-comment-reply-link {
+		font-family: $font__family;
+		font-weight: $font__weight-bold;
+		position: absolute;
+		right: 0;
+		margin-top: 2px;
+
+		.fa:hover {
+			color: palette(primary);;
+		}
+	}
+
+	.comment-form-comment,
+	.comment-form-legit,
+	.comment-form-author,
+	.comment-form-email {
+		position: relative;
+		margin-bottom: 2rem;
+	}
+
+	//* Hide spamfield
+	.comment-form-legit {
+		display: none;
+	}
+
+	.form-submit {}
+
+	label {
+		color: palette(grey, dark);
+		position:absolute;
+		pointer-events: none;
+		left: 0px;
+		top: 2px;
+		transition:0.2s ease all; 
+		-moz-transition:0.2s ease all; 
+		-webkit-transition:0.2s ease all;
+
+		&.superscript,
+		.show-if-no-js & {
+			top: - rem(18);
+			font-size: rem(14);
+		}
+	}
+}
+
+#{$all-text-inputs},
+textarea {
+	border: none;
+	border-bottom: 1px solid palette(grey);
+	padding: rem(5) 0;
+	display:block;
+
+	&:focus {
+		border-bottom-width: 2px;
+		border-color: palette(primary);
+		margin-bottom: -1px;
+	}
+}
+
+//* Textarea margin-correction (haven't found the reason yet)
+textarea:focus {
+	margin-bottom: 0;
+}
