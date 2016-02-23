@@ -42,7 +42,7 @@ include_once( THEME_LIB_DIR . 'extensions/featured-service-widget.php' );
  */
 function ejo_register_image_sizes() 
 {
-	// add_image_size( 'page-header', 960, 240, true ); 
+	add_image_size( 'banner', 960, 240, true ); 
 }
 
 /**
