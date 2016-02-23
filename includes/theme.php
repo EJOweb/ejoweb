@@ -12,6 +12,9 @@
 /* Register custom image sizes. */
 add_action( 'init', 'ejo_register_image_sizes', 5 );
 
+/* Add custom image sizes to media dropdown */
+add_filter('image_size_names_choose', 'post_image_sizes');
+
 /* Register custom menus. */
 add_action( 'init', 'ejo_register_menus', 5 );
 
@@ -44,6 +47,18 @@ function ejo_register_image_sizes()
 {
 	add_image_size( 'banner', 960, 240, true ); 
 }
+
+/**
+ * Add custom image sizes to media dropdown 
+ */
+function post_image_sizes($sizes)
+{
+    $custom_sizes = array(
+        'banner' => 'Banner'
+    );
+    return array_merge( $sizes, $custom_sizes );
+}
+
 
 /**
  * Registers nav menu locations.
