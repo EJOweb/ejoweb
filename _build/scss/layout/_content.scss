@@ -1,28 +1,25 @@
-#content {
+.archive-header {
+	margin-bottom: $vertical__space;
+}
 
-	.archive-header {
-		margin-bottom: $vertical__space;
-	}
+.entry {
+	margin-bottom: $vertical__space;
+}	
 
-	.entry {
-		margin-bottom: $vertical__space;
-	}	
+.entry-content {
+	
+}
 
-	.entry-content {
-		
-	}
+.entry-byline {
+	// display: none;
+}
 
-	.entry-byline {
-		// display: none;
-	}
+.entry-header {
+	
+}
 
-	.entry-header {
-		
-	}
-
-	.entry-footer {
-		
-	}
+.entry-footer {
+	
 }
 
 

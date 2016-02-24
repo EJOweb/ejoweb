@@ -9,13 +9,14 @@
 	}
 
 	.knowledgebase-categories {
-		margin-top: 0.75rem;
+		margin-bottom: $vertical__space;
 	}
 
 	.category-title {
 		margin-bottom: 0;
-		padding: 0.5rem 0;	
 		&:not(:last-of-type) {
+			margin-bottom: 0.5rem;
+			padding-bottom: 0.5rem;
 			border-bottom: 1px solid palette(grey);
 		}
 		a:before {
@@ -32,19 +33,42 @@
 	}
 
 	.read-more {
-		margin-top: 0.5rem;
 		display: block;
 		font-size: $font__size-small;
 	}
 }
 
-
-.diensten-widget,
-#black-studio-tinymce-2 {
+.recent-posts-widget {
 	.widget-title {
-		&:before {
-			@include icon(fa-magic);
+		a:before {
+			@include icon(fa-pencil);
 			padding-right: 8px;
 		}
+	}
+
+	.recent-posts {
+		margin-bottom: $vertical__space;
+	}
+
+	.entry {
+		margin-bottom: $vertical__space;
+	}
+
+	.entry-byline {
+		color: palette(black, light);
+		font-size: $font__size-small;
+		a {
+			color: inherit;
+			&:hover {
+				color: palette(primary);
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.entry-title {
+		margin-bottom: $vertical__space-half;
+		font-size: rem(20);
+		line-height: 1.2;
 	}
 }

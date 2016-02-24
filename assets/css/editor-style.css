@@ -864,16 +864,6 @@ pre {
   margin-bottom: 1.25rem;
 }
 
-p:last-child,
-ul:last-child, ol:last-child,
-table:last-child,
-figure:last-child, audio:last-child, video:last-child, object:last-child, embed:last-child, iframe:last-child,
-hr:last-child,
-blockquote:last-child,
-pre:last-child {
-  margin-bottom: 0;
-}
-
 /* Main content styling */
 /* Editor Style specifics
 ============================================================================ */

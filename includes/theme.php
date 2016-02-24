@@ -34,7 +34,8 @@ add_action( 'admin_init', 'ejo_add_editor_styles' );
 add_filter( 'excerpt_more', function() { return '...'; } );
 
 //* Extensions
-include_once( THEME_LIB_DIR . 'extensions/featured-service-widget.php' );
+// include_once( THEME_LIB_DIR . 'extensions/featured-service-widget.php' );
+include_once( THEME_LIB_DIR . 'extensions/recent-posts-widget.php' );
 
 /**
  * Registers custom image sizes for the theme. 

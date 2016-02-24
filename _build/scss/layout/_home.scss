@@ -18,10 +18,11 @@
 	// background-color: palette(grey, light); // this simulates the color of the border
 
 	.widget {
-		flex-basis: boxsize(2, 8px);
-		margin-top: 8px; // this simulates a border because of parent container background-color
+		flex-basis: boxsize(2, 16px);
+		margin-top: 16px; // this simulates a border because of parent container background-color
 
 		// Remove 'border' from first row
+		// &:nth-child(5),
 		// &:nth-child(4),
 		// &:nth-child(3),
 		&:nth-child(2),
@@ -29,11 +30,12 @@
 			margin-top: 0px;
 		}
 
-		padding: 2.75rem 3rem;
+		padding: 2.75rem 3rem (2.75rem - $vertical__space);
 		background-color: palette(white);
 		box-shadow: $box__shadow;	
 
 		.widget-title {
+			text-align: center;
 			font-size: $font__size-heading-2;
 		}
 	}
@@ -51,12 +53,12 @@
 
 .home-blocks .widget {
 	@include media($breakpoint__huge) {
-		flex-basis: boxsize(2, 8px);
+		flex-basis: boxsize(2, 16px);
 
 		// Remove 'border' from first row
 		&:nth-child(3),
 		&:nth-child(4) {
-			margin-top: 8px;
+			margin-top: 16px;
 		}
 	}
 
@@ -65,7 +67,7 @@
 
 		// Remove 'border' from first row
 		&:nth-child(2) {
-			margin-top: 8px;
+			margin-top: 16px;
 		}
 	}
 }
