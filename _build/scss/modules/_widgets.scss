@@ -1,12 +1,6 @@
 
 
 .knowledgebase-widget {
-	.widget-title {
-		a:before {
-			@include icon(fa-folder-open-o);
-			padding-right: 8px;
-		}
-	}
 
 	.knowledgebase-categories {
 		margin-bottom: $vertical__space;
@@ -39,12 +33,6 @@
 }
 
 .recent-posts-widget {
-	.widget-title {
-		a:before {
-			@include icon(fa-pencil);
-			padding-right: 8px;
-		}
-	}
 
 	.recent-posts {
 		margin-bottom: $vertical__space;

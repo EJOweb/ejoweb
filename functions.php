@@ -71,4 +71,7 @@ function ejo_theme_setup()
 
 	/* EJO Knowledgebase */
 	add_theme_support( 'ejo-knowledgebase' );
+
+	/* Admin Script for Image selecting */
+	add_theme_support( 'ejo-admin-image-select' );
 }

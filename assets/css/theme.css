@@ -1178,6 +1178,31 @@ pre {
   font-size: 1.75rem;
 }
 
+.home-blocks .widget .featured-image-container {
+  margin-top: -2.75rem;
+  margin-bottom: 2.25rem;
+  margin-left: -3rem;
+  margin-right: -3rem;
+}
+
+.home-blocks .widget .featured-image-container img {
+  display: block;
+  width: 100%;
+}
+
+.home-blocks .widget .icon-container {
+  position: relative;
+  display: block;
+  margin: -70px auto -2px;
+  width: 72px;
+  height: 72px;
+  font-size: 30px;
+  line-height: 72px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #fffefc;
+}
+
 /**
  * Responsiveness 
  */
@@ -1858,17 +1883,6 @@ pre {
   background-color: #4d729f;
 }
 
-.knowledgebase-widget .widget-title a:before {
-  display: inline-block;
-  font: normal normal normal 1rem/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
-  padding-right: 8px;
-}
-
 .knowledgebase-widget .knowledgebase-categories {
   margin-bottom: 1.25rem;
 }
@@ -1906,17 +1920,6 @@ pre {
 .knowledgebase-widget .read-more {
   display: block;
   font-size: 0.9375rem;
-}
-
-.recent-posts-widget .widget-title a:before {
-  display: inline-block;
-  font: normal normal normal 1rem/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
-  padding-right: 8px;
 }
 
 .recent-posts-widget .recent-posts {

@@ -1,35 +1,35 @@
 <?php
 
-add_action( 'widgets_init', 'register_recent_posts_widget' );
+add_action( 'widgets_init', 'register_ejo_edited_knowledgebase_widget', 99 );
 
 //* Register Widget
-function register_recent_posts_widget() 
+function register_ejo_edited_knowledgebase_widget() 
 { 
+    //* Unregister primary knowledgebase widget
+	unregister_widget( 'EJO_Knowledgebase_Widget' );
+
     //* Include Widget Class
-    register_widget( 'EJO_Recent_Posts_Widget' ); 
+    register_widget( 'EJO_Knowledgebase_Widget_Edited' ); 
 }
 
-
 /**
- * Class used to implement a Recent Posts widget.
+ * Class used to implement a Knowledgebase widget.
  */
-final class EJO_Recent_Posts_Widget extends WP_Widget
+final class EJO_Knowledgebase_Widget_Edited extends WP_Widget
 {
 	/**
 	 * Sets up a new widget instance.
 	 */
 	function __construct() 
 	{
-		$widget_title = __('Recent Posts Widget', 'ejoweb');
+		$widget_title = __('Knowledgebase Widget', 'ejo-core');
 
 		$widget_info = array(
-			'classname'   => 'recent-posts-widget',
-			'description' => __('Displays latest blog posts', 'ejoweb'),
+			'classname'   => 'knowledgebase-widget',
+			'description' => __('Text followed by knowledgebase categories', 'ejo-core'),
 		);
 
-		$widget_control = array( 'width' => 600 );
-
-		parent::__construct( 'recent-posts-widget', $widget_title, $widget_info, $widget_control );
+		parent::__construct( 'knowledgebase-widget-edit', $widget_title, $widget_info );
 	}
 
 	/**
@@ -42,18 +42,18 @@ final class EJO_Recent_Posts_Widget extends WP_Widget
 		 * Then extract variables of this array
 		 */
         extract( wp_parse_args( $instance, array( 
+            'title' => '',
             'image_id' => '',
             'icon' => '',
-            'title' => '',
             'text' => '',
-            'number_of_posts' => 3,
+            'link_text' => '',
         )));
 
-        /* Run $text through filter */
+		/* Run $text through filter */
 		$text = apply_filters( 'widget_text', $text, $instance, $this );
 
-		/* Get Url of blog section */
-		$url = ( get_option( 'show_on_front' ) == 'page' ) ? get_permalink( get_option('page_for_posts' ) ) : bloginfo('url');
+		/* Get archive of knowledgebase */
+		$url = get_post_type_archive_link( EJO_Knowledgebase::$post_type );
 		?>
 
 		<?php echo $args['before_widget']; ?>
@@ -76,53 +76,53 @@ final class EJO_Recent_Posts_Widget extends WP_Widget
 
 		<?php echo $args['before_title']; ?><a href="<?php echo $url; ?>"><?php echo $title; ?></a><?php echo $args['after_title']; ?>
 
-		<?php if (!empty($text)) : // Check if there is text ?>
-
-			<div class="textwidget"><?php echo wpautop($text); ?></div>
-
-		<?php endif; // END text check ?>
+		<div class="textwidget">
+			<?php echo wpautop($text); ?>
+		</div>
 
 		<?php
 
-		/* Get articles of current knowledgebase category */
-	    $recent_posts_query = new WP_Query( array(
-	    	'post_type' => 'post',
-	    	'posts_per_page' => $number_of_posts,
-	    	'orderby' => 'post_date',
-			'order' => 'DESC',	
-	    ) );
+		/* Get knowledgebase categories */
+		$categories = get_terms( 
+			'knowledgebase_category',
+			array(
+			    'orderby' => 'name',
+			    'order'   => 'ASC',
+			)
+		);
 
 		?>
+	    
+	    <div class="knowledgebase-categories">
 
-		<?php if ( $recent_posts_query->have_posts() ) : // Checks if any posts were found. ?>
+		    <?php foreach( $categories as $category ) : // Loop through each knowledgebase category ?>
 
-	    	<div class="recent-posts">
+		    	<?php
 
-				<?php while ( $recent_posts_query->have_posts() ) : // Begins the loop through found posts. ?>
+				/* Get Knowledgebase ategory url */
+				$category_url = esc_url( get_term_link( $category ) );
 
-					<?php $recent_posts_query->the_post(); // Loads the post data. ?>
-    
-		    		<?php $post_date = sprintf( "<time %s>%s</time>", hybrid_get_attr( 'entry-published' ), get_the_date( 'j F Y' ) ); ?>
+				/* Fabricate knowledgebase category link */
+			    $category_link = sprintf( '<a href="%s" alt="%s">%s</a>',
+			        $category_url,
+			        esc_attr( sprintf( 'View all posts in %s', $category->name ) ),
+			        esc_html( $category->name )
+			    );
 
-					<article <?php hybrid_attr( 'post' ); ?>>
+				?>
 
-						<div class="entry-byline">
-							<?php echo $post_date; ?> &bullet; <?php hybrid_post_terms( array( 'taxonomy' => 'category' ) ); ?>
-						</div>
+		    	<h4 <?php hybrid_attr( 'category-title' ); ?>><a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" title="<?php echo esc_attr( 'Bekijk alle '. $category->name .' artikelen' ); ?>" rel="bookmark" itemprop="url"><?php echo $category->name; ?></a></h4>
 
-						<header class="entry-header">
-							<h4 <?php hybrid_attr( 'entry-title' ); ?>><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a></h4>
-						</header>
 
-					</article>
+			<?php endforeach; // END foreach category loop ?>
 
-				<?php endwhile; // End found posts loop. ?>
+		</div>
 
-			</div>
+		<?php if (!empty($link_text)) : ?>
 
-			<?php wp_reset_postdata(); ?>
+			<a href="<?php echo $url; ?>" class="read-more"><?php echo $link_text; ?></a>
 
-		<?php endif; // End check for posts. ?>
+		<?php endif; // URL check ?>
 	
 		<?php echo $args['after_widget']; ?>
 
@@ -139,11 +139,11 @@ final class EJO_Recent_Posts_Widget extends WP_Widget
 		 * Then extract variables of this array
 		 */
         extract( wp_parse_args( $instance, array( 
+            'title' => '',
             'image_id' => '',
             'icon' => '',
-            'title' => '',
             'text' => '',
-            'number_of_posts' => 3,
+            'link_text' => '',
         )));
 
 		?>
@@ -174,21 +174,14 @@ final class EJO_Recent_Posts_Widget extends WP_Widget
 
 		<p>
 			<label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Text:') ?></label>
-			<textarea class="widefat" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>" rows="5"><?php echo $text; ?></textarea>
+			<textarea class="widefat" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+			<?php //wp_editor( $text, $this->get_field_id('text'), array(	'textarea_name' => $this->get_field_name('text') ) ); ?>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('number_of_posts'); ?>"><?php _e('Aantal berichten:') ?></label>
-			<select class="widefat" id="<?php echo $this->get_field_id('number_of_posts'); ?>" name="<?php echo $this->get_field_name('number_of_posts'); ?>">
-				<option value="1" <?php selected($number_of_posts, 1); ?>>1</option>
-				<option value="2" <?php selected($number_of_posts, 2); ?>>2</option>
-				<option value="3" <?php selected($number_of_posts, 3); ?>>3</option>
-				<option value="4" <?php selected($number_of_posts, 4); ?>>4</option>
-				<option value="5" <?php selected($number_of_posts, 5); ?>>5</option>
-			</select>
+			<label for="<?php echo $this->get_field_id('link_text'); ?>"><?php _e('Link text:') ?></label>
+			<input type="text" class="widefat" id="<?php echo $this->get_field_id('link_text'); ?>" name="<?php echo $this->get_field_name('link_text'); ?>" value="<?php echo $link_text; ?>" />
 		</p>
-
-
 		<?php
 	}
 
@@ -215,8 +208,8 @@ final class EJO_Recent_Posts_Widget extends WP_Widget
 		else
 			$instance['text'] = wp_kses_post( stripslashes( $new_instance['text'] ) );
 
-		/* Store number of posts */
-		$instance['number_of_posts'] = strip_tags( $new_instance['number_of_posts'] );
+		/* Store url and link-text */
+		$instance['link-text'] = strip_tags( $new_instance['link-text'] );
 
 		/* Return updated instance */
 		return $instance;

@@ -36,6 +36,8 @@ add_filter( 'excerpt_more', function() { return '...'; } );
 //* Extensions
 // include_once( THEME_LIB_DIR . 'extensions/featured-service-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/recent-posts-widget.php' );
+include_once( THEME_LIB_DIR . 'extensions/ejo-text-widget.php' );
+include_once( THEME_LIB_DIR . 'extensions/edited-knowledgebase-widget.php' );
 
 /**
  * Registers custom image sizes for the theme. 
@@ -47,6 +49,7 @@ include_once( THEME_LIB_DIR . 'extensions/recent-posts-widget.php' );
 function ejo_register_image_sizes() 
 {
 	add_image_size( 'banner', 960, 240, true ); 
+	add_image_size( 'featured', 480, 200, true ); 
 }
 
 /**
@@ -95,8 +98,8 @@ function ejo_register_sidebars()
 			'id'          => 'home-blocks',
 			'name'        => 'Home - Blocks',
 			'description' => 'Drag widgets to here',
-			'before_widget' => '<article id="%1$s" class="widget %2$s"><div class="wrap">',
-			'after_widget'  => '</div></article>',
+			'before_widget' => '<article id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</article>',
 		)
 	);
 
