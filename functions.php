@@ -54,7 +54,7 @@ function ejo_theme_setup()
 	add_theme_support( 'get-the-image' );
 
 	/* Cleanup Backend */
-	add_theme_support( 'ejo-cleanup-backend', array( 'widgets' ) );
+	add_theme_support( 'ejo-cleanup-backend', array( 'widgets', 'wp-smush' ) );
 
 	/* Cleanup Frontend */
 	add_theme_support( 'ejo-cleanup-frontend', array( 'head', 'xmlrpc', 'pingback' ) );
