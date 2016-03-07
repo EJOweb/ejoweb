@@ -95,4 +95,8 @@
 			margin-top: 16px;
 		}
 	}
+
+	@include media($breakpoint__tiny) {
+		&:nth-child(1n) { margin-top: 0; }
+	}
 }

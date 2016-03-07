@@ -15,11 +15,13 @@
 
 #main {
 	@include media($breakpoint__small) {
-		padding-left: 0;
-		padding-right: 0;
+		padding-left: $width__site-padding / 2;
+		padding-right: $width__site-padding / 2;
 	}
 
 	@include media($breakpoint__tiny) {
+		padding-left: 0;
+		padding-right: 0;
 		> .wrap {
 			padding: 2rem 2.25rem (2rem - $vertical__space);
 		}

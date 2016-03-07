@@ -75,6 +75,9 @@ function ejo_theme_setup()
 	/* Admin Script for Image selecting */
 	add_theme_support( 'ejo-admin-image-select' );
 
+	/* Admin Client Cleanup */
+	add_theme_support( 'ejo-admin-client-cleanup', array() );
+
 	/* Yoast Breadcrumbs */
 	add_theme_support( 'yoast-seo-breadcrumbs' );
 }

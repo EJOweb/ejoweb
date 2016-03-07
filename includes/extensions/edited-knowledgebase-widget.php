@@ -86,7 +86,7 @@ final class EJO_Knowledgebase_Widget_Edited extends WP_Widget
 		$categories = get_terms( 
 			'knowledgebase_category',
 			array(
-			    'orderby' => 'name',
+			    'orderby' => 'term_order',
 			    'order'   => 'ASC',
 			)
 		);

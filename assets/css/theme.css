@@ -934,12 +934,16 @@ pre {
 
 @media screen and (max-width: 540px) {
   #main {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
 @media screen and (max-width: 460px) {
+  #main {
+    padding-left: 0;
+    padding-right: 0;
+  }
   #main > .wrap {
     padding: 2rem 2.25rem 0.75rem;
   }
@@ -1225,6 +1229,12 @@ pre {
   }
   .home-blocks .widget:nth-child(2) {
     margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .home-blocks .widget:nth-child(1n) {
+    margin-top: 0;
   }
 }
 
