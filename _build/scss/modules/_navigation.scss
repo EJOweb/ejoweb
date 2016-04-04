@@ -6,6 +6,7 @@
 
 /* Layout */
 #menu-primary {
+	flex-basis: auto;
 	padding: 10px $width__site-padding 12px;
 	color: palette(white);
 	a {	color: inherit;	}

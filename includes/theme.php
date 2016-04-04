@@ -136,7 +136,7 @@ function ejo_add_styles_and_scripts()
 
 	//* Styles
 	/* Load Font */
-	// wp_enqueue_style( 'ejo-fonts', 'https://fonts.googleapis.com/css?family=Oswald:400,700|Droid+Serif:400,400italic,700,700italic' );
+	wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Roboto+Slab:400,700' );
 
 	/* Load active theme stylesheet. */
 	wp_enqueue_style( 'theme', THEME_CSS_URI . "theme{$suffix}.css", false, THEME_VERSION );

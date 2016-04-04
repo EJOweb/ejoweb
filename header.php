@@ -10,8 +10,6 @@
 	<div id="container">
 
 		<header <?php hybrid_attr( 'header' ); ?>>
-			<div class="header-image"></div>
-
 			<div class="wrap">
 
 				<div <?php hybrid_attr( 'branding' ); ?>>
@@ -21,12 +19,8 @@
 				</div><!-- #branding -->
 
 				<?php hybrid_get_menu( 'primary' ); // Loads the menu/primary.php template. ?>
-				<?php //hybrid_get_menu( 'primary-mobile' ); // Loads the menu/primary-mobile.php template. ?>
+				<?php hybrid_get_menu( 'primary-mobile' ); // Loads the menu/primary-mobile.php template. ?>
 				
 			</div><!-- .wrap -->
 
 		</header><!-- #header -->
-
-
-		<div id="main" class="main">
-			<div class="wrap">			

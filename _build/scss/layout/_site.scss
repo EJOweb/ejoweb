@@ -1,9 +1,4 @@
 #container {
-	background: palette(white, dark) url($path__images + 'body-bg.jpg') repeat 0 0;
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	min-height: 100%;
 	overflow: hidden;
 }
 
@@ -15,5 +10,5 @@
 @import "layout/main";
 @import "layout/content";
 @import "layout/kennisbank";
-@import "layout/home";
+// @import "layout/home";
 @import "layout/footer";

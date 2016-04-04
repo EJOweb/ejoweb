@@ -1,3 +1,20 @@
+.page-header {
+	// Colors
+	background-color: palette(primary);
+	color: palette(white); 
+	a {	color: inherit;	}
+
+	// Structure
+	padding-top: 100px;
+	text-align: center;
+}
+
+.page-header > .wrap {
+	max-width: $width__site-max;
+	margin: 0 auto;
+	padding: 2rem 0;
+}
+
 #main {
 	padding-left: $width__site-padding;
 	padding-right: $width__site-padding;

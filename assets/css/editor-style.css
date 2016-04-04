@@ -869,7 +869,7 @@ pre {
 ============================================================================ */
 /* Main content editor */
 body.content {
-  max-width: 720px;
+  max-width: 1200px;
   padding-left: 4rem !important;
   padding-right: 4rem !important;
   margin-top: 2.5rem;

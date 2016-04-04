@@ -1,12 +1,19 @@
-			</div><!-- .wrap -->
-		</div><!-- #main -->
+		<div class="call-to-action">
+			<section class="entry" itemtype="http://schema.org/CreativeWork" itemscope="itemscope">
+
+				<h2 <?php hybrid_attr( 'entry-title' ); ?>>Meer weten over het laten maken van een website?</h2>
+
+				<a href="" class="button">Contact opnemen</a>
+
+			</section>
+		</div>
 
 		<footer <?php hybrid_attr( 'footer' ); ?>>
-			<div class="wrap">
+			<div class="footer-widgets">
 
-				<a id="toTop">Naar Boven</a>
+				
 
-			</div><!-- .wrap -->
+			</div><!-- .footer-widgets -->
 		</footer><!-- #footer -->
 
 	</div><!-- #container -->

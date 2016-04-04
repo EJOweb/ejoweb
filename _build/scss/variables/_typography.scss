@@ -2,64 +2,40 @@
 // https://github.com/ultimate-package/tools.font-scale
 
 // FONT-FAMILY SETTINGS
-$font-primary: (
-	stack: "Georgia, serif",
-  
-	x-small: (
-		font-size: 13,
-		line-height: 16
-	),
+$fonts: (
+    primary: (
+    	stack: "Roboto, Helvetica, Arial, sans-serif",
 
-	small: (
-		font-size: 14,
-		line-height: 20
-	),
+    	small: (
+            font-size: 16,
+            line-height: 24
+        ),
 
-	base: (
-		font-size: 16,
-		line-height: 18
-	),
+        base: (
+            font-size: 18,
+            line-height: 28
+        ),
 
-	mid: (
-		font-size: 18,
-		line-height: 22
-	),
+        large: (
+            font-size: 20,
+            line-height: 32
+        )
+    ),
+    secondary: (
+    	stack: "Roboto Slab, Georgia, Utopia, Charter, serif",
 
-	mid-large: (
-		font-size: 20,
-		line-height: 26
-	),
-
-	large: (
-		font-size: 25,
-		line-height: 30
-	),
-
-	x-large: (
-		font-size: 45,
-		line-height: 47
-	)
+        small: (
+            font-size: 13,
+            line-height: 16
+        ),
+        base: (
+            font-size: 15,
+            line-height: 19
+        )
+    )
 );
 
-$font-secondary: (
-	stack: "Verdana, sans-serif", 
-
-	x-small: (
-		font-size: 12,
-		line-height: 16
-	)
-);
-
-// $font-default: $font-georgia;
-
-
-// input: 
-// font-scale(base, secondary)
-
-// output:
-// font-size: xx
-// line-height: xx
-
+// @include font-scale(large, helvetica);
 
 // Font sizes
 $em-base: 16px; // For bourbon rem function
