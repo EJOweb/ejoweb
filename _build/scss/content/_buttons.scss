@@ -1,12 +1,15 @@
 @mixin button( $style: primary ) {
+    // Reset
     @include reset-link-style;
+
+    // Structure
     display: inline-block;
-    padding: 7px 12px 8px;
+    padding: 10px 15px;
 
-    font-family: $font__family-button;
-    font-weight: $font__weight-normal;
-    line-height: 1;
+    // Font
+    font-size: get-font-size(base);
 
+    // Color
     @if $style == white {
         background-color: palette(white);
         color: palette(black);
@@ -31,7 +34,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    @include button;
+    @include button();
 }
 
 a.button + br + a.button {

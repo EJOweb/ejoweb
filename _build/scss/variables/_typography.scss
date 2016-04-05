@@ -1,76 +1,80 @@
-// http://erskinedesign.com/blog/setting-typographic-scale-with-sass-maps/
-// https://github.com/ultimate-package/tools.font-scale
+// FONT FAMILY 
+$font__families: (
+	primary: (
+		stack: "Roboto, Helvetica, Arial, sans-serif",
+		weights: (
+			normal: 400,
+			bold: 700
+		)
+	),
 
-// FONT-FAMILY SETTINGS
-$fonts: (
-    primary: (
-    	stack: "Roboto, Helvetica, Arial, sans-serif",
-
-    	small: (
-            font-size: 16,
-            line-height: 24
-        ),
-
-        base: (
-            font-size: 18,
-            line-height: 28
-        ),
-
-        large: (
-            font-size: 20,
-            line-height: 32
-        )
-    ),
-    secondary: (
-    	stack: "Roboto Slab, Georgia, Utopia, Charter, serif",
-
-        small: (
-            font-size: 13,
-            line-height: 16
-        ),
-        base: (
-            font-size: 15,
-            line-height: 19
-        )
-    )
+	secondary: (
+		stack: "'Roboto Slab', Georgia, Utopia, Charter, serif",	
+		weights: (
+			normal: 400,
+			bold: 700
+		)
+	)
 );
 
-// @include font-scale(large, helvetica);
 
-// Font sizes
-$em-base: 16px; // For bourbon rem function
-$font__size: rem($em-base); 
-$font__size-small: rem(15px); 
-$font__size-large: rem(18px); 
-$font__size-heading-1: rem(38px);
-$font__size-heading-2: rem(28px);
-$font__size-heading-3: rem(23px);
-$font__size-heading-4: rem(18px);
+// Aangezien in mijn body al primary font-family wordt ingeladen
+// hoef ik dat niet te doen voor bij teksten die deze font gebruiken
+// Geldt ook voor font-weight?
 
-$font__line-height: 1.6;
-$font__line-height-small: 1.6;
-$font__line-height-large: 1.8;
-$font__line-height-heading-1: 1.125;
-$font__line-height-heading-2: 1.125;
-$font__line-height-heading-3: 1.125;
-$font__line-height-heading-4: 1.125;
-$font__line-height-menu: 1;
-$font__line-height-pre: 1.6;
+$fonts: (
+	base: (
+		font-family: primary,
+        font-weight: normal,
+        font-size: 18,
+        line-height: 28
+    ),
 
-$font__residu: ($font__line-height - 1) * $font__size;
+	small: (
+        font-size: 16,
+        line-height: 24
+    ),
 
-// Font Family
-$font__family: Georgia, serif;
-$font__family-heading: Arial, sans-serif;
-$font__family-menu: $font__family-heading;
-$font__family-button: $font__family-heading;
-$font__family-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-$font__family-pre: "Courier 10 Pitch", Courier, monospace;
+    large: (
+        font-size: 20,
+        line-height: 32
+    ),
 
-// Font Weights
-$font__weight-normal: 400;
-$font__weight-bold: 700;
+	heading1: (
+		font-family: secondary,
+        font-weight: bold,
+        font-size: 42,
+        line-height: 42
+    ),
 
-// Gap between typography elements
-$vertical__space: 1.25rem;
-$vertical__space-half: $vertical__space / 2;
+    heading2: (
+    	font-family: secondary,
+        font-weight: bold,
+        font-size: 15,
+        line-height: 19
+    ),
+
+    heading3: (
+    	font-family: secondary,
+        font-weight: normal,
+        font-size: 28,
+        line-height: 16,
+    ),
+
+    heading4: (
+    	font-family: secondary,
+        font-weight: bold,
+        font-size: 20,
+        line-height: 20
+    ),
+
+    nav {
+        font-family: primary,
+        font-weight: normal,
+        font-size: 18,
+        line-height: 18
+    }
+);
+
+// code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+// pre: "Courier 10 Pitch", Courier, monospace;

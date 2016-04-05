@@ -2,7 +2,7 @@
 	// Colors
 	background-color: palette(primary);
 	color: palette(white); 
-	a {	color: inherit;	}
+	a {	@include reset-link-style; }
 
 	// Structure
 	padding-top: 100px;
@@ -16,14 +16,13 @@
 }
 
 #main {
-	padding-left: $width__site-padding;
-	padding-right: $width__site-padding;
+
 }
 
 #main > .wrap {
 	position: relative;
 	margin: 0 auto;
-	max-width: $width__main-max;
+	max-width: $width__site-max;
 	padding: 2.75rem 3rem (2.75rem - $vertical__space);
 	padding: 3.5rem 4rem (3.5rem - $vertical__space);
 	background-color: palette(white);
@@ -31,16 +30,40 @@
 }
 
 #main {
-	@include media($breakpoint__small) {
-		padding-left: $width__site-padding / 2;
-		padding-right: $width__site-padding / 2;
-	}
+	// @include media($breakpoint__small) {
+	// 	padding-left: $width__site-padding / 2;
+	// 	padding-right: $width__site-padding / 2;
+	// }
 
-	@include media($breakpoint__tiny) {
-		padding-left: 0;
-		padding-right: 0;
-		> .wrap {
-			padding: 2rem 2.25rem (2rem - $vertical__space);
-		}
-	}
+	// @include media($breakpoint__tiny) {
+	// 	padding-left: 0;
+	// 	padding-right: 0;
+	// 	> .wrap {
+	// 		padding: 2rem 2.25rem (2rem - $vertical__space);
+	// 	}
+	// }
+}
+
+.archive-header {
+	margin-bottom: $vertical__space;
+}
+
+.entry {
+	margin-bottom: $vertical__space;
+}	
+
+.entry-content {
+	
+}
+
+.entry-byline {
+	// display: none;
+}
+
+.entry-header {
+	
+}
+
+.entry-footer {
+	
 }

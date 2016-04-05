@@ -1,59 +1,63 @@
 @charset 'UTF-8';
 
 // Resources
-@import "vendors/bourbon/bourbon";
 @import "vendors/colors";
-@import "vendors/icons";
-@import "vendors/social-media";
+@import "vendors/icons"; //
+@import "vendors/social-media"; //
 
 // Mixins
-@import "mixins/mixins";
-@import "mixins/mixins-flexbox";
-@import "mixins/mixins-reset-styles";
-@import "mixins/functions";
-@import "mixins/font-scale";
+@import "tools/functions"; //
+@import "tools/mixins"; //
+@import "tools/font"; //
+@import "tools/responsiveness"; //
 
 // Theme Variables
-@import "variables/colors";
-@import "variables/typography";
-@import "variables/structure";
-@import "variables/misc";
+@import "variables/colors"; //
+@import "variables/typography"; //
+@import "variables/structure"; /**/
+@import "variables/misc"; // 
+@import "variables/forms"; //
 
 /* Reset
 ============================================================================ */
 @import "vendors/normalize";
-
-/* EJO Defaults
-============================================================================ */
 @import "vendors/ejo-defaults";
 
-/* Content
-============================================================================ */
-@import "content/content";
+// /* Content
+// ============================================================================ */
+@import "content/typography"; //
+@import "content/vertical-rhythm"; //
+@import "content/links";
+@import "content/lists";
+@import "content/tables";
+@import "content/form-fields";
+@import "content/buttons";
+@import "content/misc"; //
+@import "content/titles";
+@import "content/alignments";
 
 /* Structure
 ============================================================================ */
 @import "layout/site";
 
-/* Other
-============================================================================ */
+// /* Other
+// ============================================================================ */
 @import "modules/branding";
-@import "modules/titles";
-@import "modules/navigation";
-@import "modules/navigation-mobile";
-@import "modules/breadcrumbs";
-@import "modules/pagination";
-// @import "modules/comments";
-@import "modules/social-media";
-@import "modules/widgets";
-@import "vendors/gravity-forms/setup";
+// @import "modules/navigation";
+// @import "modules/navigation-mobile";
+// @import "modules/breadcrumbs";
+// @import "modules/pagination";
+// // @import "modules/comments";
+// @import "modules/social-media";
+// @import "modules/widgets";
+// @import "vendors/gravity-forms/setup";
 
-/* Media
-============================================================================ */
-@import "modules/media/galleries";
-@import "modules/media/captions";
-@import "modules/media/smileys";
+// /* Media
+// ============================================================================ */
+// @import "modules/media/galleries";
+// @import "modules/media/captions";
+// @import "modules/media/smileys";
 
-/* Accessibility
-============================================================================ */
-@import "modules/accessibility";
+// /* Accessibility
+// ============================================================================ */
+// @import "modules/accessibility";

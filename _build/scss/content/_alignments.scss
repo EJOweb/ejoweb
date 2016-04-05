@@ -3,7 +3,6 @@
     float: left;
     margin-right: 2rem;
     margin-top: rem(6px);
-    margin-bottom: $font__residu;
 }
 
 .alignright {
@@ -11,7 +10,6 @@
     float: right;
     margin-left: 2rem;
     margin-top: rem(6px);
-    margin-bottom: $font__residu;
 }
 
 .aligncenter {
@@ -19,18 +17,17 @@
     display: block;
     margin-left: auto;
     margin-top: rem(6px);
-    margin-bottom: $font__residu;
     margin-right: auto;
 }
 
-@include media($breakpoint__small) {
-    .alignleft,
-    .alignright {
-        display: block;
-        float: none;
-        margin-right: 0;
-        margin-left: 0;
-        width: 100%;
-        margin-bottom: $vertical__space;
-    }
-}
+// @include media($breakpoint__small) {
+//     .alignleft,
+//     .alignright {
+//         display: block;
+//         float: none;
+//         margin-right: 0;
+//         margin-left: 0;
+//         width: 100%;
+//         margin-bottom: $vertical__space;
+//     }
+// }

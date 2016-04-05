@@ -1,0 +1,78 @@
+/* Images
+-------------------------------------------------------------------*/
+a.image-wrap {
+    overflow: hidden;
+
+    img {
+        display: block;
+        transition: all 0.4s ease;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+/* Paragraphs
+-------------------------------------------------------------------*/
+
+/* Intro paragraph */
+p.intro {
+    font-weight: get-font-weight(bold);
+}
+
+
+/* Media
+-------------------------------------------------------------------*/
+
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* Horizontal Rule
+-------------------------------------------------------------------*/
+
+hr {
+    margin-top: $vertical__space + 0.75rem;
+    margin-bottom: $vertical__space + 0.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    height: 2px;
+    background-color: palette(grey);
+}
+
+/* Blockquotes
+-------------------------------------------------------------------*/
+
+blockquote {
+    border-left: 6px solid palette(grey);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 0 0 1.5rem;
+    font-style: italic;
+
+    i,
+    em, 
+    cite {
+        font-style: normal;
+    }
+}
+
+/* Code
+-------------------------------------------------------------------*/
+
+code {}
+
+pre {}
+
+pre code {}

@@ -1,7 +1,8 @@
 /* Main typography
 -------------------------------------------------------------------*/
 html {
-    font-size: $em-base / 16px * 100%;
+    // font-size: get-font-size(base) / 16px * 100%;
+    font-size: get-font-size-clean(base) / 16 * 100%;
 }
 
 body,
@@ -9,11 +10,49 @@ button,
 input,
 select,
 textarea {
-    font-family: $font__family;
-    font-size: 1rem;
-    line-height: $font__line-height;
-    font-weight: $font__weight-normal;
+	@include font(base);
     color: palette(black);
 }
 
-@import "headings";
+/* Headings
+-------------------------------------------------------------------*/
+
+h1 {
+    @include font(heading1);
+}
+
+h2 {
+    @include font(heading2);
+}
+
+h3 {
+    @include font(heading3);
+}
+
+h4,h5,h6 {
+    @include font(heading4);
+}
+
+// Remove heading styling
+@mixin reset-heading-style() {
+	@include font(base);
+}
+
+/* Font Styles
+-------------------------------------------------------------------*/
+
+b, strong { 
+    font-weight: get-font-weight(bold, base);
+
+    b, strong { 
+        font-weight: get-font-weight(normal, base);
+    }
+}
+
+i, em, mark, cite { 
+    font-style: italic; 
+
+    i, em, mark, cite { 
+        font-style: normal; 
+    }
+}

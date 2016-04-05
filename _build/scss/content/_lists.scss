@@ -1,0 +1,37 @@
+/* Lists
+-------------------------------------------------------------------*/
+ul, ol {
+    margin-left: 2.5rem;
+
+    ul, ol {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    li {
+        margin-bottom: 0.25rem;
+    }
+}
+
+// Remove list styling
+@mixin reset-list-style() {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+        margin: 0;
+    }
+}
+
+.checklist {
+    margin-left: 2.5rem;
+    list-style: none;
+
+    li {
+        &:before {
+            @include icon(fa-check);
+            margin-right: 0.5em;
+        }
+    }
+}

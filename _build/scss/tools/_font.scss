@@ -1,0 +1,77 @@
+// Return clean font size (pixel value without px suffix)
+@function get-font-size-clean($face:base)
+{
+    $font-face: map-get($fonts, $face);
+    $font-size: map-get($font-face, font-size);
+
+    @return $font-size;
+}
+
+// Return font size in rem unit
+@function get-font-size($face:base)
+{
+    $font-face: map-get($fonts, $face);
+    $font-size: map-get($font-face, font-size);
+
+    @return rem($font-size);
+}
+
+// Return clean line-height (pixel value without px suffix)
+@function get-line-height-clean($face:base)
+{
+    $font-face: map-get($fonts, $face);
+    $line-height: map-get($font-face, line-height);
+
+    @return $line-height;
+}
+
+// Return line-height
+@function get-line-height($face:base)
+{
+    $font-size: get-font-size-clean($face:base);
+    $line-height: get-line-height-clean($face:base);
+    
+    @return $font-size / $line-height;
+}
+
+// Returns the font-family from the 'stack' key in a Sass list
+@function get-font-family($face:base)
+{
+    $font-family: map-get($font__families, $face);
+    $font-family-stack: map-get($font-family, stack);
+
+    @return unquote($font-family-stack);
+}
+
+// Returns the font-family from the 'stack' key in a Sass list
+@function get-font-weight($weight:normal, $face:base)
+{
+    $font: map-get($fonts, $face);
+    $font-family: get
+    $font-family-weights: map-get($font-family, weights);
+    $font-family-weight: map-get($font-family-weights, $weight);
+
+    @return $font-family-weight;
+}
+
+// Font mixin
+@mixin font($face:base) 
+{
+    $font: map-get($fonts, $face);
+    
+    // Check if optional font-family and font-weight are given
+    @if (map-has-key($font, font-family) and map-has-key($font, font-weight)) {
+        $font-family-type: map-get($font, font-family);
+        $font-weight: map-get($font, font-weight);
+        
+        font-family: get-font-family($font-family-type);
+        font-weight: get-font-weight($font-weight, $font-family-type);
+    }
+
+    // Get and print font-size and line-height
+    $font-size: map-get($font, font-size);
+    $line-height: map-get($font, line-height);
+
+    font-size: rem($font-size);
+    line-height: $font-size / $line-height;
+}

@@ -1,0 +1,17 @@
+/* Tables
+-------------------------------------------------------------------*/
+
+table {}
+
+th {
+    padding: 0.5rem 0;
+}
+
+td {
+    padding: 0.5rem 0;
+}
+
+// Remove table styling
+@mixin reset-table-style() {
+	
+}

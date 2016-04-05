@@ -1,0 +1,24 @@
+/* Titles */
+.entry-title,
+.archive-title,
+.category-title,
+.widget-title,
+.gsection_title,
+.comment-reply-title {
+    margin-top: 0;
+    a { 
+        @include reset-link-style;
+        &:hover {
+        	color: palette(primary);
+        }
+    }
+}
+
+.widget-title {
+
+}
+
+.gsection_title {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}

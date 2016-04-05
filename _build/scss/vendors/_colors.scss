@@ -15,11 +15,6 @@
    @return null;
 }
 
-// Important asset for using tones/shades of colors
-@function palette($palette, $tone: 'base') {
-    @return map-get(map-get($palettes, $palette), $tone);
-}
-
 $colors: (
 
   // whites

@@ -1,30 +1,25 @@
 // Theme colors
-$color__primary: #2c96e3;
-$color__white: color(white);
-$color__grey: color(cloud);
-$color__black: color(iron);
-
 $palettes: (
     primary: (
-        base:  $color__primary,
-        light: lighten($color__primary, 10%),
-        dark:  darken($color__primary, 10%)
+        base:  #2c96e3,
+        light: lighten(#2c96e3, 10%),
+        dark:  darken(#2c96e3, 10%)
     ),
     grey: (
-        base:  $color__grey,
-        light: lighten($color__grey, 10%),
-        dark:  darken($color__grey, 10%),
+        base:  #fffefc,
+        light: lighten(#fffefc, 10%),
+        dark:  darken(#fffefc, 10%),
     ),
     white: (
-        base:  $color__white,
-        light: lighten($color__white, 100%),
-        dark:  shade($color__white, 4%),
-        transparent: rgba($color__white, 0.4),
+        base:  #fffefc,
+        light: lighten(#fffefc, 100%),
+        dark:  shade(#fffefc, 4%),
+        transparent: rgba(#fffefc, 0.4),
     ),
     black: (
-        base:  $color__black,
-        light: lighten($color__black, 20%),
-        dark:  darken($color__black, 10%),
-        transparent: rgba($color__black, 0.05),
+        base:  #332d31,
+        light: lighten(#332d31, 20%),
+        dark:  darken(#332d31, 10%),
+        transparent: rgba(#332d31, 0.05),
     ),
 );

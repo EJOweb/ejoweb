@@ -1,7 +1,7 @@
 #header {
 	// Color
 	color: palette(white); 
-	a {	color: inherit;	}
+	a {	@include reset-link-style; }
 
 	// Structure
 	position: absolute;
