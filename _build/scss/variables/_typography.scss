@@ -24,56 +24,54 @@ $font__families: (
 
 $fonts: (
 	base: (
-		font-family: primary,
-        font-weight: normal,
+		font-family-type: primary,
+        font-weight-normal: normal,
+        font-weight-bold: bold,
         font-size: 18,
         line-height: 28
     ),
 
 	small: (
+        font-weight-normal: normal,
+        font-weight-bold: bold,
         font-size: 16,
         line-height: 24
     ),
 
     large: (
+        font-weight-normal: normal,
+        font-weight-bold: bold,
         font-size: 20,
         line-height: 32
     ),
 
 	heading1: (
-		font-family: secondary,
-        font-weight: bold,
+		font-family-type: secondary,
+        font-weight-normal: bold,
         font-size: 42,
         line-height: 42
     ),
 
     heading2: (
-    	font-family: secondary,
-        font-weight: bold,
-        font-size: 15,
-        line-height: 19
+    	font-family-type: secondary,
+        font-weight-normal: bold,
+        font-size: 34,
+        line-height: 34
     ),
 
     heading3: (
-    	font-family: secondary,
-        font-weight: normal,
+    	font-family-type: secondary,
+        font-weight-normal: normal,
         font-size: 28,
-        line-height: 16,
+        line-height: 28,
     ),
 
     heading4: (
-    	font-family: secondary,
-        font-weight: bold,
+    	font-family-type: secondary,
+        font-weight-normal: bold,
         font-size: 20,
         line-height: 20
     ),
-
-    nav {
-        font-family: primary,
-        font-weight: normal,
-        font-size: 18,
-        line-height: 18
-    }
 );
 
 // code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;

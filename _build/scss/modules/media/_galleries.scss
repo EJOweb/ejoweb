@@ -1,6 +1,8 @@
 .gallery {
-	@include flex-row(stretch);
-	@include flex-wrap(wrap);
+	display: flex;
+	flex-direction: row;
+	align-items: equalize;
+	flex-wrap: wrap;
 	margin: -6px;
 
 	.gallery-item {
@@ -35,10 +37,5 @@
 }
 
 .gallery .gallery-item {
-	@include media($breakpoint__smedium) {
-		flex-basis: 50%;
-	}
-	@include media($breakpoint__small) {
-		flex-basis: 100%;
-	}
+
 }

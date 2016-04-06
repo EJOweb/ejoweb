@@ -8,9 +8,6 @@
 #menu-primary {
 	flex-basis: auto;
 	color: palette(white);
-	a {	@include reset-link-style; }
-
-	@include font(nav);
 
 	.menu-items {
 		display: flex;
@@ -30,7 +27,6 @@
 			padding: 4px 17px;
 			text-align: center;
 			text-transform: uppercase;
-			font-weight: get-font-weight(bold);
 		}
 
 		> a:after {
@@ -98,7 +94,7 @@
 
 	.menu-items > .menu-item > .sub-menu > .menu-item {
 		white-space: nowrap;
-		font-size: $font__size-small;
+		@include font(small);
 		a {
 			display: block;
 			padding: 12px 12px;
@@ -115,8 +111,5 @@
 
 /* Responsiveness */
 #menu-primary {
-	@include media($breakpoint__small) {
-		padding-left: 0;
-		padding-right: 0;
-	}
+
 }

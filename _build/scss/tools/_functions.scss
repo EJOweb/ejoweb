@@ -23,3 +23,13 @@
 @function palette($palette, $tone: 'base') {
     @return map-get(map-get($palettes, $palette), $tone);
 }
+
+// Mixes a color with black.
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+// Mixes a color with white.
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}

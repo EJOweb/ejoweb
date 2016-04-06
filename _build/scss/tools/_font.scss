@@ -1,3 +1,36 @@
+/**
+ * Font family data
+ */
+
+ // Returns the font-family from the 'stack' key in a Sass list
+@function get-font-weight-by-type($weight:normal, $type:primary)
+{
+    @if map-has-key($font__families, $type) == false {
+        @warn "Font family " + $type + " not found in $font__families";
+        @warn 'Returning 400 font-weight';
+        @return 400;
+    }    
+
+    $font-family: map-get($font__families, $type);
+    $font-family-weights: map-get($font-family, weights);
+    $font-family-weight: map-get($font-family-weights, $weight);
+
+    @return $font-family-weight;   
+}
+
+// Returns the font-family associated with a type
+@function get-font-family-by-type($type:primary)
+{
+    $font-family: map-get($font__families, $type);
+    $font-family-stack: map-get($font-family, stack);
+
+    @return unquote($font-family-stack);
+}
+
+/**
+ * Font data
+ */
+
 // Return clean font size (pixel value without px suffix)
 @function get-font-size-clean($face:base)
 {
@@ -31,28 +64,51 @@
     $font-size: get-font-size-clean($face:base);
     $line-height: get-line-height-clean($face:base);
     
-    @return $font-size / $line-height;
+    @return $line-height / $font-size;
 }
 
 // Returns the font-family from the 'stack' key in a Sass list
 @function get-font-family($face:base)
 {
-    $font-family: map-get($font__families, $face);
-    $font-family-stack: map-get($font-family, stack);
+    $font: map-get($fonts, $face);
 
-    @return unquote($font-family-stack);
+    @if map-has-key($font, font-family-type) == false {
+        @warn $face + " has no font-family specified";
+        @warn 'Returning primary font-type';
+        @return get-font-family-by-type(primary);;
+    }
+
+    $font-family-type: map-get($font, font-family-type);
+    @return get-font-family-by-type($font-family-type);
 }
 
 // Returns the font-family from the 'stack' key in a Sass list
 @function get-font-weight($weight:normal, $face:base)
 {
-    $font: map-get($fonts, $face);
-    $font-family: get
-    $font-family-weights: map-get($font-family, weights);
-    $font-family-weight: map-get($font-family-weights, $weight);
+    @if map-has-key($fonts, $face) == false {
+        @warn 'No data found in $fonts for ' + $face;
+        @warn 'Returning 400 font-weight';
+        @return 400;
+    }
 
-    @return $font-family-weight;
+    $font: map-get($fonts, $face);        
+
+    // Check if font-family-type and font-weight-[weight] are set
+    @if (map-has-key($font, font-family-type) and map-has-key($font, 'font-weight-' + $weight)) == false {
+        @warn 'Face: ' + $face + ' | Weight: font-weight-' + $weight;
+        @warn 'Returning 400 font-weight';
+        @return 400;
+    }
+
+    $font-family-type: map-get($font, font-family-type);
+    $font-weight: map-get($font, 'font-weight-' + $weight);
+    @return get-font-weight-by-type($font-weight, $font-family-type);
 }
+
+
+/**
+ * Font mixin
+ */
 
 // Font mixin
 @mixin font($face:base) 
@@ -60,12 +116,12 @@
     $font: map-get($fonts, $face);
     
     // Check if optional font-family and font-weight are given
-    @if (map-has-key($font, font-family) and map-has-key($font, font-weight)) {
-        $font-family-type: map-get($font, font-family);
-        $font-weight: map-get($font, font-weight);
+    @if (map-has-key($font, font-family-type) and map-has-key($font, font-weight-normal)) {
+        $font-family-type: map-get($font, font-family-type);
+        $font-weight-normal: map-get($font, font-weight-normal);
         
-        font-family: get-font-family($font-family-type);
-        font-weight: get-font-weight($font-weight, $font-family-type);
+        font-family: get-font-family-by-type($font-family-type);
+        font-weight: get-font-weight-by-type($font-weight-normal, $font-family-type);
     }
 
     // Get and print font-size and line-height
@@ -73,5 +129,5 @@
     $line-height: map-get($font, line-height);
 
     font-size: rem($font-size);
-    line-height: $font-size / $line-height;
+    line-height: $line-height / $font-size;
 }

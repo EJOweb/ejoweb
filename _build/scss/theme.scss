@@ -43,21 +43,20 @@
 // /* Other
 // ============================================================================ */
 @import "modules/branding";
-// @import "modules/navigation";
-// @import "modules/navigation-mobile";
-// @import "modules/breadcrumbs";
-// @import "modules/pagination";
-// // @import "modules/comments";
-// @import "modules/social-media";
-// @import "modules/widgets";
+@import "modules/navigation";
+@import "modules/navigation-mobile";
+@import "modules/breadcrumbs";
+@import "modules/pagination";
+@import "modules/social-media";
+@import "modules/widgets";
 // @import "vendors/gravity-forms/setup";
 
-// /* Media
-// ============================================================================ */
-// @import "modules/media/galleries";
-// @import "modules/media/captions";
-// @import "modules/media/smileys";
+/* Media
+============================================================================ */
+@import "modules/media/galleries";
+@import "modules/media/captions";
+@import "modules/media/smileys";
 
-// /* Accessibility
-// ============================================================================ */
-// @import "modules/accessibility";
+/* Accessibility
+============================================================================ */
+@import "modules/accessibility";

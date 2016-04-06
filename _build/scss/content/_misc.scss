@@ -20,7 +20,7 @@ a.image-wrap {
 
 /* Intro paragraph */
 p.intro {
-    font-weight: get-font-weight(bold);
+    font-weight: get-font-weight-by-type(bold);
 }
 
 

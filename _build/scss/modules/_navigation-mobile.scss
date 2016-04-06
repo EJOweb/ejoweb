@@ -1,32 +1,31 @@
+/* Reset */
+#menu-primary-mobile {
+	ul { @include reset-list-style; }
+	a {	@include reset-link-style; }
+	li,	a { display: block;	}
+}
+
 /* Responsiveness */
 #menu-primary-mobile {
 	display: none;
-	@include media($breakpoint__smedium) {
-		display: block;
-	}
 }
 
 /* Toggle */
 .menu-toggle {
 	span { 
 		padding: rem(11px) rem(12px) rem(12px); 
-		color: palette(white);
 		text-transform: capitalize;
 		cursor: pointer;
+		text-align: center;
 
 		&:hover {
-			color: palette(white, dark);
+			color: palette(white);
 			text-decoration: underline;
 		}
 
-		font-size: $font__size-large;
-		font-family: $font__family-menu;
-		line-height: $font__line-height-menu;
-		text-align: center;
-
 		&:before { 
 			@include icon('fa-navicon');
-			font-size: $font__size-large;
+			font-size: get-font-size(large);
 			padding-right: 5px;
 		}
 	}
@@ -38,8 +37,10 @@
 		}
 	}
 
-
-	@include flex-row(center);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
 
 
 	&:before {
@@ -49,12 +50,8 @@
 		border-color: #fff;
 		border-style: solid;
 		border-width: 8px 0 0 0;
-		-webkit-border-image: url($path__images + 'border.png') 8 round;
-		   -moz-border-image: url($path__images + 'border.png') 8 round;
-		     -o-border-image: url($path__images + 'border.png') 8 round;
-		        border-image: url($path__images + 'border.png') 8 round;
-
-		@include flex(1 1 auto);
+        border-image: url($path__images + 'border.png') 8 round;
+		flex: 1 1 auto;
 		margin-right: 0;
 		width: auto;	
 	}
@@ -62,25 +59,11 @@
 	
 }
 
-/* Reset */
-#menu-primary-mobile {
-	ul { @include reset-list-style; }
-	a {	@include reset-link-style; }
-
-	li,	a {
-		display: block;
-	}
-}
-
 /* Structure */
 #menu-primary-mobile {
     .menu-items {
     	display: none;
     }
-
-    @include media($breakpoint__small) {
-		padding-left: 54px;
-	}
 }
 
 /* Style */
@@ -162,7 +145,7 @@
 			}		
 
 			&.current-menu-item { 
-				font-weight: $font__weight-bold;
+				font-weight: get-font-weight(bold);
 			}
 		}
 	}
@@ -174,11 +157,9 @@
 		text-align: center;
 		cursor: pointer;
 		padding: 15px 20px;
-		// background-color: rgba(palette(black), 0.2);
 		color: palette(white);
 
 		&:hover {
-			// background-color: rgba(palette(black), 0.35);
 		}
 	}
 }
