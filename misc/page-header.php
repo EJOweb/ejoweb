@@ -1,4 +1,4 @@
-<div class="page-header">
+<div class="page-header box-colored">
 	<div class="wrap">
 
 		<section <?php hybrid_attr( 'post' ); ?>>
@@ -13,11 +13,11 @@
 
 					<h3>Vakkundig webdesign</h3>
 
-					<p>Op zoek naar een webdesign-bureau om je website te laten maken? Dan ben je hier aan het juiste adres. Wij bouwen professionele websites voor kleine bedrijven, ZZP’ers en particulieren. Onze websites zijn zoekmachine vriendelijk en zien er goed uit op desktop, tablet én smartphone!</p>
+					<p>Op zoek naar een <a href="#">webdesign-bureau</a> om je website te laten maken? Dan ben je hier aan het juiste adres. <strong>Wij bouwen <strong>professionele websites</strong> voor kleine bedrijven, ZZP’ers en particulieren.</strong> Onze websites zijn zoekmachine vriendelijk en zien er goed uit op desktop, tablet én smartphone!</p>
 
 					<p>Alsof dat nog niet genoeg is zorgen wij met vakkundig programmeerwerk en betrouwbare hosting dat je website razendsnel laadt. En tot slot kun je altijd eenvoudig zelf je website vullen en aanpassen. Met onze jarenlange ervaring in webdesign en ontwikkeling zijn we je graag van dienst.</p>
 
-					<a href="" class="button">Webdiensten</a> <a href="" class="button highlight">Direct contact</a>
+					<p><a href="" class="button">Webdiensten</a> <a href="" class="button highlight">Direct contact</a></p>
 
 				</div><!-- .entry-content -->				
 

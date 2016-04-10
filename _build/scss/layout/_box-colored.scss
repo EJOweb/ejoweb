@@ -1,0 +1,24 @@
+/* Box Colored
+-------------------------------------------------------------------*/
+.box-colored {
+	background-color: $havelock-blue;
+	color: $white;
+
+	a {
+		@include on-event {
+            color: red;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $white;
+	}
+
+	#{$buttons} {
+		@include button(white);
+
+		&.highlight {
+			@include button(flame-pea)
+		}
+	}
+}

@@ -1,0 +1,120 @@
+/* Forms
+-------------------------------------------------------------------*/
+$form-text-inputs: 	'input[type="color"]',
+					'input[type="date"]',
+					'input[type="datetime"]',
+					'input[type="datetime-local"]',
+					'input[type="email"]',
+					'input[type="month"]',
+					'input[type="number"]',
+					'input[type="password"]',
+					'input[type="search"]',
+					'input[type="tel"]',
+					'input[type="text"]',
+					'input[type="time"]',
+					'input[type="url"]',
+					'input[type="week"]',
+					'input:not([type])';
+
+button,
+input,
+select,
+textarea {
+	font-family: get-font-family(primary);
+    font-weight: get-font-weight(normal, primary);
+    font-size: 1rem;
+    line-height: $base-line-height;
+}
+
+#{$form-text-inputs},
+select,
+textarea {
+	border: 1px solid $river-bed;
+	border-radius: $border-radius;	
+
+	@include on-event {
+
+	}
+}
+
+select {
+
+}
+
+textarea {
+	resize: vertical;
+	min-height: 100px;
+}
+
+/* Style label of checked input */
+input:checked + label {
+	text-decoration: underline;
+}
+
+/* Gravity Forms */
+.gform_wrapper .gf_list_inline {
+	li {
+		
+	}
+	input + label {
+
+	}
+}
+
+/* Buttons
+-------------------------------------------------------------------*/
+$buttons:   'a.button',
+            'button',
+            'input[type="button"]',
+            'input[type="reset"]',
+            'input[type="submit"]';
+
+@mixin button($style:havelock-blue) 
+{
+	@if $style == white {
+		background-color: $white;
+	    color: $river-bed;
+
+		@include on-event {
+			background-color: shade($white, 8%);
+		}
+	}
+	@elseif $style == flame-pea {
+		background-color: $flame-pea;
+	    color: $white;
+
+		@include on-event {
+			background-color: tint($flame-pea, 12%);
+		}
+	}
+	@else {
+		background-color: $havelock-blue;
+	    color: $white;
+
+		@include on-event {
+			background-color: shade($havelock-blue, 10%);
+		}
+	}
+}
+
+#{$buttons} {
+	@extend %reset-link;
+
+    display: inline-block;
+    border-radius: 5px;
+    padding: 12px 18px;
+    line-height: 1;
+}
+
+#{$buttons} {
+	@include button(havelock-blue);
+
+	&.highlight {
+		@include button(flame-pea);
+	}
+}
+
+/* Create small space if buttons are posted above each other */
+a.button + br + a.button {
+    margin-top: 4px;
+}   

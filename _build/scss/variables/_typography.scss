@@ -1,7 +1,11 @@
+// BASE FONT SIZE
+$base-font-size: 18;
+$base-line-height: (28/18);
+
 // FONT FAMILY 
 $font__families: (
 	primary: (
-		stack: "Roboto, Helvetica, Arial, sans-serif",
+		stack: ('Roboto', 'Helvetica', 'Arial', sans-serif),
 		weights: (
 			normal: 400,
 			bold: 700
@@ -9,70 +13,10 @@ $font__families: (
 	),
 
 	secondary: (
-		stack: "'Roboto Slab', Georgia, Utopia, Charter, serif",	
+		stack: ('Roboto Slab', 'Georgia', 'Utopia', 'Charter', serif),	
 		weights: (
 			normal: 400,
 			bold: 700
 		)
 	)
 );
-
-
-// Aangezien in mijn body al primary font-family wordt ingeladen
-// hoef ik dat niet te doen voor bij teksten die deze font gebruiken
-// Geldt ook voor font-weight?
-
-$fonts: (
-	base: (
-		font-family-type: primary,
-        font-weight-normal: normal,
-        font-weight-bold: bold,
-        font-size: 18,
-        line-height: 28
-    ),
-
-	small: (
-        font-weight-normal: normal,
-        font-weight-bold: bold,
-        font-size: 16,
-        line-height: 24
-    ),
-
-    large: (
-        font-weight-normal: normal,
-        font-weight-bold: bold,
-        font-size: 20,
-        line-height: 32
-    ),
-
-	heading1: (
-		font-family-type: secondary,
-        font-weight-normal: bold,
-        font-size: 42,
-        line-height: 42
-    ),
-
-    heading2: (
-    	font-family-type: secondary,
-        font-weight-normal: bold,
-        font-size: 34,
-        line-height: 34
-    ),
-
-    heading3: (
-    	font-family-type: secondary,
-        font-weight-normal: normal,
-        font-size: 28,
-        line-height: 28,
-    ),
-
-    heading4: (
-    	font-family-type: secondary,
-        font-weight-normal: bold,
-        font-size: 20,
-        line-height: 20
-    ),
-);
-
-// code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-// pre: "Courier 10 Pitch", Courier, monospace;

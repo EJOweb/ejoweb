@@ -9,6 +9,7 @@
 @import "tools/functions"; //
 @import "tools/mixins"; //
 @import "tools/font"; //
+@import "tools/colors"; //
 @import "tools/responsiveness"; //
 
 // Theme Variables
@@ -17,46 +18,54 @@
 @import "variables/structure"; /**/
 @import "variables/misc"; // 
 @import "variables/forms"; //
+// @import "variables/components"; //
 
 /* Reset
-============================================================================ */
-@import "vendors/normalize";
-@import "vendors/ejo-defaults";
+-------------------------------------------------------------------*/
+@import url(normalize.min.css);
 
-// /* Content
-// ============================================================================ */
-@import "content/typography"; //
-@import "content/vertical-rhythm"; //
-@import "content/links";
-@import "content/lists";
-@import "content/tables";
-@import "content/form-fields";
-@import "content/buttons";
-@import "content/misc"; //
-@import "content/titles";
-@import "content/alignments";
+// Content
+@import "defaults/site"; //
+@import "defaults/body"; //
+@import "defaults/headings"; //
+@import "defaults/links";
+@import "defaults/lists";
+@import "defaults/tables";
+@import "defaults/misc"; //
+@import "defaults/forms";
 
-/* Structure
-============================================================================ */
+// Layout
 @import "layout/site";
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/navigation-mobile";
+@import "layout/box-colored";
+@import "layout/page-header";
+@import "layout/main";
+@import "layout/footer-banner";
+@import "layout/footer";
 
-// /* Other
-// ============================================================================ */
+// Templates
+@import "layout/home";
+@import "layout/archive";
+@import "layout/kennisbank";
+
+// Other
 @import "modules/branding";
-@import "modules/navigation";
-@import "modules/navigation-mobile";
 @import "modules/breadcrumbs";
 @import "modules/pagination";
 @import "modules/social-media";
-@import "modules/widgets";
+@import "modules/image-effects";
+@import "modules/alignments";
 // @import "vendors/gravity-forms/setup";
 
-/* Media
-============================================================================ */
+// Media
 @import "modules/media/galleries";
 @import "modules/media/captions";
 @import "modules/media/smileys";
 
-/* Accessibility
-============================================================================ */
+// Accessibility
 @import "modules/accessibility";
+
+// Hacks
+@import "modules/shame";

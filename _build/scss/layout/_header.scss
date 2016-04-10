@@ -1,7 +1,8 @@
+/* Header
+-------------------------------------------------------------------*/
+
 #header {
-	// Color
-	color: palette(white); 
-	a {	@include reset-link-style; }
+	color: $white;
 
 	// Structure
 	position: absolute;
@@ -15,5 +16,5 @@
 
 	max-width: $width__site-max;
 	margin: 0 auto;
-	border-bottom: 1px solid palette(white);
+	border-bottom: 1px solid border-color(primary);
 }

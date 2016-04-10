@@ -1,11 +1,13 @@
-		<div class="call-to-action">
-			<section class="entry" itemtype="http://schema.org/CreativeWork" itemscope="itemscope">
+		<div class="footer-banner box-colored">
+			<div class="wrap">
+				<section class="entry" itemtype="http://schema.org/CreativeWork" itemscope="itemscope">
 
-				<h2 <?php hybrid_attr( 'entry-title' ); ?>>Meer weten over het laten maken van een website?</h2>
+					<h2 <?php hybrid_attr( 'entry-title' ); ?>>Meer weten over het laten maken van een website?</h2>
 
-				<a href="" class="button">Contact opnemen</a>
+					<a href="" class="button highlight">Contact opnemen</a>
 
-			</section>
+				</section>
+			</div>
 		</div>
 
 		<footer <?php hybrid_attr( 'footer' ); ?>>

@@ -1,0 +1,23 @@
+/* Tables
+-------------------------------------------------------------------*/
+    
+table {
+	width: 100%;
+	margin-bottom: $vertical__space;
+}
+
+th {
+    padding: 0.5rem 0;
+	text-align: left;
+    vertical-align: middle;
+}
+
+td {
+    padding: 0.5rem 0;
+    vertical-align: middle;
+}
+
+/* Reset table */
+%reset-table {
+	
+}

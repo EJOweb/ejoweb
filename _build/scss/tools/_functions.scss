@@ -4,14 +4,14 @@
 
 // Convert pixels to rems
 // eg. for a relational value of 12px write rem(12)
-// Assumes $em-base is the font-size of <html>
+// Assumes $base-font-size is the font-size of <html>
 @function rem($pxval) 
 {
     @if not unitless($pxval) {
         $pxval: strip-units($pxval);
     }
 
-    $base: get-font-size-clean(base);
+    $base: $base-font-size;
     @if not unitless($base) {
         $base: strip-units($base);
     }
@@ -19,10 +19,56 @@
     @return ($pxval / $base) * 1rem;
 }
 
-// Important asset for using tones/shades of colors
-@function palette($palette, $tone: 'base') {
-    @return map-get(map-get($palettes, $palette), $tone);
+// Convert pixels to rems
+// eg. for a relational value of 12px write rem(12)
+// Assumes $base-font-size is the font-size of <html>
+@function em($pxval) 
+{
+    @if not unitless($pxval) {
+        $pxval: strip-units($pxval);
+    }
+
+    $base: $base-font-size;
+    @if not unitless($base) {
+        $base: strip-units($base);
+    }
+
+    @return ($pxval / $base) * 1em;
 }
+
+// Convert pixel line-height to value relative to font-size
+// eg. for a value of 1.5 write lh(27) assuming base-font-size is 18
+// Assumes $base-font-size is the font-size of <html>
+@function lh($line-height, $font-size: $base-font-size) 
+{
+    @if not unitless($line-height) {
+        $line-height: strip-units($line-height);
+    }
+    
+    @if not unitless($font-size) {
+        $font-size: strip-units($font-size);
+    }
+
+    @return ($line-height / $font-size);
+}
+
+
+// Important asset for using tones/shades of colors
+// @function palette($color, $tone: 'base') {
+//     @if map-has-key($palettes, $color) == false {
+//         @warn "/#{$color}/ not found in $palletes... Returning #000";
+//         @return #000;
+//     }
+
+//     $palette: map-get($palettes, $color);
+
+//     @if map-has-key($palette, $tone) == false {
+//         @warn "/#{$tone}/ not found in /#{$color}/-palette... Returning #000";
+//         @return #000;
+//     }
+
+//     @return map-get($palette, $tone);
+// }
 
 // Mixes a color with black.
 @function shade($color, $percent) {

@@ -1,7 +1,7 @@
 /* Reset */
 #menu-primary-mobile {
-	ul { @include reset-list-style; }
-	a {	@include reset-link-style; }
+	ul { @extend %reset-list; }
+	a {	@extend %reset-link; }
 	li,	a { display: block;	}
 }
 
@@ -19,13 +19,11 @@
 		text-align: center;
 
 		&:hover {
-			color: palette(white);
 			text-decoration: underline;
 		}
 
 		&:before { 
 			@include icon('fa-navicon');
-			font-size: get-font-size(large);
 			padding-right: 5px;
 		}
 	}
@@ -71,14 +69,10 @@
 	position: relative;
 
 	.menu-items {
-		background-color: palette(grey);
-		color: palette(black);
-		
 		a {
 			color: inherit;
 		}
-
-		border-top: 1px solid palette(grey, dark);
+		border-top: 1px solid inherit;
 		position: absolute;
 		top: 100%;
 		right: 0;
@@ -97,14 +91,14 @@
 
 	/* Top level */
 	.menu-items > .menu-item {
-		border-bottom: 1px solid palette(grey, dark);
+		// border-bottom: 1px solid palette(grey, dark);
 		position: relative;
 
 		> a {
 			padding: 15px 20px;
 
 			&:hover {
-				background-color: palette(grey, dark);
+				// background-color: palette(grey, dark);
 				text-decoration: underline;
 
 				.fa {
@@ -115,14 +109,14 @@
 
 		&.current-menu-ancestor > a,
 		&.current-menu-item > a {
-			background-color: palette(grey, dark);
+			// background-color: palette(grey, dark);
 		}
 
 		&.expanded {
 
 			a {
 				&:hover {
-					background-color: palette(grey, dark);
+					// background-color: palette(grey, dark);
 				}
 			}
 		}
@@ -140,7 +134,7 @@
 				font-size: rem(14px);
 
 				&:hover {
-					background-color: palette(grey, light);
+					// background-color: palette(grey, light);
 				}
 			}		
 
@@ -157,7 +151,7 @@
 		text-align: center;
 		cursor: pointer;
 		padding: 15px 20px;
-		color: palette(white);
+		// color: palette(white);
 
 		&:hover {
 		}

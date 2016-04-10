@@ -1,25 +1,103 @@
-// Theme colors
+// Colors
+$havelock-blue: #4ca3df;
+$curious-blue: #3a9bde;
+$elephant: #133753;
+$white: #ffffff;
+$black: #000000;
+$grey: #999999;
+$shark: #262c30;
+$river-bed: #48555e;
+$flame-pea: #e15445;
+
+// Theme Colors
 $palettes: (
+    default: ( 
+        base: (
+            color: $shark,
+        ),
+
+        link: (
+            color: $shark,
+        ),
+
+        heading1: (
+            color: $curious-blue,
+        ),
+        heading2: (
+            color: $river-bed,
+        ),
+        heading3: (
+            color: $curious-blue,
+        ),
+        heading4: (
+            color: $curious-blue,
+        ),  
+
+        button: (
+            background-color: #4ca3df,
+            color: #ffffff,
+            hover: (
+                background-color: #000000,
+                color: #ffffff,
+            )
+        ),
+
+        button-highlight: (
+            background-color: #e15445,
+            color: #ffffff,
+            hover: (
+                background-color: tint(#e15445, 9%),
+                color: #ffffff,
+            )
+        ),
+
+        border: (
+            border-color: #cccccc,
+        )
+    ),
+
     primary: (
-        base:  #2c96e3,
-        light: lighten(#2c96e3, 10%),
-        dark:  darken(#2c96e3, 10%)
-    ),
-    grey: (
-        base:  #fffefc,
-        light: lighten(#fffefc, 10%),
-        dark:  darken(#fffefc, 10%),
-    ),
-    white: (
-        base:  #fffefc,
-        light: lighten(#fffefc, 100%),
-        dark:  shade(#fffefc, 4%),
-        transparent: rgba(#fffefc, 0.4),
-    ),
-    black: (
-        base:  #332d31,
-        light: lighten(#332d31, 20%),
-        dark:  darken(#332d31, 10%),
-        transparent: rgba(#332d31, 0.05),
+        base: (
+            background-color: #4ca3df,
+            color: #ffffff,
+        ),
+
+        link: (
+            color: #000,
+        ),
+
+        heading1: (
+            color: #ffffff,
+        ),
+        heading2: (
+            color: #ffffff,
+        ),
+        heading3: (
+            color: #ffffff,
+        ),
+        heading4: (
+            color: #ffffff,
+        ),
+
+        button: (
+            background-color: #ffffff,
+            color: $shark,
+            hover: (
+                background-color: shade(#ffffff, 7%),
+            )
+        ),
+
+        button-highlight: (
+            background-color: #e15445,
+            color: #ffffff,
+            hover: (
+                background-color: tint(#e15445, 9%),
+                color: #ffffff,
+            )
+        ),
+
+        border: (
+            border-color: #fff,
+        )
     ),
 );

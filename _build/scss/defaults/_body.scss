@@ -1,0 +1,15 @@
+/* Body
+-------------------------------------------------------------------*/
+html {
+    // font-size: get-font-size(base) / 16px * 100%;
+    font-size: $base-font-size / 16 * 100%;
+}
+
+body {
+    margin: 0;
+	font-family: get-font-family(primary);
+    font-weight: get-font-weight(normal, primary);
+    font-size: 1rem;
+    line-height: lh(28);
+    color: $shark;
+}

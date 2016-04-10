@@ -1,14 +1,12 @@
 .social-media {
-	@include reset-list-style;
+	@extend %reset-list;
+	a {
+		@extend %reset-link;
+	}
 	
 
 	li {
 		display: inline-block;
-	}
-
-	a,
-	a:hover {
-		@include reset-link-style;
 	}
 }
 

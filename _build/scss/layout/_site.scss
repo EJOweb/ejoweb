@@ -1,13 +1,7 @@
+/* Site Layout
+-------------------------------------------------------------------*/
 #container {
 	overflow: hidden;
 }
 
-// Primary Layout
-@import "layout/header";
-@import "layout/main";
-@import "layout/footer";
 
-// Templates
-@import "layout/home";
-@import "layout/archive";
-@import "layout/kennisbank";

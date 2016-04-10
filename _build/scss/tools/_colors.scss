@@ -1,0 +1,142 @@
+/**
+ * Font mixin
+ */
+
+// Font mixin
+@mixin palette($palette-name:default, $component-name:base, $state:normal) 
+{
+    @if map-has-key($palettes, $palette-name) == false {
+        @warn 'No data found in $palette for ' + $palette-name;
+    }
+    @else {
+        $palette: map-get($palettes, $palette-name);
+
+        @if map-has-key($palette, $component-name) == false {
+            @warn 'No data found in #{$palette-name}-colors for ' + $component-name;
+        }
+        @else {
+            $component: map-get($palette, $component-name);
+
+            // Print each property and value
+            @each $property, $value in $component {
+
+                @if $state == 'hover' {
+                    // Hover exception
+                    @if $property == 'hover' {
+                    
+                        $hover: map-get($component, hover);
+
+                        @each $property-hover, $value-hover in $hover {
+                            #{$property-hover}: #{$value-hover};
+                        }
+                    }
+                }
+                @else {
+                    @if $property != 'hover' {
+                        #{$property}: #{$value};
+                    }
+                }
+            }
+
+            // @if map-has-key($component, text-color) {
+            //     $text-color: map-get($component, text-color);
+            //     color: $text-color;
+            // }
+
+            // @if map-has-key($component, background-color) {
+            //     $background-color: map-get($component, background-color);
+            //     background-color: $background-color;
+            // }
+
+            // @if map-has-key($component, hover) {
+            //     $hover: map-get($component, hover);
+
+            //     &:hover {
+
+            //         @if map-has-key($hover, text-color) {
+            //             $text-color: map-get($hover, text-color);
+            //             color: $text-color;
+            //         }
+
+            //         @if map-has-key($hover, background-color) {
+            //             $background-color: map-get($hover, background-color);
+            //             background-color: $background-color;
+            //         }
+
+            //     }
+            // }
+        }
+    }
+}
+
+// Functions to get colors
+@function border-color($palette-name:default) 
+{
+    @if map-has-key($palettes, $palette-name) == false {
+        @warn 'No data found in $palette for ' + $palette-name;
+    }
+    @else {
+        $palette: map-get($palettes, $palette-name);
+
+        @if map-has-key($palette, border) == false {
+            @warn 'No data found in #{$palette-name}-colors for ' + border;
+        }
+        @else {
+            $component: map-get($palette, border);
+
+            @if map-has-key($component, border-color) {
+                @return map-get($component, border-color);
+            }
+        }
+    }
+}
+
+// Functions to get background-color
+@function background-color($palette-name:default) 
+{
+    @if map-has-key($palettes, $palette-name) == false {
+        @warn 'No data found in $palette for ' + $palette-name;
+    }
+    @else {
+        $palette: map-get($palettes, $palette-name);
+
+        @if map-has-key($palette, base) == false {
+            @warn 'No data found in #{$palette-name}-colors for ' + border;
+        }
+        @else {
+            $component: map-get($palette, base);
+
+            @if map-has-key($component, background-color) {
+                @return map-get($component, background-color);
+            }
+        }
+    }
+}
+
+@mixin color-box($palette-name: default)
+{
+    @include palette($palette-name, base);
+
+    a { @include palette($palette-name, link); }
+
+    h1 { @include palette($palette-name, heading1); }
+    h2 { @include palette($palette-name, heading2); }
+    h3 { @include palette($palette-name, heading3); }
+    h4,h5,h6 { @include palette($palette-name, heading4); }
+
+    #{$buttons} {
+        @include palette($palette-name, button);
+
+        &:#{hover} {
+            @include palette($palette-name, button, hover);
+        }
+    }
+
+    // #{$buttons-highlight} {
+    //     @include palette($palette-name, button-highlight);
+
+    //     &:#{hover} {
+    //         @include palette($palette-name, button-highlight, hover);
+    //     }
+    // }
+}

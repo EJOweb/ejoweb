@@ -1,0 +1,13 @@
+/* Page header
+-------------------------------------------------------------------*/
+.page-header {
+	padding-top: 100px;
+	background-color: $havelock-blue;
+}
+
+.page-header > .wrap {
+	max-width: $width__site-max;
+	margin: 0 auto;
+	padding: 2rem 0;
+	text-align: center;
+}

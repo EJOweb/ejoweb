@@ -1,21 +1,16 @@
+/* Footer
+-------------------------------------------------------------------*/
 #footer {
 	flex: 1 1 auto;
 }
 
 #footer {
-	background-color: palette(black, transparent);
-	color: palette(black, light);
-	a {	@include reset-link-style; }
+	a {
+		@extend %reset-link;
+	}
 }
 
 #footer > .wrap {
 	max-width: $width__site-max;
 	
-}
-
-#footer {
-	// @include media($breakpoint__small) {
-	// 	padding-left: 0;
-	// 	padding-right: 0;
-	// }
 }

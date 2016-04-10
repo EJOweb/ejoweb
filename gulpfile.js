@@ -62,13 +62,13 @@ gulp.task('sass:main', function () {
         .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
         .pipe(gulp.dest('./assets/css/'));
 
-    //* Create minified stylesheet
+    // //* Create minified stylesheet
     // gulp.src([sass_dir + 'theme.scss'])
+    //     .pipe(plumber())
     //     .pipe(sass({
     //         outputStyle: 'compressed'
     //     }))
     //     .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
-    //     .on('error', gutil.noop) // On error: just continue because log is already shown above
     //     .pipe(rename({
     //         suffix: '.min'
     //     }))
