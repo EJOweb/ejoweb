@@ -1,16 +1,51 @@
 /* Footer
 -------------------------------------------------------------------*/
 #footer {
-	flex: 1 1 auto;
-}
+	@extend .box-colored;
+	background-color: $elephant;
+	font-size: rem(16);
 
-#footer {
-	a {
-		@extend %reset-link;
+	// a {
+	// 	@include on-event {
+	// 		color: $havelock-blue;
+	// 	}
+	// }
+
+	p {
+		margin-bottom: vertical-space(0.5);
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		text-align: left;
 	}
 }
 
 #footer > .wrap {
-	max-width: $width__site-max;
-	
+	max-width: $width__site;	
+	margin: 0 auto;
+}
+
+.footer-widgets {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	padding: vertical-space(2) 0 vertical-space(2);
+
+	.widget {
+		flex-basis: boxsize(3, $width__gutter);
+	}
+
+	.widget-title {
+		margin-bottom: vertical-space(0.5);
+		font-size: rem(20);
+		font-weight: get-font-weight(bold, secondary);
+	}
+}
+
+.footer-line {
+	padding: 0.5rem 0 0.5rem;
+	border-top: 1px solid rgba($white,0.4);
+	text-align: center;
+
+	a { @extend %reset-link; }
 }

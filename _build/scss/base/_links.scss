@@ -1,12 +1,12 @@
 /* Links
 -------------------------------------------------------------------*/
 a {
-    @include palette(default, link);
-    color: inherit;
-    text-decoration: underline;
+    color: $havelock-blue;
+    text-decoration: none;
     transition: all 0.2s ease-in-out 0s;
 
     @include on-event {
+    	// color: shade($havelock-blue, 10%);
         text-decoration: underline;
     }
 }

@@ -1,0 +1,39 @@
+.columns {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	margin-bottom: -(vertical-space(1));
+	text-align: justify;
+
+	.column {
+		margin-bottom: vertical-space(1);
+	}
+}
+
+.columns-2 {
+	margin-left: ($width__columns-2 - $width__content) / 2 * -1;
+	margin-right: ($width__columns-2 - $width__content) / 2 * -1;
+}
+
+.columns-3 {
+	margin-left: ($width__columns-3 - $width__content) / 2 * -1;
+	margin-right: ($width__columns-3 - $width__content) / 2 * -1;
+}
+
+.columns-4 {
+	margin-left: ($width__columns-4 - $width__content) / 2 * -1;
+	margin-right: ($width__columns-4 - $width__content) / 2 * -1;
+}
+
+.columns-2 .column {
+	flex-basis: boxsize(2, $width__gutter-content);
+}
+
+.columns-3 .column {
+	flex-basis: boxsize(3, $width__gutter);
+}
+
+.columns-4 .column {
+	flex-basis: boxsize(4, $width__gutter);
+}
+

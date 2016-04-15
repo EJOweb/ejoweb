@@ -80,4 +80,9 @@ function ejo_theme_setup()
 
 	/* Yoast Breadcrumbs */
 	add_theme_support( 'yoast-seo-breadcrumbs' );
+
+	/* Remove Subtitles inline css */
+	if ( class_exists( 'Subtitles' ) &&  method_exists( 'Subtitles', 'subtitle_styling' ) ) {
+	    remove_action( 'wp_head', array( Subtitles::getInstance(), 'subtitle_styling' ) );
+	}
 }

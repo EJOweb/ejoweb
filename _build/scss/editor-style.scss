@@ -34,8 +34,10 @@ body {
 }
 
 /* Main content editor */
-body.content {
-	max-width: $width__site-max;
+/* Intro content editor */
+body.content,
+body.introcontent {
+	max-width: $width__site;
 	padding-left: 4rem !important;
 	padding-right: 4rem !important;
 	margin-top: 2.5rem;
@@ -47,12 +49,6 @@ body:not(.content) {
 	margin: 9px 10px;
 }
 
-/* Reversing default 100% height */
-html,
-body {
-	height: auto;
-}
-
 /* Fix weird br after linked image which causes layout problems */
 br[data-mce-bogus]:not(:only-child), 
 br[type='_moz'],
@@ -60,3 +56,4 @@ br[type='_moz'] + br[data-mce-bogus] {
 	visibility: hidden;
 	display: none;
 }
+

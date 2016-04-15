@@ -2,19 +2,19 @@
 -------------------------------------------------------------------*/
 
 #header {
-	color: $white;
-
-	// Structure
 	position: absolute;
+	z-index: 99;
 	width: 100%;
+	color: $white;
 }
 
 #header > .wrap {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: flex-end;
 
-	max-width: $width__site-max;
+	max-width: $width__site;
 	margin: 0 auto;
-	border-bottom: 1px solid border-color(primary);
+	border-bottom: 1px solid rgba($white,0.6);
 }

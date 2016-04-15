@@ -29,11 +29,12 @@ textarea {
 #{$form-text-inputs},
 select,
 textarea {
+	padding: 4px 6px;
 	border: 1px solid $river-bed;
-	border-radius: $border-radius;	
+	border-radius: $border-radius;
 
 	@include on-event {
-
+		border-color: $havelock-blue;
 	}
 }
 
@@ -87,6 +88,14 @@ $buttons:   'a.button',
 			background-color: tint($flame-pea, 12%);
 		}
 	}
+	@elseif $style == transparent {
+		background-color: transparent;
+	    color: $havelock-blue;
+
+		@include on-event {
+			color: $river-bed;
+		}
+	}
 	@else {
 		background-color: $havelock-blue;
 	    color: $white;
@@ -97,17 +106,31 @@ $buttons:   'a.button',
 	}
 }
 
-#{$buttons} {
+%button {
 	@extend %reset-link;
 
     display: inline-block;
-    border-radius: 5px;
-    padding: 12px 18px;
-    line-height: 1;
+    padding: 0 1.333rem;
+    border: none;
+    border-radius: $border-radius + 3px;
+    font-size: type-scale(0);
+    line-height: vertical-space(1.5);
+    font-weight: get-font-weight(bold,primary);
+    // text-transform: uppercase;
+    // letter-spacing: 0.5px;
+
+    & + & {
+    	margin-left: 8px;
+    }
 }
 
 #{$buttons} {
+	@extend %button;
 	@include button(havelock-blue);
+
+	&.transparent {
+		@include button(transparent);
+	}
 
 	&.highlight {
 		@include button(flame-pea);

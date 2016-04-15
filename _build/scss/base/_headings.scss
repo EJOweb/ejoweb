@@ -1,0 +1,106 @@
+/* Headings
+-------------------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+h1 {
+    margin-top: vertical-space(1);
+    margin-bottom: vertical-space(1);
+    font-size: font-size(h1);
+    line-height: vertical-space(2);
+    font-family: get-font-family(secondary);
+    font-weight: get-font-weight(bold, secondary);
+    color: $curious-blue;
+}
+
+h2 {
+    margin-top: vertical-space(1.5);
+    margin-bottom: vertical-space(1.5);
+    font-size: font-size(h2);
+    line-height: vertical-space(1.5);
+    font-family: get-font-family(secondary);
+    font-weight: get-font-weight(bold, secondary);
+    color: $curious-blue;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: vertical-space(1);
+    font-size: font-size(h3);
+    line-height: vertical-space(1);
+    font-family: get-font-family(primary);
+    font-weight: get-font-weight(bold, primary);
+    text-transform: uppercase;
+    color: $curious-blue;
+}
+
+h4,h5,h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: font-size(h4);
+    line-height: line-height(1);
+    font-family: get-font-family(secondary);
+    font-weight: get-font-weight(bold, secondary);
+    color: $curious-blue;
+}
+
+/* Reset headings */
+%reset-heading {
+    text-transform: none;
+    color: inherit;
+}
+
+%no-heading {
+    @extend %reset-heading;
+    margin: 0;
+    font-size: font-size(base);
+    line-height: vertical-space(1);
+    font-family: get-font-family(primary);
+    font-weight: get-font-weight(normal, primary);
+}
+
+.entry-subtitle,
+.subtitle {
+    @extend %reset-heading;
+    display: block;
+    line-height: line-height(1);
+    font-weight: get-font-weight(normal, primary);
+    color: $river-bed;
+
+    h1 & {
+        margin-top: vertical-space(0.11111);
+        margin-bottom: vertical-space(-0.11111);
+        font-size: font-size(h3plus);
+    }
+
+    h2 & {
+        margin-top: vertical-space(0.25);
+        // margin-bottom: vertical-space(1.2);
+        font-size: font-size(h3);
+    }
+}
+
+/* Titles */
+.entry-title {
+    margin-top: 0;
+    a {
+        @extend %reset-link;
+    }
+}
+
+h2.entry-title {
+    margin-bottom: vertical-space(1);
+}
+
+.widget-title {
+    margin-top: 0;
+}
+
+.archive-title {
+    margin-top: 0;
+}

@@ -1,6 +1,49 @@
-#main {
-
+/* Content header
+-------------------------------------------------------------------*/
+.content-header {
+	padding-top: vertical-space(3);
+	background-color: $havelock-blue;
 }
 
-#main > .wrap {
+.content-header > .wrap {
+	position: relative;
+	max-width: $width__site;
+	margin: 0 auto;
+	padding: vertical-space(2) 0 vertical-space(1);
+	text-align: center;
+}
+
+.content-header {
+	.entry-content,
+	.archive-description {
+		max-width: $width__content;
+		margin: 0 auto;
+	}
+}
+
+.entry-byline {
+	position: relative;
+	margin-bottom: vertical-space(-0.16666);
+	margin-top: vertical-space(0.16666);
+	font-size: font-size(small);
+	color: rgba($shark, 0.6);
+
+	a {
+		@extend %reset-link;
+		@include on-event {
+			color: $havelock-blue;
+		}
+	}
+}
+
+main {
+	.content > .wrap {
+		max-width: $width__content;
+		margin: 0 auto;
+	}
+
+	.entry-header,
+	.entry-footer {
+		text-align: center;
+	}
 }

@@ -6,6 +6,26 @@
 </head>
 
 <body <?php hybrid_attr( 'body' ); ?>>
+	<div class="baseline-grid">
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+		<div class="guide"></div>
+	</div>
 
 	<div id="container">
 

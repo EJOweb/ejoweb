@@ -13,7 +13,7 @@ i, em, mark, cite {
 
 p {
     margin-top: 0;
-    margin-bottom: $vertical__space;
+    margin-bottom: vertical-space(1);
 
     &.intro {
         font-weight: get-font-weight(bold, primary);
@@ -24,20 +24,19 @@ p {
 -------------------------------------------------------------------*/
 
 hr {
-    margin-top: $vertical__space + 0.75rem;
-    margin-bottom: $vertical__space + 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
     border: 0;
-    height: 2px;
-    // background-color: palette(grey);
+    // height: 2px;
 }
 
 /* Blockquotes
 -------------------------------------------------------------------*/
 
 blockquote {
-    margin: 2rem 0;
+    margin: vertical-space(1) 0;
     padding: 0 0 0 1.5rem;
     font-style: italic;
 

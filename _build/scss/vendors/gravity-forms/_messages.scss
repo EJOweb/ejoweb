@@ -1,6 +1,6 @@
 // Variables
 $required: #790000 !default;
-$error: #790000 !default;
+$error: #CC0000 !default;
 $confirmation: #007900 !default;
 
 $ui-font-color: #333 !default;
@@ -19,8 +19,8 @@ $ui-background-color: #EFEFEF !default;
 	}
 
 	.gform_confirmation_message {
-		background-color: lighten( $confirmation, 73% );
-		border: 1px solid lighten( $confirmation, 60% );
+		background-color: tint( $confirmation, 73% );
+		border: 1px solid tint( $confirmation, 60% );
 		color: $confirmation;
 		padding: 0.5rem 0.75rem;
 	}
@@ -35,16 +35,16 @@ $ui-background-color: #EFEFEF !default;
 	}
 
 	.gfield_error {
-		background-color: lighten( $error, 73% );
-		border: 1px solid lighten( $error, 68% );
+		background-color: tint( $error, 80% );
+		border: 1px solid tint( $error, 60% );
 		padding: 0 5px;
 
 		.validation_message {
-			color: $error;
+			// color: $error;
 		}
 
 		.gfield_label {
-			color: $error;
+			// color: $error;
 		}
 	}
 }

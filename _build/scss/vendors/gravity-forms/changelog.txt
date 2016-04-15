@@ -1,3 +1,6 @@
+1.1 / 2016-04-13
+- Merged reset.scss with layout
+
 1.0.2 / 2016-01-08
 Removed gsection padding-top and increased space above send-button
 

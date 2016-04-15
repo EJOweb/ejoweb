@@ -1,19 +1,18 @@
-/* Reset */
+/* Layout */
 .site-branding {
+	flex-basis: 0;
+	padding: 24px 0 12px;
+
+	/* Reset */
 	p, h1 {
 		margin: 0;
 	}
-}
-
-/* Layout */
-.site-branding {
-	flex-basis: 150px;
-	padding: 0;
 
 	#site-title {
-		width: 150px;
-		height: 79px;
-		margin: 0 auto;
+		img {
+			width: 108px;
+
+		}
 	}
 
 	#site-title a,

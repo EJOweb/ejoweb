@@ -5,16 +5,17 @@ ol { list-style-type: decimal; }
 
 ul, ol {
     padding: 0;
+    margin-top: 0;
     margin-left: 2.5rem;
-    margin-bottom: $vertical__space;
+    margin-bottom: vertical-space(1);
 
     ul, ol {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
+        margin-top: vertical-space(0.5);
     }
 
     li {
-        margin-bottom: 0.25rem;
+        margin-bottom: vertical-space(0.5);
     }
 }
 
@@ -23,13 +24,17 @@ ul, ol {
     margin: 0;
     list-style: none;
 
+    ul, ol {
+        margin-top: 0;
+    }
+
     li {
-        margin: 0;
+        margin-bottom: 0;
     }
 }
 
 /* Special lists */
-.checklist {
+ul.checklist {
     list-style: none;
 
     li {

@@ -1,0 +1,13 @@
+.breadcrumbs {
+	position: relative;
+	margin-bottom: vertical-space(-0.33333);
+	margin-top: vertical-space(0.33333);
+	font-size: font-size(small);
+	color: rgba($shark, 0.6);
+
+	a { @extend %reset-link; }
+
+	.breadcrumb_last {
+		font-style: italic;
+	}
+}

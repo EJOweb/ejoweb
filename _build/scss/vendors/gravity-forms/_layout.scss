@@ -1,5 +1,16 @@
 /* Layout */
 .gform_wrapper {
+	ol, ul {
+		@extend %reset-list;
+	}
+
+	li {
+		display: block;
+	}
+
+	label {
+		display: block;
+	}
 
 	.gform_body {
 		margin-bottom: 0.75rem;

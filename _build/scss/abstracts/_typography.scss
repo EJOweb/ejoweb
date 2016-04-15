@@ -1,0 +1,87 @@
+////
+// TYPOGRAPHY
+////
+
+// BASE FONT SIZE
+$base-font-size: 18;
+$base-line-height: (27 / 18) * 1rem; // 27
+
+$font-sizes: (
+  small: 16,
+  base: $base-font-size,
+  h1: 42,
+  h2plus: 36,
+  h2: 33,
+  h3plus: 27,
+  h3: 24,
+  h4plus: 21,
+  h4: 18
+);
+
+// FONT FAMILY 
+$font__families: (
+	primary: (
+		stack: ('Roboto', 'Helvetica', 'Arial', sans-serif),
+		weights: (
+			light: 300,
+			normal: 400,
+			bold: 700
+		)
+	),
+
+	secondary: (
+		stack: ('Roboto Slab', 'Georgia', 'Utopia', 'Charter', serif),	
+		weights: (
+			light: 300,
+			normal: 400,
+			bold: 700
+		)
+	)
+);
+
+// Again, we can make a helper function:
+@function line-height($level: 1) {
+  @return $base-line-height * $level;
+}
+
+// Alias for line-height function
+@function vertical-space($level: 1) {
+  @return line-height($level);
+}
+
+// Get font-size
+@function font-size($level: base) {
+  @return rem(map-get($font-sizes, $level));
+}
+
+// Returns the font-family from the 'stack' key in a Sass list
+@function get-font-weight($weight:normal, $type:primary)
+{
+    @if map-has-key($font__families, $type) == false {
+        @warn "Font family " + $type + " not found in $font__families";
+        @warn 'Returning 400 font-weight';
+        @return 400;
+    }    
+
+    $font-family: map-get($font__families, $type);
+    $font-family-weights: map-get($font-family, weights);
+    $font-family-weight: map-get($font-family-weights, $weight);
+
+    @return $font-family-weight;   
+}
+
+// Alias for get-font-weight
+@function font-weight($weight:normal, $type:primary)
+{
+    @return get-font-weight($weight, $type);   
+}
+
+// Returns the font-family associated with a type
+@function get-font-family($type:primary)
+{
+    $font-family: map-get($font__families, $type);
+    $font-family-stack: map-get($font-family, stack);
+
+    @return $font-family-stack;
+    // @return unquote($font-family-stack);
+}

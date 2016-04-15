@@ -2,20 +2,46 @@
 
 	<?php if ( is_singular() ) : // If a single knowledgebase post. ?>
 
-		<header class="entry-header">
-			<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php the_title(); ?></h1>
-		</header>
+		<div class="content-header box-colored">
+			<div class="wrap">
 
-		<div <?php hybrid_attr( 'entry-content' ); ?>>
+				<?php locate_template( array( 'menu/breadcrumbs.php' ), true ); // Loads the menu/breadcrumbs.php template. ?>
 
-			<?php the_content(); ?>
+				<header class="entry-header">
 
-		</div><!-- .entry-content -->
+					<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php the_title(); ?></h1>
+
+				</header><!-- .entry-header -->
+
+				<?php if ($intro_content = ejo_get_intro_content()) : // Check if there's intro content ?>
+
+					<div <?php hybrid_attr( 'entry-content' ); ?>>
+
+						<?php echo $intro_content; ?>
+						
+					</div><!-- .entry-content -->
+					
+				<?php endif; // End intro content check ?>
+
+			</div><!-- .wrap -->
+		</div><!-- .content-header -->
+
+		<div class="content">
+			<div class="wrap">
+
+				<div <?php hybrid_attr( 'entry-content' ); ?>>
+
+					<?php the_content(); ?>
+					
+				</div><!-- .entry-content -->
+				
+			</div><!-- .wrap -->
+		</div><!-- .content -->
 
 	<?php elseif (is_post_type_archive()) : // Check if knowledgebase archive ?>
 
 		<header class="entry-header">
-			<h4 <?php hybrid_attr( 'entry-title' ); ?>><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a></h4>
+			<h3 <?php hybrid_attr( 'entry-title' ); ?>><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a></h3>
 		</header><!-- .entry-header -->
 
 	<?php else : // If not a single knowledgebase post or archive. ?>

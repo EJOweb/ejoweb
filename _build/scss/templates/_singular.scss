@@ -1,0 +1,12 @@
+.singular {
+
+	main .content > .wrap {
+		padding: vertical-space(1.5) 0 vertical-space(1.5);
+
+		.entry-byline {
+			margin-top: vertical-space(-0.5);
+			margin-bottom: vertical-space(0.5);
+			text-align: center;
+		}
+	}
+}

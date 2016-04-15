@@ -5,20 +5,37 @@
 	color: $white;
 
 	a {
+		color: inherit;
+		text-decoration: underline;
 		@include on-event {
-            color: red;
+			color: rgba($white, 0.8);
         }
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, 
+    .entry-subtitle, .subtitle {
         color: $white;
 	}
 
 	#{$buttons} {
+		line-height: vertical-space(2);
+		text-decoration: none;
 		@include button(white);
 
 		&.highlight {
 			@include button(flame-pea)
+		}
+	}
+
+	.entry-byline,
+	.breadcrumbs {
+		color: rgba($white, 0.8);
+
+		a {
+			@extend %reset-link;
+			@include on-event {
+				color: rgba($white, 1);
+			}
 		}
 	}
 }

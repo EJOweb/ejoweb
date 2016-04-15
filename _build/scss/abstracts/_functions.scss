@@ -70,6 +70,17 @@
 //     @return map-get($palette, $tone);
 // }
 
+
+// Compose calc() formula for size of a box relative to the total blocks and space-around
+@function boxsize($total-blocks, $gap-size: 0px) 
+{
+    // If there are 6 blocks, there need to be calculated space for 5 borders
+    $number-of-gaps: $total-blocks - 1;
+
+    // Return the calculation formula for the size of 1 block
+    @return calc(100% / #{$total-blocks} - ((#{$number-of-gaps} * #{$gap-size}) / #{$total-blocks}));
+}
+
 // Mixes a color with black.
 @function shade($color, $percent) {
   @return mix(#000, $color, $percent);
@@ -79,3 +90,5 @@
 @function tint($color, $percent) {
   @return mix(#fff, $color, $percent);
 }
+
+

@@ -5,7 +5,20 @@
 }
 
 .footer-banner > .wrap {
-	max-width: $width__site-max;
+	max-width: $width__site;
 	margin: 0 auto;
-	padding: 2rem 0;
+	padding: vertical-space(1) 0;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-banner {
+	.entry-title {
+		font-size: font-size(h3plus);
+		margin-bottom: 0;
+		margin-right: 2rem;
+	}
 }

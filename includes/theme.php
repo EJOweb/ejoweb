@@ -33,11 +33,15 @@ add_action( 'admin_init', 'ejo_add_editor_styles' );
 //* Filter excerpt_more
 add_filter( 'excerpt_more', function() { return '...'; } );
 
+//* Add style formats
+add_filter( 'ejo_tinymce_style_formats', 'ejo_extra_style_formats' );
+
 //* Extensions
 // include_once( THEME_LIB_DIR . 'extensions/featured-service-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/recent-posts-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/ejo-text-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/edited-knowledgebase-widget.php' );
+include_once( THEME_LIB_DIR . 'extensions/intro-content.php' );
 
 /**
  * Registers custom image sizes for the theme. 
@@ -112,6 +116,24 @@ function ejo_register_sidebars()
 			'after_widget'  => '</article>',
 		)
 	);
+
+	hybrid_register_sidebar(
+		array(
+			'id'          => 'footer-widgets',
+			'name'        => 'Footer Widgets',
+			'description' => 'Drag widgets to here',
+			// 'before_title'  => '<h4 class="widget-title">',
+			// 'after_title'   => '</h4>'
+		)
+	);
+
+	hybrid_register_sidebar(
+		array(
+			'id'          => 'footer-line',
+			'name'        => 'Footer Line',
+			'description' => 'Drag widgets to here',
+		)
+	);
 }
 
 
@@ -136,7 +158,7 @@ function ejo_add_styles_and_scripts()
 
 	//* Styles
 	/* Load Font */
-	wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Roboto+Slab:400,700' );
+	// wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Roboto+Slab:400,700' );
 
 	/* Load active theme stylesheet. */
 	wp_enqueue_style( 'theme', THEME_CSS_URI . "theme{$suffix}.css", false, THEME_VERSION );
@@ -155,4 +177,19 @@ function ejo_add_editor_styles()
 
 	/* Editor Style */
 	add_editor_style( THEME_CSS_URI . "editor-style{$suffix}.css" );
+}
+
+
+/** 
+ * Add theme style formats
+ */
+function ejo_extra_style_formats($style_formats)
+{
+	$style_formats[] =  array(
+        'title' => 'Subtitle',
+        'inline' => 'span',
+        'classes' => 'subtitle'
+    );
+
+    return $style_formats;
 }

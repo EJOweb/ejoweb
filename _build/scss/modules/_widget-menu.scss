@@ -1,0 +1,14 @@
+.widget_nav_menu {
+	a { 
+		@extend %reset-link; 
+	}
+
+	ul { 
+		@extend %reset-list; 
+		ul {
+			margin-left: 1.5rem;
+			margin-top: 2px;
+			margin-bottom: 4px;
+		}
+	}
+}

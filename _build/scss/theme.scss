@@ -1,38 +1,28 @@
 @charset 'UTF-8';
 
-// Resources
-@import "vendors/colors";
-@import "vendors/icons"; //
-@import "vendors/social-media"; //
+// Abstracts
+@import "abstracts/typography";
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
 
-// Mixins
-@import "tools/functions"; //
-@import "tools/mixins"; //
-@import "tools/font"; //
-@import "tools/colors"; //
-@import "tools/responsiveness"; //
-
-// Theme Variables
-@import "variables/colors"; //
-@import "variables/typography"; //
-@import "variables/structure"; /**/
-@import "variables/misc"; // 
-@import "variables/forms"; //
-// @import "variables/components"; //
+@import "vendors/icons";
+@import "vendors/social-media";
 
 /* Reset
 -------------------------------------------------------------------*/
 @import url(normalize.min.css);
 
 // Content
-@import "defaults/site"; //
-@import "defaults/body"; //
-@import "defaults/headings"; //
-@import "defaults/links";
-@import "defaults/lists";
-@import "defaults/tables";
-@import "defaults/misc"; //
-@import "defaults/forms";
+@import "base/site";
+@import "base/body";
+@import "base/headings";
+@import "base/links";
+@import "base/lists";
+@import "base/tables";
+@import "base/misc";
+@import "base/forms";
 
 // Layout
 @import "layout/site";
@@ -40,32 +30,31 @@
 @import "layout/navigation";
 @import "layout/navigation-mobile";
 @import "layout/box-colored";
-@import "layout/page-header";
 @import "layout/main";
 @import "layout/footer-banner";
 @import "layout/footer";
 
 // Templates
-@import "layout/home";
-@import "layout/archive";
-@import "layout/kennisbank";
+@import "templates/home";
+@import "templates/archive";
+@import "templates/singular";
+@import "templates/kennisbank";
 
-// Other
+// Modules (hapklare brokken)
+@import "modules/image-effects";
+@import "modules/alignments";
+@import "modules/columns";
 @import "modules/branding";
 @import "modules/breadcrumbs";
 @import "modules/pagination";
 @import "modules/social-media";
-@import "modules/image-effects";
-@import "modules/alignments";
-// @import "vendors/gravity-forms/setup";
-
-// Media
+@import "vendors/gravity-forms/setup";
+@import "modules/widget-menu";
+@import "modules/widget-posts";
 @import "modules/media/galleries";
 @import "modules/media/captions";
 @import "modules/media/smileys";
-
-// Accessibility
 @import "modules/accessibility";
 
-// Hacks
+// Shame
 @import "modules/shame";

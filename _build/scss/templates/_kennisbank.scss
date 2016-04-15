@@ -1,0 +1,125 @@
+.archive-knowledgebase_post,
+.taxonomy-knowledgebase_category {
+	.content > .wrap {
+		padding-top: vertical-space(1.5);
+		padding-bottom: vertical-space(1.5);
+	}
+
+	.content {
+		.knowledgebase_post {
+			margin-bottom: 0;
+			border-bottom: 1px solid $grey;
+			&:last-of-type { border-bottom: none; }
+
+			.entry-title {
+				@extend %reset-heading;
+				text-align: left;
+				margin-bottom: 0;
+
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+
+				&:before {
+					@include icon(fa-file-text-o);
+					flex-basis: 1.75em;
+					font-size: 1em - em(2);
+					padding-left: em(2);
+				}
+			}
+
+			a {
+				@extend %reset-link;				
+
+				@include on-event {
+					color: $havelock-blue;
+				}
+			}
+		}
+	}
+}
+
+.kennisbank {
+	.category-title {
+		margin-bottom: vertical-space(0.75);
+
+		a:before {
+			@include icon(fa-folder-o);
+			padding-right: 0.25em;
+		}
+
+		a {
+			@extend %reset-link;
+			@include on-event {
+				color: shade($havelock-blue, 10%);
+			}	
+		}
+	}
+
+	.category-list {
+		margin-bottom: vertical-space(0.75);
+	}
+
+	footer {
+		text-align: center;
+
+		a {
+			@extend %reset-link;
+			@include on-event {
+				color: $havelock-blue;
+			}
+
+			&:before {
+				@include icon(fa-angle-double-right);
+				padding-right: 0.25em;
+			}
+		}
+	}
+}
+
+/* Kennisbank archive */
+.archive-knowledgebase_post {
+	.archive-title:before {
+		@include icon(fa-folder-open-o);
+		padding-right: 0.25em;
+	}
+
+	.content {
+		.knowledgebase_post {
+			.entry-title {
+				margin-top: vertical-space(0.25);
+				margin-bottom: vertical-space(0.25);
+				font-size: font-size(h4plus);
+				line-height: line-height(1);
+			}
+		}
+	}
+}
+	
+/* Kennisbank category archive */
+.taxonomy-knowledgebase_category {
+	.archive-title:before {
+		@include icon(fa-folder-o);
+		padding-right: 0.25em;
+	}
+
+	.content {
+		.knowledgebase_post {
+			.entry-title {
+				margin-top: vertical-space(0.25);
+				margin-bottom: vertical-space(0.25);
+				font-size: font-size(h3plus);
+				line-height: line-height(1.5);
+			}
+		}
+	}
+}
+
+
+// /* Kennisbank post */
+// .singular-knowledgebase_post {
+// 	.content .entry-title:before {
+// 		@include icon(fa-file-text-o);
+// 		padding-right: 0.25em;
+// 	}
+// }

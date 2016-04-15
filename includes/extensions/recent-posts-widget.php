@@ -106,11 +106,10 @@ final class EJO_Recent_Posts_Widget extends WP_Widget
 
 					<article <?php hybrid_attr( 'post' ); ?>>
 
-						<div class="entry-byline">
-							<?php echo $post_date; ?> &bullet; <?php hybrid_post_terms( array( 'taxonomy' => 'category' ) ); ?>
-						</div>
-
 						<header class="entry-header">
+							<div class="entry-byline">
+								<?php echo $post_date; ?> &bullet; <?php hybrid_post_terms( array( 'taxonomy' => 'category' ) ); ?>
+							</div>
 							<h4 <?php hybrid_attr( 'entry-title' ); ?>><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a></h4>
 						</header>
 

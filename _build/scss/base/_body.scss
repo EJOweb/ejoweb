@@ -10,6 +10,6 @@ body {
 	font-family: get-font-family(primary);
     font-weight: get-font-weight(normal, primary);
     font-size: 1rem;
-    line-height: lh(28);
+    line-height: line-height(1);
     color: $shark;
 }

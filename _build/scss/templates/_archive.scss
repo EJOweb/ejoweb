@@ -1,0 +1,21 @@
+.taxonomy-category,
+.blog {
+
+	main {
+		.content > .wrap {
+			padding-bottom: vertical-space(0.5);
+		}
+
+		.entry {
+			padding: vertical-space(1.5) 0 vertical-space(1.5);
+		}
+
+		.entry + .entry {
+			border-top: 1px solid $grey;
+		}
+	}
+
+	.entry-title {
+
+	}
+}
