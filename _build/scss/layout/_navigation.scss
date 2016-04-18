@@ -1,6 +1,16 @@
 /* Primary Navigation
 -------------------------------------------------------------------*/
 #menu-primary {
+	display: none;
+}
+
+@include breakpoint(large) {
+	#menu-primary {
+		display: block;
+	}
+}
+
+#menu-primary {
 	flex-grow: 1;
 
 	ul { @extend %reset-list; }
@@ -83,7 +93,7 @@
 			left: 0;
 			z-index: 99;
 			max-width: 320px;
-			padding: 5px;
+			padding: 6px 0;
 			background: $white;
 			color: $river-bed;
 			box-shadow: $box__shadow;
@@ -103,22 +113,17 @@
 	}
 
 	.menu-items > .menu-item > .sub-menu > .menu-item {
-		font-size: rem(16);
+		font-size: font-size(small);
 		white-space: nowrap;
 		a {
-			padding: 12px 12px;
+			padding: 0.333rem 1rem;
 			transition: all 100ms linear 0s;
 
 			&:hover {
 				background: $grey;
-				color: $white;
+				// color: $white;
 			}
 		}
 	}
-
-}
-
-/* Responsiveness */
-#menu-primary {
 
 }

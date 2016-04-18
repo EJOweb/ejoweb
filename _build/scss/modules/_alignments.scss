@@ -1,18 +1,10 @@
 /* Alignments
 -------------------------------------------------------------------*/
 
-.alignleft {
-    display: inline;
-    float: left;
-    margin-right: 2rem;
-    margin-top: rem(6px);
-}
-
+.alignleft,
 .alignright {
-    display: inline;
-    float: right;
-    margin-left: 2rem;
-    margin-top: rem(6px);
+    display: block;
+    margin-bottom: vertical-space(1);
 }
 
 .aligncenter {
@@ -23,14 +15,19 @@
     margin-right: auto;
 }
 
-// @include media($breakpoint__small) {
-//     .alignleft,
-//     .alignright {
-//         display: block;
-//         float: none;
-//         margin-right: 0;
-//         margin-left: 0;
-//         width: 100%;
-//         margin-bottom: $vertical__space;
-//     }
-// }
+
+@include breakpoint(small) {
+    .alignleft {
+        display: inline;
+        float: left;
+        margin-right: 2rem;
+        margin-top: rem(6px);
+    }
+
+    .alignright {
+        display: inline;
+        float: right;
+        margin-left: 2rem;
+        margin-top: rem(6px);
+    }
+}

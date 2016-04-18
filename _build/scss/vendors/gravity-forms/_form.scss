@@ -1,0 +1,50 @@
+/* Layout */
+.gform_wrapper {
+	/* Form fields */
+	#{$form-text-inputs},
+	select,
+	textarea { 
+		width: 100%; 
+	}
+
+	@include breakpoint(small) {
+		/* Form fields */
+		.small { width: 23%; }
+		.medium { width: 48%; }
+		.large { width: 100%; }
+		.textarea { width: 100%; }
+	}
+
+	.gf_half,
+	.gf_one_third,
+	.gf_two_third,
+	.gf_one_fourth,
+	.gf_three_fourth,
+	.gf_left_half,
+	.gf_right_half,
+	.gf_left_third,
+	.gf_middle_third,
+	.gf_right_third,
+	.gcolumn {
+		.medium,
+		.large {
+			width: 100%;
+		}
+	}
+
+	/* Radio & checkbox fields */
+	ul.gfield_radio,
+	ul.gfield_checkbox {
+		label {
+			padding-left: 0.5rem;
+			cursor: pointer;
+		}
+
+		input,
+		label {
+			display: inline;
+			width: auto;
+		}
+	}
+}
+

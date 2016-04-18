@@ -1,0 +1,36 @@
+// Variables
+$required: #790000 !default;
+$error: #CC0000 !default;
+$confirmation: #007900 !default;
+
+$ui-font-color: #333 !default;
+$ui-border-color: #DDD !default;
+$ui-background-color: #EFEFEF !default;
+
+$breakpoints: (
+	'small': (min-width: 480px),
+) !default;
+
+@if mixin-exists(breakpoint) == false {
+	/// Responsive breakpoint manager
+	/// @access public
+	/// @param {String} $breakpoint - Breakpoint
+	/// @requires $breakpoints
+	@mixin breakpoint($breakpoint) {
+	    $raw-query: map-get($breakpoints, $breakpoint);
+
+	    @if $raw-query {
+	        $query: if(
+	            type-of($raw-query) == 'string',
+	            unquote($raw-query),
+	            inspect($raw-query)
+	        );
+
+	        @media #{$query} {
+	            @content;
+	        }
+	    } @else {
+	        @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+	    }
+	}	
+}

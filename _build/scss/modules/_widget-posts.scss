@@ -1,18 +1,16 @@
 .recent-posts-widget {
-	a { 
-		@extend %reset-link; 
-	}
-
 	.entry-byline {
-		font-size: em(16);
+		margin: 0;
+		font-size: rem(15);
 		color: rgba($white,0.6);
+
 	}
 
 	.entry-title {
 		margin-bottom: vertical-space(0.5);
-		font-size: em(18);
+		font-size: font-size(base);
 		font-family: get-font-family(primary);
 		font-weight: get-font-weight(normal, primary);
-		line-height: lh(24,18);
+		line-height: inherit;
 	}
 }

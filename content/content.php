@@ -27,7 +27,7 @@
 			</div><!-- .wrap -->
 		</div><!-- .content-header -->
 
-		<div class="content">
+		<div class="content-main">
 			<div class="wrap">
 
 				<div <?php hybrid_attr( 'entry-content' ); ?>>
@@ -41,7 +41,7 @@
 				</div><!-- .entry-content -->
 				
 			</div><!-- .wrap -->
-		</div><!-- .content -->
+		</div><!-- .content-main -->
 
 	<?php else : // If not a single post. ?>
 

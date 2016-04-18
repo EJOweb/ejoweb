@@ -1,6 +1,8 @@
 // Gravity Forms structure sass
+@import "abstract";
+@import "form";
 @import "layout";
-@import "structure";
+@import "left_label";
 @import "widget";
 @import "misc";
 @import "messages";

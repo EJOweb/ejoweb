@@ -1,25 +1,31 @@
 /* Box Colored
 -------------------------------------------------------------------*/
 .box-colored {
+	padding: 0 $site__padding;
 	background-color: $havelock-blue;
 	color: $white;
 
 	a {
 		color: inherit;
-		text-decoration: underline;
-		@include on-event {
-			color: rgba($white, 0.8);
-        }
     }
+
 
     h1, h2, h3, h4, h5, h6, 
     .entry-subtitle, .subtitle {
-        color: $white;
+        color: inherit;
 	}
 
+    .entry-content,
+    .textwidget {
+    	a:not(.button) {
+	    	text-decoration: underline;
+			@include on-event {
+				color: rgba($white, 0.8);
+	        }
+	    }
+    }
+
 	#{$buttons} {
-		line-height: vertical-space(2);
-		text-decoration: none;
 		@include button(white);
 
 		&.highlight {
@@ -32,7 +38,7 @@
 		color: rgba($white, 0.8);
 
 		a {
-			@extend %reset-link;
+			// @extend %reset-link;
 			@include on-event {
 				color: rgba($white, 1);
 			}

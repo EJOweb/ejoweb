@@ -1,4 +1,13 @@
 .home { 
-	
-	
+	.content-header {
+		background: $havelock-blue url($path__images + 'webdesign-header-image.jpg') no-repeat center bottom;
+	}	
+
+	.content-header .columns {
+		text-align: justify;
+	}
+
+	.content-main .columns {
+		margin-bottom: vertical-space(-1);
+	}
 }

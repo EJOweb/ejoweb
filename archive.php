@@ -4,7 +4,7 @@
 
 	<?php locate_template( array( 'misc/archive-header.php' ), true ); // Loads the misc/archive-header.php template. ?>
 
-	<div class="content">
+	<div class="content-main">
 		<div class="wrap">
 
 			<?php if ( have_posts() ) : // Checks if any posts were found. ?>

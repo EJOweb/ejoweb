@@ -1,7 +1,8 @@
 .breadcrumbs {
 	position: relative;
-	margin-bottom: vertical-space(-0.33333);
-	margin-top: vertical-space(0.33333);
+	// margin-bottom: vertical-space(-0.5);
+	margin-bottom: 0;
+	line-height: line-height(0.66666);
 	font-size: font-size(small);
 	color: rgba($shark, 0.6);
 

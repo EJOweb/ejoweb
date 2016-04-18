@@ -6,7 +6,7 @@ $curious-blue: #3a9bde;
 $elephant: #133753;
 $white: #ffffff;
 $black: #000000;
-$grey: #bbbbbb;
+$grey: #eeeeee;
 $shark: #262c30;
 $river-bed: #48555e;
 $flame-pea: #e15445;
@@ -14,18 +14,29 @@ $flame-pea: #e15445;
 ////
 // STRUCTURE
 ////
-$width__site: 1200px;
+$width__site: 1080px;
 $width__site-min: 300px;
 $width__content: 720px;
-$width__columns-2: 900px;
+$width__columns-2: 840px;
 $width__columns-3: $width__site;
 $width__columns-4: $width__site;
 
-// Large
-// Medium
-// Smedium
-// Small
-// Tiny
+$site__padding: 24px;
+
+//// 
+// Breakpoints
+//
+// Names: 
+// barebones, tiny, small, small-plus (or smedium), 
+// medium, medium-plus, large, huge
+////
+$breakpoints: (
+	'barebones': (max-width: 420px),
+	'small': (min-width: 480px + $site__padding * 2),
+	'medium': (min-width: 700px + $site__padding * 2),
+	'large': (min-width: 1000px + $site__padding * 2),
+	'full': (min-width: 1080px + $site__padding * 2),
+);
 
 // desktop
 // laptop

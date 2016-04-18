@@ -4,12 +4,13 @@
 	@extend .box-colored;
 	background-color: $elephant;
 	font-size: rem(16);
+	line-height: rem(24);
 
-	// a {
-	// 	@include on-event {
-	// 		color: $havelock-blue;
-	// 	}
-	// }
+	a {
+		@include on-event {
+			color: $havelock-blue;
+		}
+	}
 
 	p {
 		margin-bottom: vertical-space(0.5);
@@ -25,14 +26,35 @@
 	margin: 0 auto;
 }
 
-.footer-widgets {
+#footer {
+	.entry-content,
+    .textwidget {
+    	a:not(.button) {
+	    	text-decoration: underline;
+			@include on-event {
+				color: $havelock-blue;
+	        }
+	    }
+    }
+}
+
+#footer .footer-widgets {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	padding: vertical-space(2) 0 vertical-space(2);
-
+	padding: vertical-space(2) 0 vertical-space(0.5);
+	
 	.widget {
-		flex-basis: boxsize(3, $width__gutter);
+		flex: 0 0 100%;
+		margin-bottom: vertical-space(1.5);
+
+		@include breakpoint(small) {
+			flex: 0 0 boxsize(2, $width__gutter);
+		}
+
+		@include breakpoint(medium) {
+			flex: 0 0 boxsize(3, $width__gutter);
+		}
 	}
 
 	.widget-title {
@@ -42,10 +64,14 @@
 	}
 }
 
-.footer-line {
+#footer .footer-line {
 	padding: 0.5rem 0 0.5rem;
 	border-top: 1px solid rgba($white,0.4);
 	text-align: center;
 
-	a { @extend %reset-link; }
+	.textwidget {
+		a { 
+			text-decoration: none;
+		}
+	}
 }

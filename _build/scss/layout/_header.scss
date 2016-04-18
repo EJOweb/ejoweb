@@ -6,6 +6,7 @@
 	z-index: 99;
 	width: 100%;
 	color: $white;
+	padding: 0 $site__padding;
 }
 
 #header > .wrap {
@@ -18,3 +19,4 @@
 	margin: 0 auto;
 	border-bottom: 1px solid rgba($white,0.6);
 }
+

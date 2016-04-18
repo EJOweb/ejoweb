@@ -17,6 +17,8 @@
 	}
 	?>
 
+	<?php hybrid_get_menu( 'breadcrumbs' ); // Loads the menu/breadcrumbs.php template. ?>	
+	
 	<?php locate_template( array( 'content/error.php' ), true ); // Loads the content/error.php template. ?>
 
 </main><!-- #content -->

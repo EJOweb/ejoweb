@@ -42,6 +42,8 @@ include_once( THEME_LIB_DIR . 'extensions/recent-posts-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/ejo-text-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/edited-knowledgebase-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/intro-content.php' );
+include_once( THEME_LIB_DIR . 'extensions/call-to-action.php' );
+// include_once( THEME_LIB_DIR . 'extensions/columns-shortcode.php' );
 
 /**
  * Registers custom image sizes for the theme. 

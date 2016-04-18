@@ -1,17 +1,19 @@
+/* Archive for Posts & Post Category */
 .taxonomy-category,
 .blog {
 
 	main {
-		.content > .wrap {
-			padding-bottom: vertical-space(0.5);
+		.content-main > .wrap {
+			margin-top: vertical-space(1.5);
+			margin-bottom: vertical-space(2);
 		}
 
 		.entry {
-			padding: vertical-space(1.5) 0 vertical-space(1.5);
-		}
-
-		.entry + .entry {
-			border-top: 1px solid $grey;
+			&:not(:last-of-type) {
+				margin-bottom: vertical-space(1.5);
+				padding-bottom: vertical-space(1.5);
+				border-bottom: 1px solid $grey;
+			}
 		}
 	}
 

@@ -1,0 +1,36 @@
+/* Left label layout */
+.gform_fields.left_label {	
+
+	@include breakpoint(small) {
+		.gf_half,
+		.gf_one_third,
+		.gf_two_third,
+		.gf_one_fourth,
+		.gf_three_fourth,
+		.gf_left_half,
+		.gf_right_half,
+		.gf_left_third,
+		.gf_middle_third,
+		.gf_right_third {
+			flex-basis: 100%;
+			max-width: 100%;
+		}
+
+
+		.gfield {
+			display: flex;
+			flex-flow: row wrap;
+		}
+
+		.gfield_label {
+			flex-basis: 30%;
+			// width: 30%;
+			margin-bottom: 0;
+			margin-right: 3%;
+		}
+
+		.ginput_container {
+			flex-basis: 67%;
+		}
+	}
+}

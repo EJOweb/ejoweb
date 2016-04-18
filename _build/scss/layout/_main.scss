@@ -37,9 +37,13 @@
 }
 
 main {
-	.content > .wrap {
+	.content-main {
+		padding: 0 $site__padding;
+	}
+
+	.content-main > .wrap {
 		max-width: $width__content;
-		margin: 0 auto;
+		margin: vertical-space(1) auto;
 	}
 
 	.entry-header,

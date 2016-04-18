@@ -1,39 +1,60 @@
+$column: 	'.column',
+			'> div',
+			'> p';
 .columns {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	margin-bottom: -(vertical-space(1));
-	text-align: justify;
+	// margin-bottom: -(vertical-space(1));
+	text-align: left;
 
-	.column {
+	#{$column} {
 		margin-bottom: vertical-space(1);
+		flex-basis: 100%;
 	}
 }
 
+
+
 .columns-2 {
-	margin-left: ($width__columns-2 - $width__content) / 2 * -1;
-	margin-right: ($width__columns-2 - $width__content) / 2 * -1;
+	@include breakpoint(large) {
+		margin-left: ($width__columns-2 - $width__content) / 2 * -1;
+		margin-right: ($width__columns-2 - $width__content) / 2 * -1;
+	}
+	
+	#{$column} {
+		flex-basis: boxsize(2, $width__gutter-content);
+	}
 }
 
 .columns-3 {
-	margin-left: ($width__columns-3 - $width__content) / 2 * -1;
-	margin-right: ($width__columns-3 - $width__content) / 2 * -1;
+	@include breakpoint(medium) {
+		.column {
+			flex-basis: boxsize(2, $width__gutter-content);
+		}
+	}
+
+	@include breakpoint(large) {
+		margin-left: ($width__columns-2 - $width__content) / -2;
+		margin-right: ($width__columns-2 - $width__content) / -2;
+	}
+
+	@include breakpoint(full) {
+		margin-left: ($width__columns-3 - $width__content) / -2;
+		margin-right: ($width__columns-3 - $width__content) / -2;
+
+		.column {
+			flex-basis: boxsize(3, $width__gutter-content);
+		}
+	}
 }
 
 .columns-4 {
-	margin-left: ($width__columns-4 - $width__content) / 2 * -1;
-	margin-right: ($width__columns-4 - $width__content) / 2 * -1;
+	@include breakpoint(large) {
+		margin-left: ($width__columns-4 - $width__content) / 2 * -1;
+		margin-right: ($width__columns-4 - $width__content) / 2 * -1;
+	}
+	.column {
+		flex-basis: boxsize(4, $width__gutter-content);
+	}
 }
-
-.columns-2 .column {
-	flex-basis: boxsize(2, $width__gutter-content);
-}
-
-.columns-3 .column {
-	flex-basis: boxsize(3, $width__gutter);
-}
-
-.columns-4 .column {
-	flex-basis: boxsize(4, $width__gutter);
-}
-

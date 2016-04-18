@@ -1,15 +1,7 @@
 /* Layout */
-.gform_wrapper {
-	ol, ul {
+.gform_wrapper {	
+	ul, ul ul {
 		@extend %reset-list;
-	}
-
-	li {
-		display: block;
-	}
-
-	label {
-		display: block;
 	}
 
 	.gform_body {
@@ -23,67 +15,91 @@
 		&.gsection {  }
 	}
 
-		/* Label */
-		.gfield_label {
-			margin-bottom: 0.25rem;
+	/* Label */
+	.gfield_label {
+		display: block;
+		margin-bottom: 0.25rem;
 
-			&:empty { display: none; }
-		}
-
-		/* Description */
-		.gfield_description {}
-
-	/* Form fields */
-	.small { width: 23%; }
-	.medium { width: 48%; }
-	.large { width: 100%; }
-	.textarea { width: 100%; }
-
-	.gf_half,
-	.gf_one_third,
-	.gf_two_third,
-	.gf_one_fourth,
-	.gf_three_fourth,
-	.gf_left_half,
-	.gf_right_half,
-	.gf_left_third,
-	.gf_middle_third,
-	.gf_right_third,
-	.gcolumn {
-		.medium,
-		.large {
-			width: 100%;
-		}
+		&:empty { display: none; }
 	}
 
-	/* Radio & checkbox fields */
-	ul.gfield_radio,
-	ul.gfield_checkbox {		
-		label {
-			padding-left: 0.5rem;
-			cursor: pointer;
-		}
-
-		input,
-		label {
-			display: inline;
-		}
-	}
+	/* Description */
+	.gfield_description {}
 }
 
-/* Left label layout */
-.gform_wrapper .left_label {
-	.gfield_label {
-		display: inline-block;
-		margin-bottom: 0;
-		width: 30%;
-		margin-right: 3%;
+/* Structure (Gravity Form list layout) */
+.gform_fields {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	/* Let empty list-item not disrupt flex-items */
+	> li:empty {
+   		display: none;
+    }
+
+	.gfield {
+		flex: 0 0 100%;
+		max-width: 100%; /* Tell IE10/11 not to grow larger */
+		min-width: 0;
 	}
 
-	.small { width: 20%; }
-	.medium { width: 40%; }
-	.large { width: 67%; }
-	
-	.textarea { width: 40%; }
-	.textarea.large { width: 67%; }
+	@include breakpoint(small) {
+
+		> .gf_half,
+		> .gf_left_half,
+		> .gf_right_half {
+			flex-basis: 48%;
+			max-width: 48%; /* Tell IE10/11 not to grow larger */
+			min-width: 0;
+		}
+
+		> .gf_one_third,
+		> .gf_left_third,
+		> .gf_right_third,
+		> .gf_middle_third {
+			flex-basis: 30.66666%;
+			max-width: 30.66666%; /* Tell IE10/11 not to grow larger */
+			min-width: 0;
+		}
+
+		> .gf_two_third {
+			flex-basis: 65.33333%;
+			max-width: 65.33333%; /* Tell IE10/11 not to grow larger */
+			min-width: 0;
+		}
+
+		> .gf_one_fourth {
+			flex-basis: 22%;
+			max-width: 22%; /* Tell IE10/11 not to grow larger */
+			min-width: 0;
+		}
+
+		> .gf_three_fourth {
+			flex-basis: 74%;
+			max-width: 74%; /* Tell IE10/11 not to grow larger */
+			min-width: 0;
+		}
+
+		.gcolumn {
+			flex-basis: 48%;
+			max-width: 48%; /* Tell IE10/11 not to grow larger */
+			min-width: 0;
+		}
+	}
+
+	.gf_list_inline {
+		ul.gfield_radio,
+		ul.gfield_checkbox {
+			display: flex;
+			flex-flow: row wrap;
+			margin-left: -1rem;
+			li {
+				flex: 0 1 auto;
+				max-width: 100%; /* Tell IE10/11 not to grow larger */
+				min-width: 0;
+				padding-left: 1rem;
+			}
+		}
+	}
 }

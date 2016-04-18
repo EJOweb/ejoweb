@@ -4,10 +4,10 @@
 
 	<?php locate_template( array( 'misc/archive-header.php' ), true ); // Loads the misc/archive-header.php template. ?>
 
-	<div class="content">
+	<div class="content-main">
 		<div class="wrap">
 
-			<div class="kennisbank columns columns-2">
+			<div class="kennisbank">
 				<?php
 
 				/* Get knowledgebase categories */
@@ -49,7 +49,7 @@
 
 				    <?php if ( $category_posts_query->have_posts() ) : // Checks if any posts were found. ?>
 
-				    	<section class="kennisbank-category column">
+				    	<section class="kennisbank-category">
 
 					    	<h2 <?php hybrid_attr( 'category-title' ); ?>><a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" title="<?php echo esc_attr( 'Bekijk alle '. $category->name .' artikelen' ); ?>" rel="bookmark" itemprop="url"><?php echo $category->name; ?></a></h2>
 

@@ -16,28 +16,24 @@
     }
 }
 
-//* Breakpoint query
-@mixin media($breakpoint_width, $min-max: 'max-width', $device: 'screen') {
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin breakpoint($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
 
-    // /* Check for breakpoint names */
-    // @if $breakpoint_width == large {
-    //  $breakpoint_width: $breakpoint__large;
-    // }
-    // @else if $breakpoint_width == medium {
-    //  $breakpoint_width: $breakpoint__medium;
-    // }
-    // @else if $breakpoint_width == smedium {
-    //  $breakpoint_width: $breakpoint__smedium;
-    // }
-    // @else if $breakpoint_width == small {
-    //  $breakpoint_width: $breakpoint__small;
-    // }
-    // @else if $breakpoint_width == tiny {
-    //  $breakpoint_width: $breakpoint__tiny;
-    // }
+    @if $raw-query {
+        $query: if(
+            type-of($raw-query) == 'string',
+            unquote($raw-query),
+            inspect($raw-query)
+        );
 
-    //* Output media query
-    @media #{$device} and (#{$min-max}: #{$breakpoint_width}) {
-        @content;
+        @media #{$query} {
+            @content;
+        }
+    } @else {
+        @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
     }
 }
