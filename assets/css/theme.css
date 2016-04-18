@@ -71,17 +71,35 @@ body {
   color: #262c30;
 }
 
+/* Links
+-------------------------------------------------------------------*/
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+/* Links in content */
+.entry-content a:not(.button), .textwidget a:not(.button) {
+  color: #4ca3df;
+  text-decoration: underline;
+}
+
+.entry-content a:not(.button):hover, .entry-content a:not(.button):active, .entry-content a:not(.button):focus, .textwidget a:not(.button):hover, .textwidget a:not(.button):active, .textwidget a:not(.button):focus {
+  color: #227dbd;
+}
+
 /* Headings
 -------------------------------------------------------------------*/
-h1, h2, h3, h4, h5, h6 {
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .textwidget h1, .textwidget h2, .textwidget h3, .textwidget h4, .textwidget h5, .textwidget h6 {
   text-align: center;
 }
 
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+.entry-content h1:first-child, .entry-content h2:first-child, .entry-content h3:first-child, .entry-content h4:first-child, .entry-content h5:first-child, .entry-content h6:first-child, .textwidget h1:first-child, .textwidget h2:first-child, .textwidget h3:first-child, .textwidget h4:first-child, .textwidget h5:first-child, .textwidget h6:first-child {
   margin-top: 0;
 }
 
-h1 {
+.entry-content h1, .textwidget h1 {
   margin-top: 1.66667rem;
   margin-bottom: 2.5rem;
   font-size: 2.33333rem;
@@ -91,7 +109,7 @@ h1 {
   color: #3a9bde;
 }
 
-h2 {
+.entry-content h2, .textwidget h2 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
   font-size: 1.83333rem;
@@ -101,7 +119,7 @@ h2 {
   color: #3a9bde;
 }
 
-h3 {
+.entry-content h3, .textwidget h3 {
   margin-top: 0;
   margin-bottom: 1.66667rem;
   font-size: 1.33333rem;
@@ -112,7 +130,7 @@ h3 {
   color: #3a9bde;
 }
 
-h4, h5, h6 {
+.entry-content h4, .entry-content h5, .entry-content h6, .textwidget h4, .textwidget h5, .textwidget h6 {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1.11111rem;
@@ -175,25 +193,6 @@ h2.entry-title {
 
 .gsection_title:first-child {
   margin-top: 1.66667rem;
-}
-
-/* Links
--------------------------------------------------------------------*/
-a {
-  color: #4ca3df;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out 0s;
-}
-
-a:hover, a:active, a:focus {
-  text-decoration: underline;
-}
-
-/* Reset links */
-.entry-title a, .widget-title a, a.button, button, input[type="button"], input[type="reset"], input[type="submit"], #menu-primary a, #menu-primary-mobile a, .entry-byline a, .archive-knowledgebase_post .content-main .knowledgebase_post a,
-.taxonomy-knowledgebase_category .content-main .knowledgebase_post a, .kennisbank .kennisbank-category .category-title a, .kennisbank .kennisbank-category footer a, .breadcrumbs a, .social-media a, .widget_nav_menu a {
-  color: inherit;
-  text-decoration: none;
 }
 
 /* Lists
@@ -381,15 +380,12 @@ a.button, button, input[type="button"], input[type="reset"], input[type="submit"
   font-size: type-scale(0);
   line-height: 2.5rem;
   font-weight: 700;
+  background-color: #4ca3df;
+  color: #ffffff;
 }
 
 a.button + a.button, button + a.button, input[type="button"] + a.button, input[type="reset"] + a.button, input[type="submit"] + a.button, a.button + button, button + button, input[type="button"] + button, input[type="reset"] + button, input[type="submit"] + button, a.button + input[type="button"], button + input[type="button"], input[type="button"] + input[type="button"], input[type="reset"] + input[type="button"], input[type="submit"] + input[type="button"], a.button + input[type="reset"], button + input[type="reset"], input[type="button"] + input[type="reset"], input[type="reset"] + input[type="reset"], input[type="submit"] + input[type="reset"], a.button + input[type="submit"], button + input[type="submit"], input[type="button"] + input[type="submit"], input[type="reset"] + input[type="submit"], input[type="submit"] + input[type="submit"] {
   margin-left: 8px;
-}
-
-a.button, button, input[type="button"], input[type="reset"], input[type="submit"] {
-  background-color: #4ca3df;
-  color: #ffffff;
 }
 
 a.button:hover, a.button:active, a.button:focus, button:hover, button:active, button:focus, input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
@@ -745,24 +741,20 @@ a.button + br + a.button {
   color: #ffffff;
 }
 
-.box-colored a, #footer a {
+.box-colored h1, #footer h1, .box-colored h2, #footer h2, .box-colored h3, #footer h3, .box-colored h4, #footer h4, .box-colored h5, #footer h5, .box-colored h6, #footer h6 {
   color: inherit;
 }
 
-.box-colored h1, #footer h1, .box-colored h2, #footer h2, .box-colored h3, #footer h3, .box-colored h4, #footer h4, .box-colored h5, #footer h5, .box-colored h6, #footer h6,
-.box-colored .entry-subtitle, #footer .entry-subtitle, .box-colored .subtitle, #footer .subtitle {
+.box-colored h1 span, #footer h1 span, .box-colored h2 span, #footer h2 span, .box-colored h3 span, #footer h3 span, .box-colored h4 span, #footer h4 span, .box-colored h5 span, #footer h5 span, .box-colored h6 span, #footer h6 span {
   color: inherit;
 }
 
-.box-colored .entry-content a:not(.button), #footer .entry-content a:not(.button),
-.box-colored .textwidget a:not(.button), #footer .textwidget a:not(.button) {
+.box-colored .entry-content a:not(.button), #footer .entry-content a:not(.button), .box-colored .textwidget a:not(.button), #footer .textwidget a:not(.button) {
+  color: inherit;
   text-decoration: underline;
 }
 
-.box-colored .entry-content a:not(.button):hover, #footer .entry-content a:not(.button):hover, .box-colored .entry-content a:not(.button):active, #footer .entry-content a:not(.button):active, .box-colored .entry-content a:not(.button):focus, #footer .entry-content a:not(.button):focus,
-.box-colored .textwidget a:not(.button):hover, #footer .textwidget a:not(.button):hover,
-.box-colored .textwidget a:not(.button):active, #footer .textwidget a:not(.button):active,
-.box-colored .textwidget a:not(.button):focus, #footer .textwidget a:not(.button):focus {
+.box-colored .entry-content a:not(.button):hover, #footer .entry-content a:not(.button):hover, .box-colored .entry-content a:not(.button):active, #footer .entry-content a:not(.button):active, .box-colored .entry-content a:not(.button):focus, #footer .entry-content a:not(.button):focus, .box-colored .textwidget a:not(.button):hover, #footer .textwidget a:not(.button):hover, .box-colored .textwidget a:not(.button):active, #footer .textwidget a:not(.button):active, .box-colored .textwidget a:not(.button):focus, #footer .textwidget a:not(.button):focus {
   color: rgba(255, 255, 255, 0.8);
 }
 

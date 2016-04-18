@@ -111,10 +111,8 @@ $buttons:   'a.button',
 	}
 }
 
-%button {
-	@extend %reset-link;
-
-    display: inline-block;
+#{$buttons} {
+	display: inline-block;
     padding: 0 1.333rem;
     border: none;
     border-radius: $border-radius + 3px;
@@ -125,10 +123,7 @@ $buttons:   'a.button',
     & + & {
     	margin-left: 8px;
     }
-}
 
-#{$buttons} {
-	@extend %button;
 	@include button(havelock-blue);
 
 	&.transparent {

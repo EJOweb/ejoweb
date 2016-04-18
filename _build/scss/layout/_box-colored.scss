@@ -5,24 +5,19 @@
 	background-color: $havelock-blue;
 	color: $white;
 
-	a {
-		color: inherit;
-    }
-
-
-    h1, h2, h3, h4, h5, h6, 
-    .entry-subtitle, .subtitle {
+    h1, h2, h3, h4, h5, h6 {
         color: inherit;
+        span {
+        	color: inherit;
+        }
 	}
 
-    .entry-content,
-    .textwidget {
-    	a:not(.button) {
-	    	text-decoration: underline;
-			@include on-event {
-				color: rgba($white, 0.8);
-	        }
-	    }
+    #{$textcontent-links} {
+    	color: inherit;
+    	text-decoration: underline;
+		@include on-event {
+			color: rgba($white, 0.8);
+        }
     }
 
 	#{$buttons} {
@@ -38,7 +33,6 @@
 		color: rgba($white, 0.8);
 
 		a {
-			// @extend %reset-link;
 			@include on-event {
 				color: rgba($white, 1);
 			}
