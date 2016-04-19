@@ -13,7 +13,7 @@ $textcontent-h4: selector-nest(#{$textcontent}, 'h4, h5, h6');
 }
 
 h1 {
-    margin-bottom: vertical-space(1.5);
+    margin-bottom: vertical-space(1);
     font-size: font-size(h1);
     line-height: vertical-space(1.5);
     font-family: get-font-family(secondary);

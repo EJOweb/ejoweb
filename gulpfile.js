@@ -1,5 +1,5 @@
 /* EJOweb gulpfile
- * v20160405
+ * v20160419
  *
  * npm install --save-dev gulp gulp-util gulp-plumber gulp-rename gulp-concat gulp-sass gulp-autoprefixer gulp-coffee gulp-uglify gulp-jshint
  * 
@@ -46,14 +46,6 @@ var browser_support = 'last 2 version';
 gulp.task('sass:main', function () {
 
     //* Create expanded stylesheet
-    // gulp.src([sass_dir + 'theme.scss'])
-    //     .pipe(sass({
-    //         outputStyle: 'expanded'
-    //     }))
-    //     .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
-    //     .on('error', gutil.log) // On error: show log and continue
-    //     .pipe(gulp.dest('./assets/css/'));
-
     gulp.src([sass_dir + 'theme.scss'])
         .pipe(plumber())
         .pipe(sass({
@@ -62,17 +54,17 @@ gulp.task('sass:main', function () {
         .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
         .pipe(gulp.dest('./assets/css/'));
 
-    // //* Create minified stylesheet
-    // gulp.src([sass_dir + 'theme.scss'])
-    //     .pipe(plumber())
-    //     .pipe(sass({
-    //         outputStyle: 'compressed'
-    //     }))
-    //     .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
-    //     .pipe(rename({
-    //         suffix: '.min'
-    //     }))
-    //     .pipe(gulp.dest('./assets/css/'));
+    //* Create minified stylesheet
+    gulp.src([sass_dir + 'theme.scss'])
+        .pipe(plumber())
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }))
+        .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('./assets/css/'));
 });
 
 //* Create expanded and minified stylesheet at the same time (performance is fast using libsass)
@@ -81,20 +73,20 @@ gulp.task('sass:editor', function () {
 
     //* Create expanded stylesheet
     gulp.src([sass_dir + 'editor-style.scss'])
+        .pipe(plumber())
         .pipe(sass({
             outputStyle: 'expanded'
         }))
         .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
-        .on('error', gutil.log) // On error: show log and continue
         .pipe(gulp.dest('./assets/css/'));
 
     //* Create minified stylesheet
     gulp.src([sass_dir + 'editor-style.scss'])
+        .pipe(plumber())
         .pipe(sass({
             outputStyle: 'compressed'
         }))
         .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
-        .on('error', gutil.noop) // On error: just continue because log is already shown above
         .pipe(rename({
             suffix: '.min'
         }))
@@ -122,8 +114,7 @@ gulp.task('js:main', function() {
 
 // Watch Files For Changes
 gulp.task('sass:watch', function() {
-    // gulp.watch( sass_dir + '**/*.scss', ['sass:main', 'sass:editor'] );
-    gulp.watch( sass_dir + '**/*.scss', ['sass:main'] );
+    gulp.watch( sass_dir + '**/*.scss', ['sass:main', 'sass:editor'] );
 });
 
 // Watch Files For Changes
@@ -133,5 +124,5 @@ gulp.task('js:watch', function() {
 
 //* Default task
 gulp.task('default', ['sass:main', 'sass:editor', 'js:main', 'sass:watch', 'js:watch']);
-gulp.task('sass', ['sass:main', 'sass:watch']);
+gulp.task('sass', ['sass:main', 'sass:editor', 'sass:watch']);
 gulp.task('js', ['js:main', 'js:watch']);

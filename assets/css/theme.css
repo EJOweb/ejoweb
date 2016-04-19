@@ -17,45 +17,6 @@ body {
   height: 100%;
 }
 
-.baseline-grid {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 2;
-  transition: opacity 0.2s ease-out;
-}
-
-.baseline-grid:hover {
-  opacity: 1;
-}
-
-.guide {
-  margin-bottom: 8.33333rem;
-  position: relative;
-}
-
-.guide, .guide:before, .guide:after {
-  content: '';
-  height: 1.66667rem;
-  width: 100%;
-  box-shadow: 0 1px 0 turquoise, 0 -1px 0 turquoise;
-}
-
-.guide:before, .guide:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 200%;
-}
-
-.guide:after {
-  top: 400%;
-}
-
 /* Body
 -------------------------------------------------------------------*/
 html {
@@ -80,12 +41,12 @@ a {
 }
 
 /* Links in content */
-.entry-content a:not(.button), .textwidget a:not(.button) {
+.entry-content a:not(.button), .textwidget a:not(.button), .wp-editor a:not(.button) {
   color: #4ca3df;
   text-decoration: underline;
 }
 
-.entry-content a:not(.button):hover, .entry-content a:not(.button):active, .entry-content a:not(.button):focus, .textwidget a:not(.button):hover, .textwidget a:not(.button):active, .textwidget a:not(.button):focus {
+.entry-content a:not(.button):hover, .entry-content a:not(.button):active, .entry-content a:not(.button):focus, .textwidget a:not(.button):hover, .textwidget a:not(.button):active, .textwidget a:not(.button):focus, .wp-editor a:not(.button):hover, .wp-editor a:not(.button):active, .wp-editor a:not(.button):focus {
   color: #227dbd;
 }
 
@@ -96,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.66667rem;
   font-size: 2.33333rem;
   line-height: 2.5rem;
   font-family: "Roboto Slab", "Georgia", "Utopia", "Charter", serif;
@@ -132,27 +93,27 @@ h4, h5, h6 {
   color: #3a9bde;
 }
 
-.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .textwidget h1, .textwidget h2, .textwidget h3, .textwidget h4, .textwidget h5, .textwidget h6 {
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .textwidget h1, .textwidget h2, .textwidget h3, .textwidget h4, .textwidget h5, .textwidget h6, .wp-editor h1, .wp-editor h2, .wp-editor h3, .wp-editor h4, .wp-editor h5, .wp-editor h6 {
   text-align: center;
 }
 
-.entry-content h1:first-child, .entry-content h2:first-child, .entry-content h3:first-child, .entry-content h4:first-child, .entry-content h5:first-child, .entry-content h6:first-child, .textwidget h1:first-child, .textwidget h2:first-child, .textwidget h3:first-child, .textwidget h4:first-child, .textwidget h5:first-child, .textwidget h6:first-child {
+.entry-content h1:first-child, .entry-content h2:first-child, .entry-content h3:first-child, .entry-content h4:first-child, .entry-content h5:first-child, .entry-content h6:first-child, .textwidget h1:first-child, .textwidget h2:first-child, .textwidget h3:first-child, .textwidget h4:first-child, .textwidget h5:first-child, .textwidget h6:first-child, .wp-editor h1:first-child, .wp-editor h2:first-child, .wp-editor h3:first-child, .wp-editor h4:first-child, .wp-editor h5:first-child, .wp-editor h6:first-child {
   margin-top: 0;
 }
 
-.entry-content h1, .textwidget h1 {
+.entry-content h1, .textwidget h1, .wp-editor h1 {
   margin-top: 1.66667rem;
 }
 
-.entry-content h2, .textwidget h2 {
+.entry-content h2, .textwidget h2, .wp-editor h2 {
   margin-top: 2.5rem;
 }
 
-.entry-content h3, .textwidget h3 {
+.entry-content h3, .textwidget h3, .wp-editor h3 {
   margin-top: 0;
 }
 
-.entry-content h4, .entry-content h5, .entry-content h6, .textwidget h4, .textwidget h5, .textwidget h6 {
+.entry-content h4, .entry-content h5, .entry-content h6, .textwidget h4, .textwidget h5, .textwidget h6, .wp-editor h4, .wp-editor h5, .wp-editor h6 {
   margin-top: 0;
 }
 
@@ -761,12 +722,12 @@ a.button + br + a.button {
   color: inherit;
 }
 
-.box-colored .entry-content a:not(.button), #footer .entry-content a:not(.button), .box-colored .textwidget a:not(.button), #footer .textwidget a:not(.button) {
+.box-colored .entry-content a:not(.button), #footer .entry-content a:not(.button), .box-colored .textwidget a:not(.button), #footer .textwidget a:not(.button), .box-colored .wp-editor a:not(.button), #footer .wp-editor a:not(.button) {
   color: inherit;
   text-decoration: underline;
 }
 
-.box-colored .entry-content a:not(.button):hover, #footer .entry-content a:not(.button):hover, .box-colored .entry-content a:not(.button):active, #footer .entry-content a:not(.button):active, .box-colored .entry-content a:not(.button):focus, #footer .entry-content a:not(.button):focus, .box-colored .textwidget a:not(.button):hover, #footer .textwidget a:not(.button):hover, .box-colored .textwidget a:not(.button):active, #footer .textwidget a:not(.button):active, .box-colored .textwidget a:not(.button):focus, #footer .textwidget a:not(.button):focus {
+.box-colored .entry-content a:not(.button):hover, #footer .entry-content a:not(.button):hover, .box-colored .entry-content a:not(.button):active, #footer .entry-content a:not(.button):active, .box-colored .entry-content a:not(.button):focus, #footer .entry-content a:not(.button):focus, .box-colored .textwidget a:not(.button):hover, #footer .textwidget a:not(.button):hover, .box-colored .textwidget a:not(.button):active, #footer .textwidget a:not(.button):active, .box-colored .textwidget a:not(.button):focus, #footer .textwidget a:not(.button):focus, .box-colored .wp-editor a:not(.button):hover, #footer .wp-editor a:not(.button):hover, .box-colored .wp-editor a:not(.button):active, #footer .wp-editor a:not(.button):active, .box-colored .wp-editor a:not(.button):focus, #footer .wp-editor a:not(.button):focus {
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -931,25 +892,25 @@ main .entry-footer {
 }
 
 #footer .footer-widgets .widget {
-  -webkit-flex: 0 0 100%;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
   margin-bottom: 2.5rem;
 }
 
 @media (min-width: 528px) {
   #footer .footer-widgets .widget {
-    -webkit-flex: 0 0 calc(100% / 2 - ((1 * 48px) / 2));
-        -ms-flex: 0 0 calc(100% / 2 - ((1 * 48px) / 2));
-            flex: 0 0 calc(100% / 2 - ((1 * 48px) / 2));
+    -webkit-flex-basis: calc(100% / 2 - ((1 * 48px) / 2));
+        -ms-flex-preferred-size: calc(100% / 2 - ((1 * 48px) / 2));
+            flex-basis: calc(100% / 2 - ((1 * 48px) / 2));
   }
 }
 
 @media (min-width: 748px) {
   #footer .footer-widgets .widget {
-    -webkit-flex: 0 0 calc(100% / 3 - ((2 * 48px) / 3));
-        -ms-flex: 0 0 calc(100% / 3 - ((2 * 48px) / 3));
-            flex: 0 0 calc(100% / 3 - ((2 * 48px) / 3));
+    -webkit-flex-basis: calc(100% / 3 - ((2 * 48px) / 3));
+        -ms-flex-preferred-size: calc(100% / 3 - ((2 * 48px) / 3));
+            flex-basis: calc(100% / 3 - ((2 * 48px) / 3));
   }
 }
 
@@ -971,10 +932,6 @@ main .entry-footer {
 
 .home .content-header {
   background: #4ca3df url("../images/webdesign-header-image.jpg") no-repeat center bottom;
-}
-
-.home .content-header .columns {
-  text-align: justify;
 }
 
 .home .content-main .columns {
@@ -1025,7 +982,7 @@ main .entry-footer {
 
 .archive-knowledgebase_post .content-main .knowledgebase_post .entry-title,
 .taxonomy-knowledgebase_category .content-main .knowledgebase_post .entry-title {
-  text-align: left;
+  text-align: center;
   margin-bottom: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1051,19 +1008,21 @@ main .entry-footer {
   }
 }
 
-.archive-knowledgebase_post .content-main .knowledgebase_post .entry-title:before,
-.taxonomy-knowledgebase_category .content-main .knowledgebase_post .entry-title:before {
-  display: inline-block;
-  font: normal normal normal 1rem/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "";
-  width: 2em;
-  padding-left: 0.11111em;
-  font-size: 0.88889em;
-  text-align: center;
+@media (min-width: 528px) {
+  .archive-knowledgebase_post .content-main .knowledgebase_post .entry-title:before,
+  .taxonomy-knowledgebase_category .content-main .knowledgebase_post .entry-title:before {
+    display: inline-block;
+    font: normal normal normal 1rem/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "";
+    width: 1.5em;
+    padding-left: 0.11111em;
+    font-size: 0.88889em;
+    text-align: left;
+  }
 }
 
 .archive-knowledgebase_post .content-main .knowledgebase_post a:hover, .archive-knowledgebase_post .content-main .knowledgebase_post a:active, .archive-knowledgebase_post .content-main .knowledgebase_post a:focus,
@@ -1097,6 +1056,7 @@ main .entry-footer {
       -ms-flex-preferred-size: 100%;
           flex-basis: 100%;
   margin-bottom: 1.66667rem;
+  text-align: center;
 }
 
 @media (min-width: 1048px) {
@@ -1104,6 +1064,7 @@ main .entry-footer {
     -webkit-flex-basis: calc(100% / 2 - ((1 * 48px) / 2));
         -ms-flex-preferred-size: calc(100% / 2 - ((1 * 48px) / 2));
             flex-basis: calc(100% / 2 - ((1 * 48px) / 2));
+    text-align: left;
   }
 }
 
@@ -1128,10 +1089,6 @@ main .entry-footer {
 
 .kennisbank .kennisbank-category .category-list {
   margin-bottom: 1.25rem;
-}
-
-.kennisbank .kennisbank-category footer {
-  text-align: center;
 }
 
 .kennisbank .kennisbank-category footer a:hover, .kennisbank .kennisbank-category footer a:active, .kennisbank .kennisbank-category footer a:focus {
@@ -1244,7 +1201,6 @@ a.image-wrap:hover img {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  text-align: left;
 }
 
 .columns .column, .columns > div, .columns > p {
@@ -1254,17 +1210,20 @@ a.image-wrap:hover img {
           flex-basis: 100%;
 }
 
+@media (min-width: 748px) {
+  .columns-2 .column, .columns-2 > div, .columns-2 > p {
+    -webkit-flex-basis: calc(100% / 2 - ((1 * 36px) / 2));
+        -ms-flex-preferred-size: calc(100% / 2 - ((1 * 36px) / 2));
+            flex-basis: calc(100% / 2 - ((1 * 36px) / 2));
+    text-align: justify;
+  }
+}
+
 @media (min-width: 1048px) {
   .columns-2 {
     margin-left: -60px;
     margin-right: -60px;
   }
-}
-
-.columns-2 .column, .columns-2 > div, .columns-2 > p {
-  -webkit-flex-basis: calc(100% / 2 - ((1 * 36px) / 2));
-      -ms-flex-preferred-size: calc(100% / 2 - ((1 * 36px) / 2));
-          flex-basis: calc(100% / 2 - ((1 * 36px) / 2));
 }
 
 @media (min-width: 748px) {
@@ -1309,9 +1268,6 @@ a.image-wrap:hover img {
 
 /* Layout */
 .site-branding {
-  -webkit-flex-basis: 0;
-      -ms-flex-preferred-size: 0;
-          flex-basis: 0;
   padding: 24px 0 12px;
   /* Reset */
 }

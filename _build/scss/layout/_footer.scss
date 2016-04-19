@@ -45,15 +45,15 @@
 	padding: vertical-space(2) 0 vertical-space(0.5);
 	
 	.widget {
-		flex: 0 0 100%;
+		flex-basis: 100%;
 		margin-bottom: vertical-space(1.5);
 
 		@include breakpoint(small) {
-			flex: 0 0 boxsize(2, $width__gutter);
+			flex-basis: boxsize(2, $width__gutter);
 		}
 
 		@include breakpoint(medium) {
-			flex: 0 0 boxsize(3, $width__gutter);
+			flex-basis: boxsize(3, $width__gutter);
 		}
 	}
 

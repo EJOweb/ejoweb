@@ -13,7 +13,7 @@
 
 			.entry-title {
 				@extend %reset-heading;
-				text-align: left;
+				text-align: center;
 				margin-bottom: 0;
 
 				display: flex;
@@ -26,12 +26,14 @@
 					justify-content: flex-start;
 				}
 
-				&:before {
-					@include icon(fa-file-text-o);
-					width: 2em;
-					padding-left: em(2);
-					font-size: 1em - em(2);
-					text-align: center;
+				@include breakpoint(small) {
+					&:before {
+						@include icon(fa-file-text-o);
+						width: 1.5em;
+						padding-left: em(2);
+						font-size: 1em - em(2);
+						text-align: left;
+					}
 				}
 			}
 
@@ -59,9 +61,11 @@
 	.kennisbank-category {
 		flex-basis: 100%;
 		margin-bottom: vertical-space(1);
+		text-align: center;
 
 		@include breakpoint(large) {
 			flex-basis: boxsize(2, $width__gutter);
+			text-align: left;
 		}
 
 		.category-title {
@@ -85,8 +89,6 @@
 		}
 
 		footer {
-			text-align: center;
-
 			a {
 				@extend %reset-link;
 				@include on-event {
@@ -143,7 +145,7 @@
 
 // /* Kennisbank post */
 // .singular-knowledgebase_post {
-// 	.content-main .entry-title:before {
+// 	.content-header .entry-title:before {
 // 		@include icon(fa-file-text-o);
 // 		padding-right: 0.25em;
 // 	}

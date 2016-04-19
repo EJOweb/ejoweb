@@ -1,31 +1,47 @@
-// Resources
-@import "vendors/bourbon/bourbon";
-@import "vendors/colors";
+@charset 'UTF-8';
+
+// Abstracts
+@import "abstracts/typography";
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+
 @import "vendors/icons";
 @import "vendors/social-media";
 
-// Mixins
-@import "mixins/mixins";
-@import "mixins/mixins-flexbox";
-@import "mixins/mixins-reset-styles";
-
-// Theme Variables
-@import "variables/colors";
-@import "variables/typography";
-@import "variables/structure";
-@import "variables/misc";
-
 /* Reset
-============================================================================ */
-@import "vendors/normalize";
+-------------------------------------------------------------------*/
+@import url(normalize.min.css);
 
-/* EJO Defaults
-============================================================================ */
-@import "vendors/ejo-defaults";
+// Content
+@import "base/site";
+@import "base/body";
+@import "base/links";
+@import "base/headings";
+@import "base/lists";
+@import "base/tables";
+@import "base/misc";
+@import "base/forms";
 
-/* Content
-============================================================================ */
-@import "content/content";
+// Templates
+@import "templates/home";
+@import "templates/archive";
+@import "templates/singular";
+@import "templates/kennisbank";
+
+// Modules (hapklare brokken)
+@import "modules/image-effects";
+@import "modules/alignments";
+@import "modules/columns";
+@import "modules/social-media";
+@import "modules/media/galleries";
+@import "modules/media/captions";
+@import "modules/media/smileys";
+@import "modules/accessibility";
+
+// Shame
+@import "modules/shame";
 
 /* Editor Style specifics
 ============================================================================ */
@@ -37,15 +53,14 @@ body {
 /* Intro content editor */
 body.content,
 body.introcontent {
-	max-width: $width__site;
-	padding-left: 4rem !important;
-	padding-right: 4rem !important;
-	margin-top: 2.5rem;
-	margin-bottom: 2.5rem;
+	max-width: $width__content;
+	// padding-left: 4rem !important;
+	// padding-right: 4rem !important;
+	margin: 1rem auto; 
 }
 
 /* Other content editors (ex. black studio tinymce widget) */
-body:not(.content) {
+body:not(.content):not(.introcontent) {
 	margin: 9px 10px;
 }
 
