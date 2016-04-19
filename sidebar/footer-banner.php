@@ -9,7 +9,7 @@
 
         $cta_title = (!empty($ejo_call_to_action['title'])) ? $ejo_call_to_action['title'] : 'Meer weten over het laten maken van een website?';
         $cta_text = (!empty($ejo_call_to_action['text'])) ? $ejo_call_to_action['text'] : '';
-        $cta_post_id = (!empty($ejo_call_to_action['post_id'])) ? $ejo_call_to_action['post_id'] : '51';
+        $cta_post_id = (!empty($ejo_call_to_action['post_id'])) ? $ejo_call_to_action['post_id'] : '12';
         $cta_link_text = (!empty($ejo_call_to_action['link_text'])) ? $ejo_call_to_action['link_text'] : 'Contact opnemen';
 		?>
 
