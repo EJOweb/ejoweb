@@ -1,18 +1,21 @@
 /* Links
 -------------------------------------------------------------------*/
-a {
-    color: $havelock-blue;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out 0s;
 
-    @include on-event {
-    	// color: shade($havelock-blue, 10%);
-        text-decoration: underline;
-    }
+a {
+	color: inherit;
+    text-decoration: none;    
+	transition: all 0.2s ease-in-out 0s;
 }
 
-/* Reset links */
-%reset-link {
-    color: inherit;
-    text-decoration: none;
+$default-links: 'a:not(.button)';
+$textcontent-links: selector-nest(#{$textcontent}, #{$default-links});
+
+/* Links in content */
+#{$textcontent-links} {
+	color: $havelock-blue;
+	text-decoration: underline;
+
+	@include on-event {
+		color: darken($havelock-blue, 15%);
+	}	 
 }
