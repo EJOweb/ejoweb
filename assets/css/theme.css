@@ -91,6 +91,47 @@ a {
 
 /* Headings
 -------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 2.5rem;
+  font-size: 2.33333rem;
+  line-height: 2.5rem;
+  font-family: "Roboto Slab", "Georgia", "Utopia", "Charter", serif;
+  font-weight: 700;
+  color: #3a9bde;
+}
+
+h2 {
+  margin-bottom: 2.5rem;
+  font-size: 1.83333rem;
+  line-height: 2.5rem;
+  font-family: "Roboto Slab", "Georgia", "Utopia", "Charter", serif;
+  font-weight: 700;
+  color: #3a9bde;
+}
+
+h3 {
+  margin-bottom: 1.66667rem;
+  font-size: 1.33333rem;
+  line-height: 1.66667rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #3a9bde;
+}
+
+h4, h5, h6 {
+  margin-bottom: 0;
+  font-size: 1.11111rem;
+  line-height: 1.66667rem;
+  font-family: "Roboto Slab", "Georgia", "Utopia", "Charter", serif;
+  font-weight: 700;
+  color: #3a9bde;
+}
+
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .textwidget h1, .textwidget h2, .textwidget h3, .textwidget h4, .textwidget h5, .textwidget h6 {
   text-align: center;
 }
@@ -101,43 +142,18 @@ a {
 
 .entry-content h1, .textwidget h1 {
   margin-top: 1.66667rem;
-  margin-bottom: 2.5rem;
-  font-size: 2.33333rem;
-  line-height: 2.5rem;
-  font-family: "Roboto Slab", "Georgia", "Utopia", "Charter", serif;
-  font-weight: 700;
-  color: #3a9bde;
 }
 
 .entry-content h2, .textwidget h2 {
   margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  font-size: 1.83333rem;
-  line-height: 2.5rem;
-  font-family: "Roboto Slab", "Georgia", "Utopia", "Charter", serif;
-  font-weight: 700;
-  color: #3a9bde;
 }
 
 .entry-content h3, .textwidget h3 {
   margin-top: 0;
-  margin-bottom: 1.66667rem;
-  font-size: 1.33333rem;
-  line-height: 1.66667rem;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #3a9bde;
 }
 
 .entry-content h4, .entry-content h5, .entry-content h6, .textwidget h4, .textwidget h5, .textwidget h6 {
   margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1.11111rem;
-  line-height: 1.66667rem;
-  font-family: "Roboto Slab", "Georgia", "Utopia", "Charter", serif;
-  font-weight: 700;
-  color: #3a9bde;
 }
 
 /* Reset headings */
@@ -168,21 +184,17 @@ h2 .entry-subtitle, h2
   font-size: 1.33333rem;
 }
 
-/* Titles */
-.entry-title {
-  margin-top: 0;
+/* Link in title */
+.entry-title a:hover, .entry-title a:active, .entry-title a:focus,
+.widget-title a:hover,
+.widget-title a:active,
+.widget-title a:focus {
+  color: #4ca3df;
 }
 
+/* Titles */
 h2.entry-title {
   margin-bottom: 1.66667rem;
-}
-
-.widget-title {
-  margin-top: 0;
-}
-
-.archive-title {
-  margin-top: 0;
 }
 
 .gsection_title {
