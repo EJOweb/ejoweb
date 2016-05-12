@@ -14,58 +14,9 @@ $elephant: #133753;
 $white: #ffffff;
 $black: #000000;
 $grey: #eeeeee;
-$shark: #262c30;
-$river-bed: #48555e;
+$shark: #424d54; // 404a51
+$subtitle: #a9bdcc;
 $flame-pea: #e15445;
-
-////
-// STRUCTURE
-////
-$width__site: 1080px;
-$width__site-min: 300px;
-$width__content: 720px;
-$width__columns-2: 840px;
-$width__columns-3: $width__site;
-$width__columns-4: $width__site;
-
-$site__padding: 24px;
-
-//// 
-// Breakpoints
-//
-// Names: 
-// barebones, tiny, small, small-plus (or smedium), 
-// medium, medium-plus, large, huge
-////
-$breakpoints: (
-	'barebones': (max-width: 420px),
-	'small': (min-width: 480px + $site__padding * 2),
-	'medium': (min-width: 700px + $site__padding * 2),
-	'large': (min-width: 1000px + $site__padding * 2),
-	'full': (min-width: 1080px + $site__padding * 2),
-);
-
-// desktop
-// laptop
-// tablet
-// phablet
-// smartphone
-// featurephone
-
-$width__gutter: 48px;
-$width__gutter-content: 36px;
-$width__gutter-half: $width__gutter / 2;
-$width__gutter-pct: ( $width__gutter / $width__site ) * 100%;
-$width__gutter-smartphone: 32px;
-
-// Column widths
-$width__column-one-half: (100% - ($width__gutter-pct * 1)) / 2;
-$width__column-one-third: (100% - ($width__gutter-pct * 2)) / 3;
-$width__column-two-third: $width__column-one-third * 2 + $width__gutter-pct;
-$width__column-one-fourth: (100% - ($width__gutter-pct * 3)) / 4;
-$width__column-three-fourth: $width__column-one-fourth * 3 + $width__gutter-pct;
-$width__column-one-sixth: (100% - ($width__gutter-pct * 5)) / 6;
-$width__column-five-sixth: $width__column-one-sixth * 5 + $width__gutter-pct;
 
 ////
 // MISC
@@ -74,8 +25,12 @@ $width__column-five-sixth: $width__column-one-sixth * 5 + $width__gutter-pct;
 // Paths
 $path__images: '../images/';
 
-// Shadow
+// Borders
+$border-width: 1px;
 $box__shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.15);
+$border-radius: 4px;
 
-// Border radius
-$border-radius: 3px;
+$enable-rounded:            true !default;
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        false !default;

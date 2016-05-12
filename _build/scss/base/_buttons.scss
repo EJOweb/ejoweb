@@ -1,0 +1,110 @@
+/* Buttons
+-------------------------------------------------------------------*/
+$buttons:   'button',
+            '.button',
+            'input[type="button"]',
+            'input[type="reset"]',
+            'input[type="submit"]';
+
+@mixin button-style($style:havelock-blue) 
+{
+	border: $border-width solid transparent;
+
+	@if $style == outline {
+		background-color: transparent;
+	    color: $havelock-blue;
+		border-color: $havelock-blue;
+
+		@include on-event {
+			background-color: $havelock-blue;
+			color: $white;
+		}
+	}
+	@elseif $style == outline-white {
+		background-color: transparent;
+	    color: $white;
+		border-color: $white;
+
+		@include on-event {
+			background-color: $white;
+			color: $havelock-blue;
+		}
+	}
+	@elseif $style == white {
+		background-color: $white;
+	    color: $shark;	    
+
+		@include on-event {
+			background-color: shade($white, 8%);
+		}
+	}
+	@elseif $style == flame-pea {
+		background-color: $flame-pea;
+	    color: $white;
+
+		@include on-event {
+			background-color: tint($flame-pea, 12%);
+		}
+	}
+	@elseif $style == transparent {
+		background-color: transparent;
+	    color: $havelock-blue;
+
+		@include on-event {
+			color: $shark;
+		}
+	}
+	@else {
+		background-color: $havelock-blue;
+	    color: $white;
+
+		@include on-event {
+			background-color: shade($havelock-blue, 10%);
+		}
+	}
+}
+
+//
+// Buttons
+//
+#{$buttons} {
+	display: inline-block;
+    padding: 0.5rem 1.3333rem;
+    @include border-radius();
+    border-style: solid;
+
+    font-family: get-font-family(primary);
+    line-height: vertical-space(1);
+    font-weight: get-font-weight(bold,primary);
+
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+
+	&,
+	&.default {
+    	@include button-style(havelock-blue);
+    }
+
+	&.transparent {
+		@include button-style(transparent);
+	}
+
+	&.highlight {
+		@include button-style(flame-pea);
+	}
+
+	&.outline  {
+		@include button-style(outline);
+	}
+
+    & + & {
+    	margin-left: 8px;
+    }
+}
+
+/* Create small space if buttons are posted above each other */
+a.button + br + a.button {
+    margin-top: 4px;
+}   

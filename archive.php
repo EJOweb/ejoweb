@@ -23,6 +23,8 @@
 
 			<?php endif; // End check for posts. ?>
 
+			<?php locate_template( array( 'misc/loop-nav.php' ), true ); // Loads the misc/loop-nav.php template. ?>
+
 		</div><!-- .wrap -->
 	</div><!-- .content -->
 

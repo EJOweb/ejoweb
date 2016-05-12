@@ -1,0 +1,154 @@
+// Structure
+
+// Breakpoints
+$breakpoints: (
+	xs: 0, 	   		// Extra small screen / phone
+	sm: 544px, 		// Small screen / phone
+	md: 768px, 		// Medium screen / tablet
+	lg: 988px, 		// Large screen / desktop
+	xl: 1120px 		// Extra large screen / wide desktop
+);
+
+// Grid containers
+$container-max-widths: (
+	xs: 1080px
+);
+
+// Space inside outer-containers
+$site-paddings: (
+	xs: 24px,
+	md: 36px
+);
+
+// Gutter
+$gutter-width-default: 36px;
+
+// Max width of content container
+$content-widths: (
+	xs: 840px
+);
+
+// Padding of content container
+$content-paddings: (
+	sm: 36px,
+	md: 90px
+);
+
+
+
+
+//
+// Site padding
+//
+@mixin site-padding()
+{
+	@each $breakpoint, $site-padding in $site-paddings {
+		@include breakpoint($breakpoint) {
+			padding-left: rem($site-padding);
+			padding-right: rem($site-padding);
+		}
+	}
+}
+
+//
+// Content container
+//
+@mixin content-container()
+{
+	@each $breakpoint, $content-width in $content-widths {
+		@include breakpoint($breakpoint) {
+			max-width: $content-width;
+		}
+	}
+	
+	@each $breakpoint, $content-padding in $content-paddings {
+		@include breakpoint($breakpoint) {
+			padding-left: $content-padding;	 
+			padding-right: $content-padding;		
+		}
+	}
+}
+
+@mixin content-full($columns: false)
+{
+	@each $breakpoint, $content-padding in $content-paddings {
+		@include breakpoint($breakpoint) {
+			margin-left: -$content-padding;	 
+			margin-right: -$content-padding;		
+		}
+	}
+}
+
+
+/// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin container-max-width($max-widths: $container-max-widths) 
+{
+	@each $breakpoint, $container-max-width in $max-widths {
+		@include breakpoint($breakpoint) {
+			max-width: $container-max-width;
+		}
+	}
+}
+
+/// Row - Column Grid
+// 
+// 
+
+@mixin make-row($gutter: $gutter-width-default) {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+
+@mixin make-column($gutter: $gutter-width-default) {
+	// position: relative;
+	min-height: 1px;
+}
+
+@mixin column-span($column-span, $columns-total, $gutter: $gutter-width-default) 
+{
+	// Calculate how many gutters are remaining
+	// If column-span is 2 and columns-total is 3,
+	// then there will be 1 gutter remaining
+    $gutters-remaining: $columns-total - $column-span;
+
+    // Calculate the percentage of the spanning columns
+    // If column-span is 2 and columns-total is 3,
+    // then the result will be 66.66666 percent
+    $column-percentage-size: (100% / #{$columns-total}) * #{$column-span};
+
+    // Calculate the size of the remaining gutters
+    // If gutters-remaining is 1, gutter is 36px and columns-total is 3,
+    // then the gutter size sum will be 12px
+    $gutter-size-sum: #{$gutters-remaining} * #{$gutter} / #{$columns-total};
+
+    // Return the calculation formula for the size of 1 block
+	flex: 0 0 calc( #{$column-percentage-size} - #{$gutter-size-sum} );
+}
+
+
+// // Compose calc() formula for size of a box relative to the total blocks and space-around
+// @function boxsize($total-blocks, $gutter: $gutter-width-default) 
+// {
+//     // If there are 6 blocks, there need to be calculated space for 5 borders
+//     $number-of-gutters: $total-blocks - 1;
+
+//     // Return the calculation formula for the size of 1 block
+//     @return calc(100% / #{$total-blocks} - ((#{$number-of-gutters} * #{$gutter}) / #{$total-blocks}));
+// }
+
+
+// Fixes margin overflow of children
+@mixin margin-collapse-fix {
+	overflow: auto;
+	// &:after {
+	// 	content: "";
+	// 	display: block;
+	// 	clear: both;
+	// }
+}

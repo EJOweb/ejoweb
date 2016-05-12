@@ -16,7 +16,7 @@
 }
 
 
-@include breakpoint(small) {
+@include breakpoint(sm) {
     .alignleft {
         display: inline;
         float: left;

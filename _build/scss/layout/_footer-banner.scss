@@ -1,12 +1,14 @@
 /* Footer Banner
 -------------------------------------------------------------------*/
 .footer-banner {
-	background-color: $havelock-blue;
+	@include background-variant(primary);
+	@include site-padding;
 }
 
 .footer-banner > .wrap {
-	max-width: $width__site;
-	margin: 0 auto;
+	@include container-max-width;
+	margin-left: auto;
+	margin-right: auto;
 	padding: vertical-space(1) 0;
 
 	display: flex;

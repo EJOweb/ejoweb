@@ -1,99 +1,111 @@
 /* Headings
 -------------------------------------------------------------------*/
-
 $default-headings: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6';
 $textcontent-headings: selector-nest(#{$textcontent}, #{$default-headings});
 $textcontent-h1: selector-nest(#{$textcontent}, 'h1');
 $textcontent-h2: selector-nest(#{$textcontent}, 'h2');
 $textcontent-h3: selector-nest(#{$textcontent}, 'h3');
-$textcontent-h4: selector-nest(#{$textcontent}, 'h4, h5, h6');
+$textcontent-h4: selector-nest(#{$textcontent}, 'h4');
+$textcontent-h5: selector-nest(#{$textcontent}, 'h5');
+$textcontent-h6: selector-nest(#{$textcontent}, 'h6');
 
-#{$default-headings} {
-    margin: 0;
-}
-
-h1 {
+@mixin h1 {
     margin-bottom: vertical-space(1);
     font-size: font-size(h1);
     line-height: vertical-space(1.5);
     font-family: get-font-family(secondary);
     font-weight: get-font-weight(bold, secondary);
-    color: $curious-blue;
+    text-align: center;
 }
 
-h2 {
+@mixin h2 {
     margin-bottom: vertical-space(1.5);
     font-size: font-size(h2);
     line-height: vertical-space(1.5);
     font-family: get-font-family(secondary);
     font-weight: get-font-weight(bold, secondary);
-    color: $curious-blue;
 }
 
-h3 {
-    margin-bottom: vertical-space(1);
+@mixin h3 {
+    margin-bottom: vertical-space(0.33333);
     font-size: font-size(h3);
     line-height: vertical-space(1);
-    font-family: get-font-family(primary);
-    font-weight: get-font-weight(bold, primary);
-    text-transform: uppercase;
-    color: $curious-blue;
+    font-family: get-font-family(secondary);
+    font-weight: get-font-weight(normal, secondary);
 }
 
-h4,h5,h6 {
-    margin-bottom: 0;
+@mixin h4 {
+    margin-bottom: vertical-space(0.05);
     font-size: font-size(h4);
-    line-height: line-height(1);
+    line-height: vertical-space(0.8);
     font-family: get-font-family(secondary);
     font-weight: get-font-weight(bold, secondary);
-    color: $curious-blue;
 }
 
-#{$textcontent-headings} {
-    text-align: center;
-    &:first-child {
-        margin-top: 0;
-    }
-}
-
-#{$textcontent-h1} {
-    margin-top: vertical-space(1);
-}
-
-#{$textcontent-h2} {
-    margin-top: vertical-space(1.5);
-}
-
-#{$textcontent-h3} {
-    margin-top: 0;
-}
-
-#{$textcontent-h4} {
-    margin-top: 0;
-}
-
-/* Reset headings */
-%reset-heading {
-    text-transform: none;
+// Reset headings
+@mixin reset-heading {
+    padding-top: 0;
+    margin-bottom: vertical-space(1);
+    font-size: inherit;
+    // font-family: get-font-family(secondary);
+    font-weight: get-font-weight(bold, secondary);
+    line-height: inherit;
     color: inherit;
 }
 
+#{$default-headings} {
+    margin: 0;
+    color: $curious-blue;
+}
+
+h1 {
+    @include h1;
+}
+
+h2 {
+    @include h2;
+}
+
+h3 {
+    @include h3;
+}
+
+h4, h5, h6 { 
+    @include h4;
+}
+
+#{$textcontent-h1} {
+    padding-top: vertical-space(1);
+    margin-bottom: vertical-space(2);
+    text-align: center;
+}
+
+#{$textcontent-h2} {
+    padding-top: vertical-space(0.5);
+    text-align: center;
+}
+
+#{$textcontent-h3} {
+    padding-top: vertical-space(0.66666);
+}
+
+#{$textcontent-h4} {
+    padding-top: vertical-space(0.15);
+}
+
+/* Subtitle (inside h1 or h2) */
 .entry-subtitle,
 .subtitle {
-    @extend %reset-heading;
     display: block;
     line-height: vertical-space(1);
     font-weight: get-font-weight(normal, primary);
-    color: $river-bed;
+    color: rgba($shark, 0.75);
+    font-size: font-size(h3);
 
     h1 & {
-        margin-top: vertical-space(0.25);
-        margin-bottom: vertical-space(-0.25);
+        margin-top: vertical-space(0.125);
+        margin-bottom: vertical-space(-0.125);
         font-size: font-size(h3plus);
-    }
-
-    h2 & {
-        font-size: font-size(h3);
     }
 }
 
@@ -108,22 +120,20 @@ h4,h5,h6 {
 }
 
 /* Titles */
-.entry-title {}
+h1.entry-title,
+.archive-title {
+    // margin-top: vertical-space(1);
+}
 
 h2.entry-title {
     margin-bottom: vertical-space(1);
 }
 
-.widget-title {}
-
-.archive-title {}
+.widget-title {
+    margin-bottom: vertical-space(1);
+}
 
 .gsection_title {
-    margin-top: vertical-space(1);
-    margin-bottom: vertical-space(1);
-
-    /* Reverse default heading style */
-    &:first-child {
-        margin-top: vertical-space(1);
-    }
+    margin-top: vertical-space(0.5);
+    // h2
 }

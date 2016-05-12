@@ -2,65 +2,48 @@ $column: 	'.column',
 			'> div',
 			'> p';
 .columns {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	// text-align: left;
-
+	@include make-row;
+	
 	#{$column} {
 		margin-bottom: vertical-space(1);
-		flex-basis: 100%;
+		@include make-column;
 	}
 }
 
-
-
 .columns-2 {
-	@include breakpoint(medium) {
+	@include breakpoint(md) {
 		#{$column} {
-			flex-basis: boxsize(2, $width__gutter-content);
-			text-align: justify;
+			@include column-span(1, 2);
 		}
 	}
-	@include breakpoint(large) {
-		margin-left: ($width__columns-2 - $width__content) / 2 * -1;
-		margin-right: ($width__columns-2 - $width__content) / 2 * -1;
-
-		#{$column} {
-			// flex-basis: boxsize(2, $width__gutter-content);
-			// text-align: justify;
-		}
+	@include breakpoint(lg) {
+		
 	}	
 }
 
 .columns-3 {
-	@include breakpoint(medium) {
+	@include breakpoint(md) {
 		.column {
-			flex-basis: boxsize(2, $width__gutter-content);
+			@include column-span(1, 2);
 		}
 	}
 
-	@include breakpoint(large) {
-		margin-left: ($width__columns-2 - $width__content) / -2;
-		margin-right: ($width__columns-2 - $width__content) / -2;
+	@include breakpoint(lg) {
+
 	}
 
-	@include breakpoint(full) {
-		margin-left: ($width__columns-3 - $width__content) / -2;
-		margin-right: ($width__columns-3 - $width__content) / -2;
-
+	@include breakpoint(xl) {
 		.column {
-			flex-basis: boxsize(3, $width__gutter-content);
+			@include column-span(1, 3);
 		}
 	}
 }
 
 .columns-4 {
-	@include breakpoint(large) {
-		margin-left: ($width__columns-4 - $width__content) / 2 * -1;
-		margin-right: ($width__columns-4 - $width__content) / 2 * -1;
+	@include breakpoint(lg) {
+
 	}
 	.column {
-		flex-basis: boxsize(4, $width__gutter-content);
+		@include column-span(1, 4);
 	}
 }

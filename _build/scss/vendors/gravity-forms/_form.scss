@@ -7,7 +7,7 @@
 		width: 100%; 
 	}
 
-	@include breakpoint(small) {
+	@include breakpoint(sm) {
 		/* Form fields */
 		.small { width: 23%; }
 		.medium { width: 48%; }

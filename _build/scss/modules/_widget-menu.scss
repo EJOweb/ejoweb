@@ -1,14 +1,23 @@
 .widget_nav_menu {
-	a { 
-		@extend %reset-link; 
-	}
-
 	ul { 
-		@extend %reset-list; 
+		@include reset-list; 
+
+		li::before {
+			content: "\203A";
+			display: inline-block;
+			width: 0.66666rem;
+			padding-right: rem(2);
+		}
+
+		// li:hover::before {
+		// 	text-align: right;
+		// }
+
 		ul {
 			margin-left: 1.5rem;
-			margin-top: 2px;
-			margin-bottom: 4px;
+			margin-top: vertical-space(0.5);
+			margin-bottom: vertical-space(0.5);
+			font-size: font-size(small);
 		}
 	}
 }

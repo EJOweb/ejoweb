@@ -1,12 +1,10 @@
 .breadcrumbs {
 	position: relative;
-	// margin-bottom: vertical-space(-0.5);
-	margin-bottom: 0;
-	line-height: line-height(0.66666);
+	margin-top: vertical-space(-0.1);
+	margin-bottom: vertical-space(0.1);
+	line-height: vertical-space(0.5);
 	font-size: font-size(small);
 	color: rgba($shark, 0.6);
-
-	a { @extend %reset-link; }
 
 	.breadcrumb_last {
 		font-style: italic;

@@ -4,18 +4,17 @@
 
 // BASE FONT SIZE
 $base-font-size: 18;
-$base-line-height: (30 / 18) * 1rem;
+$base-line-height: (30 / $base-font-size) * 1rem;
 
 $font-sizes: (
+  tiny: 14,
   small: 16,
   base: $base-font-size,
   h1: 42,
-  h2plus: 36,
-  h2: 33,
-  h3plus: 27,
-  h3: 24,
-  h4plus: 21,
-  h4: 20
+  h2: 35,
+  h3plus: 30,
+  h3: 26,
+  h4: 19
 );
 
 // FONT FAMILY 

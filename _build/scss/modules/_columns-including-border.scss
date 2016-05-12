@@ -1,0 +1,188 @@
+/// Box - Block Grid
+// 
+// 
+
+@mixin make-box() {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+@mixin make-block() {
+	position: relative;
+	min-height: 1px;
+}
+
+$column: 	'.column',
+			'> div',
+			'> p';
+.columns {
+	@include make-row;
+	
+	&.border {
+		@include make-box;
+	}
+	
+	#{$column} {
+		margin-bottom: vertical-space(1);
+		@include make-column;
+	}
+}
+
+
+
+.columns-2 {
+	&.border {
+		#{$column} {
+			padding: vertical-space(1.25) vertical-space(1.25) vertical-space(0.25);
+			margin-bottom: 0;	
+
+			// Default
+			&:nth-child(1n) {
+				border: $border-width solid $grey;
+				border-left: none;
+				border-top: none;
+			}
+
+			// Show vertical 1st items top-border
+			&:nth-child(1) {
+				border-top: $border-width solid $grey;
+			}
+
+			// Show horizontal 1st items left-border
+			&:nth-child(1n) {
+				border-left: $border-width solid $grey;
+			}		
+
+			@include breakpoint(md) {
+				@include column-span(2);
+
+				// Default
+				&:nth-child(1n) {
+					border: $border-width solid $grey;
+					border-left: none;
+					border-top: none;
+				}
+
+				// Show vertical 1st items top-border
+				&:nth-child(1),
+				&:nth-child(2) {
+					border-top: $border-width solid $grey;
+				}
+
+				// Show horizontal 1st items left-border
+				&:nth-child(2n-1) {
+					border-left: $border-width solid $grey;
+				}
+			}
+		}
+	}
+
+	@include breakpoint(md) {
+		#{$column} {
+			@include ejo-column-span(2);
+			// text-align: justify;
+		}
+	}
+	@include breakpoint(lg) {
+		
+	}	
+}
+
+.columns-3 {
+	&.border {
+		#{$column} {
+			padding: vertical-space(1.25) vertical-space(1.25) vertical-space(0.25);
+			margin-bottom: 0;			
+
+			// Default
+			&:nth-child(1n) {
+				border: $border-width solid $grey;
+				border-left: none;
+				border-top: none;
+			}
+
+			// Show vertical 1st items top-border
+			&:nth-child(1) {
+				border-top: $border-width solid $grey;
+			}
+
+			// Show horizontal 1st items left-border
+			&:nth-child(1n) {
+				border-left: $border-width solid $grey;
+			}
+
+			@include breakpoint(md) {
+				@include column-span(2);
+
+				// Default
+				&:nth-child(1n) {
+					border: $border-width solid $grey;
+					border-left: none;
+					border-top: none;
+				}
+
+				// Show vertical 1st items top-border
+				&:nth-child(1),
+				&:nth-child(2) {
+					border-top: $border-width solid $grey;
+				}
+
+				// Show horizontal 1st items left-border
+				&:nth-child(2n-1) {
+					border-left: $border-width solid $grey;
+				}
+			}
+
+			@include breakpoint(lg) {
+				@include column-span(3);
+
+				// Default
+				&:nth-child(1n) {
+					border: $border-width solid $grey;
+					border-left: none;
+					border-top: none;
+				}
+
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3) {
+					border-top: $border-width solid $grey;
+				}
+				
+				// Show horizontal 1st items left-border
+				&:nth-child(3n-2) {
+					border-left: $border-width solid $grey;
+				}
+			}
+		}
+	}
+
+	@include breakpoint(md) {
+		.column {
+			@include column-span(2);
+		}
+	}
+
+	@include breakpoint(lg) {
+
+	}
+
+	@include breakpoint(xl) {
+
+		.column {
+			@include column-span(3);
+		}
+	}
+}
+
+.columns-4 {
+	@include breakpoint(lg) {
+
+	}
+	.column {
+		@include column-span(4);
+	}
+}

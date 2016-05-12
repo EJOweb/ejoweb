@@ -1,3 +1,6 @@
+12-5-2016
+Improved reset-list and breakpoint fallback
+
 1.1 / 2016-04-13
 - Merged reset.scss with layout
 

@@ -3,11 +3,17 @@
 		background: $havelock-blue url($path__images + 'webdesign-header-image.jpg') no-repeat center bottom;
 	}	
 
-	.content-header .columns {
-		// text-align: justify;
+	.content-main > .wrap {
+		@include container-max-width;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.content-main .columns {
 		margin-bottom: vertical-space(-1);
+
+		h3, h4 {
+			margin-top: 0;
+		}
 	}
 }

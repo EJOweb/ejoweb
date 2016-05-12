@@ -1,11 +1,21 @@
 .pagination {
+	margin-top: vertical-space(1);
 	text-align: center;
 
 	.page-numbers {
 		margin-right: 4px;
+		color: $havelock-blue;
+
+		&.current {
+			color: inherit;
+		}
 
 		&:last-child {
 			margin-right: 0;
 		}
+	}
+
+	a:hover {
+		color: shade($havelock-blue, 10%);
 	}
 }

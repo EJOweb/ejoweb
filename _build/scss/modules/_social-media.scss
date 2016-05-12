@@ -1,7 +1,6 @@
 .social-media {
-	@extend %reset-list;
+	@include reset-list;
 	a {
-		@extend %reset-link;
 	}
 	
 

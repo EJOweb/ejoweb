@@ -1,7 +1,7 @@
 /* Layout */
 .gform_wrapper {	
 	ul, ul ul {
-		@extend %reset-list;
+		@include reset-list;
 	}
 
 	.gform_body {
@@ -44,7 +44,7 @@
 		min-width: 0;
 	}
 
-	@include breakpoint(small) {
+	@include breakpoint(sm) {
 
 		> .gf_half,
 		> .gf_left_half,

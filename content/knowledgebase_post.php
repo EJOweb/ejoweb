@@ -47,7 +47,7 @@
 	<?php else : // If not a single knowledgebase post or archive. ?>
 
 		<header class="entry-header">
-			<h2 <?php hybrid_attr( 'entry-title' ); ?>><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a></h2>
+			<h3 <?php hybrid_attr( 'entry-title' ); ?>><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" itemprop="url"><?php the_title(); ?></a></h3>
 		</header><!-- .entry-header -->
 	
 	<?php endif; // End knowledgebase post check. ?>

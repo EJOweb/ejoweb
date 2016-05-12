@@ -1,10 +1,11 @@
 /* Footer
 -------------------------------------------------------------------*/
 #footer {
-	@extend .box-colored;
+	@include background-variant(primary);
+	@include site-padding;
 	background-color: $elephant;
-	font-size: rem(16);
-	line-height: rem(24);
+	// font-size: font-size(small);
+	// line-height: 1.5;
 
 	a {
 		@include on-event {
@@ -12,21 +13,12 @@
 		}
 	}
 
-	p {
-		margin-bottom: vertical-space(0.5);
+	.wrap {
+		@include container-max-width;	
+		margin-left: auto;
+		margin-right: auto;
 	}
 
-	h1,h2,h3,h4,h5,h6 {
-		text-align: left;
-	}
-}
-
-#footer > .wrap {
-	max-width: $width__site;	
-	margin: 0 auto;
-}
-
-#footer {
 	.entry-content,
     .textwidget {
     	a:not(.button) {
@@ -39,28 +31,26 @@
 }
 
 #footer .footer-widgets {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	padding: vertical-space(2) 0 vertical-space(0.5);
+	@include make-row;
+
+	padding: vertical-space(2) 0 vertical-space(0);
 	
 	.widget {
-		flex-basis: 100%;
-		margin-bottom: vertical-space(1.5);
+		@include make-column;
+		margin-bottom: vertical-space(1);
 
-		@include breakpoint(small) {
-			flex-basis: boxsize(2, $width__gutter);
+		@include breakpoint(sm) {
+			@include column-span(1,2);
+			margin-bottom: vertical-space(1.5);
 		}
 
-		@include breakpoint(medium) {
-			flex-basis: boxsize(3, $width__gutter);
+		@include breakpoint(md) {			
+			@include column-span(1,3);
 		}
 	}
 
 	.widget-title {
-		margin-bottom: vertical-space(0.5);
-		font-size: rem(20);
-		font-weight: get-font-weight(bold, secondary);
+		margin-bottom: vertical-space(0.8);
 	}
 }
 

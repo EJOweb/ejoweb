@@ -67,7 +67,7 @@ function ejo_theme_setup()
 	add_theme_support( 'ejo-social-links' );
 
 	/* Improved Visual Editor */
-	add_theme_support( 'ejo-tinymce', array('button', 'intro') );
+	add_theme_support( 'ejo-tinymce' );
 
 	/* EJO Knowledgebase */
 	add_theme_support( 'ejo-knowledgebase' );
@@ -85,4 +85,25 @@ function ejo_theme_setup()
 	if ( class_exists( 'Subtitles' ) &&  method_exists( 'Subtitles', 'subtitle_styling' ) ) {
 	    remove_action( 'wp_head', array( Subtitles::getInstance(), 'subtitle_styling' ) );
 	}
+
+	//* Add style-buttons to visual editor
+	add_filter( 'ejo_tinymce_style_formats', 'ejo_add_tinymce_style_formats', 5 );
+
+	//* Remove feeds for the time being
+	remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
+	remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
+}
+
+/**
+ * Add styles to tinymce
+ */
+function ejo_add_tinymce_style_formats( $style_formats )
+{
+	$style_formats[] =  array(
+        'title' => 'Button',
+        'selector' => 'a',
+        'classes' => 'button'
+    );
+
+	return $style_formats;
 }

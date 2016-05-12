@@ -1,7 +1,7 @@
 /* Left label layout */
 .gform_fields.left_label {	
 
-	@include breakpoint(small) {
+	@include breakpoint(sm) {
 		.gf_half,
 		.gf_one_third,
 		.gf_two_third,

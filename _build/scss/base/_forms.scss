@@ -21,7 +21,6 @@ $form-text-inputs: 	'input:not([type="submit"]):not([type="checkbox"]):not([type
 
 
 
-button,
 input,
 select,
 textarea {
@@ -35,7 +34,7 @@ textarea {
 select,
 textarea {
 	padding: 4px 6px;
-	border: 1px solid $river-bed;
+	border: 1px solid rgba($shark, 0.6);
 	border-radius: $border-radius;
 
 	@include on-event {
@@ -56,86 +55,3 @@ textarea {
 input:checked + label {
 	text-decoration: underline;
 }
-
-/* Gravity Forms */
-.gform_wrapper .gf_list_inline {
-	li {
-		
-	}
-	input + label {
-
-	}
-}
-
-/* Buttons
--------------------------------------------------------------------*/
-$buttons:   'a.button',
-            'button',
-            'input[type="button"]',
-            'input[type="reset"]',
-            'input[type="submit"]';
-
-@mixin button($style:havelock-blue) 
-{
-	@if $style == white {
-		background-color: $white;
-	    color: $river-bed;
-
-		@include on-event {
-			background-color: shade($white, 8%);
-		}
-	}
-	@elseif $style == flame-pea {
-		background-color: $flame-pea;
-	    color: $white;
-
-		@include on-event {
-			background-color: tint($flame-pea, 12%);
-		}
-	}
-	@elseif $style == transparent {
-		background-color: transparent;
-	    color: $havelock-blue;
-
-		@include on-event {
-			color: $river-bed;
-		}
-	}
-	@else {
-		background-color: $havelock-blue;
-	    color: $white;
-
-		@include on-event {
-			background-color: shade($havelock-blue, 10%);
-		}
-	}
-}
-
-#{$buttons} {
-	display: inline-block;
-    padding: 0 1.333rem;
-    border: none;
-    border-radius: $border-radius + 3px;
-    font-size: type-scale(0);
-    line-height: vertical-space(1.5);
-    font-weight: get-font-weight(bold,primary);
-
-    & + & {
-    	margin-left: 8px;
-    }
-
-	@include button(havelock-blue);
-
-	&.transparent {
-		@include button(transparent);
-	}
-
-	&.highlight {
-		@include button(flame-pea);
-	}
-}
-
-/* Create small space if buttons are posted above each other */
-a.button + br + a.button {
-    margin-top: 4px;
-}   

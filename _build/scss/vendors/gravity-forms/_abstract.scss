@@ -7,10 +7,31 @@ $ui-font-color: #333 !default;
 $ui-border-color: #DDD !default;
 $ui-background-color: #EFEFEF !default;
 
+// Reset list
+// If theme does not reset lists
+@if mixin-exists(reset-list) == false {
+	@mixin reset-list() {
+		margin: 0;
+	    list-style: none;
+
+	    ul, ol {
+	        margin-top: 0;
+	    }
+
+	    li {
+	        margin-bottom: 0;
+	    }
+	}
+}
+
+// Breakpoints
+// If theme does not define breakpoints
 $breakpoints: (
-	'small': (min-width: 480px),
+	'sm': (min-width: 480px),
 ) !default;
 
+// Breakpoint mixin
+// If theme does not define breakpoint mixin
 @if mixin-exists(breakpoint) == false {
 	/// Responsive breakpoint manager
 	/// @access public

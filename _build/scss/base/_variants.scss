@@ -1,0 +1,41 @@
+// Contextual backgrounds
+@mixin background-variant($variant: 'primary') {
+	@if $variant == 'primary' {
+		background-color: $havelock-blue;
+		color: $white;
+
+	    h1, h2, h3, h4, h5, h6 {
+	        color: inherit;
+	        span {
+	        	color: inherit;
+	        }
+		}
+
+	    #{$textcontent-links} {
+	    	color: inherit;
+	    	text-decoration: underline;
+			@include on-event {
+				color: rgba($white, 0.8);
+	        }
+	    }
+
+		#{$buttons} {
+			@include button-style(white);
+
+			&.highlight {
+				@include button-style(flame-pea)
+			}
+		}
+
+		.entry-byline,
+		.breadcrumbs {
+			color: rgba($white, 0.8);
+
+			a {
+				@include on-event {
+					color: rgba($white, 1);
+				}
+			}
+		}
+	}
+}

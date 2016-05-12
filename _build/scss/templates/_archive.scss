@@ -9,11 +9,8 @@
 		}
 
 		.entry {
-			&:not(:last-of-type) {
-				margin-bottom: vertical-space(1.5);
-				padding-bottom: vertical-space(1.5);
-				border-bottom: 1px solid $grey;
-			}
+			margin-bottom: vertical-space(1);
+			border-bottom: 1px solid $grey;
 		}
 	}
 

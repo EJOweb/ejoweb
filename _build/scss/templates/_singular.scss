@@ -1,13 +1,11 @@
+/* Template Singular */
 .singular {
 
 	main .content-main > .wrap {
-		margin-top: vertical-space(1.5);
-		margin-bottom: vertical-space(1.5);
 
 		.entry-byline {
 			margin-top: vertical-space(-0.5);
 			margin-bottom: vertical-space(0.5);
-			text-align: center;
 		}
 	}
 }

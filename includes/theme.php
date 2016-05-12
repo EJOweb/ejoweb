@@ -124,8 +124,6 @@ function ejo_register_sidebars()
 			'id'          => 'footer-widgets',
 			'name'        => 'Footer Widgets',
 			'description' => 'Drag widgets to here',
-			// 'before_title'  => '<h4 class="widget-title">',
-			// 'after_title'   => '</h4>'
 		)
 	);
 

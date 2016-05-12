@@ -18,7 +18,7 @@
 	}
 }
 
-@include breakpoint(small) {
+@include breakpoint(sm) {
 
 	.gallery-columns-2 .gallery-item {
 		flex-basis: 50%;

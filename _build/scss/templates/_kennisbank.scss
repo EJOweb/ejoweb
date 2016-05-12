@@ -1,83 +1,77 @@
 .archive-knowledgebase_post,
 .taxonomy-knowledgebase_category {
-	.content-main > .wrap {
-		margin-top: vertical-space(1.5);
-		margin-bottom: vertical-space(1.5);
-	}
 
 	.content-main {
-		.knowledgebase_post {
+		text-align: center;
+	}
+
+	.knowledgebase_post {
+		border-bottom: 1px solid $grey;
+
+		.entry-title {
+			@include h4;
+			color: inherit;
 			margin-bottom: 0;
-			border-bottom: 1px solid $grey;
-			&:last-of-type { border-bottom: none; }
+			padding-top: vertical-space(0.25);
+			padding-bottom: vertical-space(0.25);
+			text-align: left;
+		}
 
-			.entry-title {
-				@extend %reset-heading;
-				text-align: center;
-				margin-bottom: 0;
+		// Facilitate icon
+		.entry-title {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-start;
+			align-items: center;
 
-				display: flex;
-				flex-flow: row nowrap;
-				justify-content: center;
-				align-items: center;
-
-				@include breakpoint(large) {
-					text-align: left;
-					justify-content: flex-start;
-				}
-
-				@include breakpoint(small) {
-					&:before {
-						@include icon(fa-file-text-o);
-						width: 1.5em;
-						padding-left: em(2);
-						font-size: 1em - em(2);
-						text-align: left;
-					}
-				}
+			// Icon
+			&:before {
+				@include icon(fa-file-text-o);
+				width: 1.5em;
+				padding-left: em(2);
+				font-size: 1em - em(2);
+				text-align: left;
 			}
+		}
 
-			a {
-				@extend %reset-link;				
-
-				@include on-event {
-					color: $havelock-blue;
-				}
+		a {
+			@include on-event {
+				color: $havelock-blue;
 			}
 		}
 	}
 }
 
-.kennisbank {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	margin: 0;
-	
-	@include breakpoint(large) {
-		margin: 0 -90px;
+.archive-knowledgebase_post {
+
+	@include breakpoint(xl) {
+		.content-main > .wrap {
+			padding: 0;
+		}
+
+		.kennisbank {
+			@include make-row;
+		}
+
+		.kennisbank-category {
+			@include make-column;
+			@include column-span(1,2);
+		}
 	}
 
 	.kennisbank-category {
-		flex-basis: 100%;
 		margin-bottom: vertical-space(1);
-		text-align: center;
-
-		@include breakpoint(large) {
-			flex-basis: boxsize(2, $width__gutter);
-			text-align: left;
-		}
+		
 
 		.category-title {
 			margin-bottom: vertical-space(0.75);
 
-			a:before {
-				@include icon(fa-folder-o);
-				padding-right: 0.25em;
-			}
-
 			a {
-				@extend %reset-link;
+				&:before {
+					@include icon(fa-folder-o);
+					padding-right: 0.25em;
+				}
+
 				@include on-event {
 					color: shade($havelock-blue, 10%);
 				}	
@@ -90,7 +84,6 @@
 
 		footer {
 			a {
-				@extend %reset-link;
 				@include on-event {
 					color: $havelock-blue;
 				}
@@ -110,17 +103,6 @@
 		@include icon(fa-folder-open-o);
 		padding-right: 0.25em;
 	}
-
-	.content-main {
-		.knowledgebase_post {
-			.entry-title {
-				margin-top: vertical-space(0.25);
-				margin-bottom: vertical-space(0.25);
-				font-size: font-size(h4plus);
-				line-height: line-height(1);
-			}
-		}
-	}
 }
 	
 /* Kennisbank category archive */
@@ -129,24 +111,13 @@
 		@include icon(fa-folder-o);
 		padding-right: 0.25em;
 	}
-
-	.content-main {
-		.knowledgebase_post {
-			.entry-title {
-				margin-top: vertical-space(0.25);
-				margin-bottom: vertical-space(0.25);
-				font-size: font-size(h3plus);
-				line-height: line-height(1.5);
-			}
-		}
-	}
 }
 
-
-// /* Kennisbank post */
-// .singular-knowledgebase_post {
-// 	.content-header .entry-title:before {
-// 		@include icon(fa-file-text-o);
-// 		padding-right: 0.25em;
-// 	}
-// }
+/* Kennisbank post */
+.singular-knowledgebase_post {
+	.content-header .entry-title:before {
+		@include icon(fa-file-text-o);
+		font-size: 0.8em;
+		padding-right: 0.33333em;
+	}
+}

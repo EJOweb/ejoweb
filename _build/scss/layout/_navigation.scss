@@ -4,7 +4,7 @@
 	display: none;
 }
 
-@include breakpoint(large) {
+@include breakpoint(lg) {
 	#menu-primary {
 		display: block;
 	}
@@ -13,11 +13,10 @@
 #menu-primary {
 	flex-grow: 1;
 
-	ul { @extend %reset-list; }
+	ul { @include reset-list; }
 	li { display: block; }
 
 	a {
-		@extend %reset-link;
 		display: block;
 	}
 
@@ -95,7 +94,7 @@
 			max-width: 320px;
 			padding: 6px 0;
 			background: $white;
-			color: $river-bed;
+			color: $shark;
 			box-shadow: $box__shadow;
 			transition: all 300ms ease 0s;
 		}

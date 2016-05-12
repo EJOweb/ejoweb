@@ -69,7 +69,7 @@
 								<?php 
 
 								/* Show link to knowledgebase category including total amount of articles */
-								printf( '<a href="%s" alt="%s" class="read-more">%s</a>',
+								printf( '<a href="%s" alt="%s" class="">%s</a>',
 									$category_url,
 									esc_attr( sprintf( 'Bekijk alle %s artikelen (%s)', $category->name, $category->count ) ),
 									sprintf( 'Alle artikelen (%s)', $category->count )
