@@ -909,72 +909,72 @@ main .entry-footer {
   margin-right: -90px;
 }
 
-/* Footer Banner
+/* Call To Action Bar
 -------------------------------------------------------------------*/
-.footer-banner {
+.call-to-action-bar {
   background-color: #4ca3df;
   color: #ffffff;
   padding-left: 1.33333rem;
   padding-right: 1.33333rem;
 }
 
-.footer-banner h1, .footer-banner h2, .footer-banner h3, .footer-banner h4, .footer-banner h5, .footer-banner h6 {
+.call-to-action-bar h1, .call-to-action-bar h2, .call-to-action-bar h3, .call-to-action-bar h4, .call-to-action-bar h5, .call-to-action-bar h6 {
   color: inherit;
 }
 
-.footer-banner h1 span, .footer-banner h2 span, .footer-banner h3 span, .footer-banner h4 span, .footer-banner h5 span, .footer-banner h6 span {
+.call-to-action-bar h1 span, .call-to-action-bar h2 span, .call-to-action-bar h3 span, .call-to-action-bar h4 span, .call-to-action-bar h5 span, .call-to-action-bar h6 span {
   color: inherit;
 }
 
-.footer-banner .entry-content a:not(.button), .footer-banner .textwidget a:not(.button), .footer-banner .wp-editor a:not(.button) {
+.call-to-action-bar .entry-content a:not(.button), .call-to-action-bar .textwidget a:not(.button), .call-to-action-bar .wp-editor a:not(.button) {
   color: inherit;
   text-decoration: underline;
 }
 
-.footer-banner .entry-content a:not(.button):hover, .footer-banner .entry-content a:not(.button):focus, .footer-banner .entry-content a:not(.button):active, .footer-banner .textwidget a:not(.button):hover, .footer-banner .textwidget a:not(.button):focus, .footer-banner .textwidget a:not(.button):active, .footer-banner .wp-editor a:not(.button):hover, .footer-banner .wp-editor a:not(.button):focus, .footer-banner .wp-editor a:not(.button):active {
+.call-to-action-bar .entry-content a:not(.button):hover, .call-to-action-bar .entry-content a:not(.button):focus, .call-to-action-bar .entry-content a:not(.button):active, .call-to-action-bar .textwidget a:not(.button):hover, .call-to-action-bar .textwidget a:not(.button):focus, .call-to-action-bar .textwidget a:not(.button):active, .call-to-action-bar .wp-editor a:not(.button):hover, .call-to-action-bar .wp-editor a:not(.button):focus, .call-to-action-bar .wp-editor a:not(.button):active {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.footer-banner button, .footer-banner .button, .footer-banner input[type="button"], .footer-banner input[type="reset"], .footer-banner input[type="submit"] {
+.call-to-action-bar button, .call-to-action-bar .button, .call-to-action-bar input[type="button"], .call-to-action-bar input[type="reset"], .call-to-action-bar input[type="submit"] {
   border: 1px solid transparent;
   background-color: #ffffff;
   color: #424d54;
 }
 
-.footer-banner button:hover, .footer-banner button:focus, .footer-banner button:active, .footer-banner .button:hover, .footer-banner .button:focus, .footer-banner .button:active, .footer-banner input[type="button"]:hover, .footer-banner input[type="button"]:focus, .footer-banner input[type="button"]:active, .footer-banner input[type="reset"]:hover, .footer-banner input[type="reset"]:focus, .footer-banner input[type="reset"]:active, .footer-banner input[type="submit"]:hover, .footer-banner input[type="submit"]:focus, .footer-banner input[type="submit"]:active {
+.call-to-action-bar button:hover, .call-to-action-bar button:focus, .call-to-action-bar button:active, .call-to-action-bar .button:hover, .call-to-action-bar .button:focus, .call-to-action-bar .button:active, .call-to-action-bar input[type="button"]:hover, .call-to-action-bar input[type="button"]:focus, .call-to-action-bar input[type="button"]:active, .call-to-action-bar input[type="reset"]:hover, .call-to-action-bar input[type="reset"]:focus, .call-to-action-bar input[type="reset"]:active, .call-to-action-bar input[type="submit"]:hover, .call-to-action-bar input[type="submit"]:focus, .call-to-action-bar input[type="submit"]:active {
   background-color: #ebebeb;
 }
 
-.footer-banner button.highlight, .footer-banner .button.highlight, .footer-banner input[type="button"].highlight, .footer-banner input[type="reset"].highlight, .footer-banner input[type="submit"].highlight {
+.call-to-action-bar button.highlight, .call-to-action-bar .button.highlight, .call-to-action-bar input[type="button"].highlight, .call-to-action-bar input[type="reset"].highlight, .call-to-action-bar input[type="submit"].highlight {
   border: 1px solid transparent;
   background-color: #e15445;
   color: #ffffff;
 }
 
-.footer-banner button.highlight:hover, .footer-banner button.highlight:focus, .footer-banner button.highlight:active, .footer-banner .button.highlight:hover, .footer-banner .button.highlight:focus, .footer-banner .button.highlight:active, .footer-banner input[type="button"].highlight:hover, .footer-banner input[type="button"].highlight:focus, .footer-banner input[type="button"].highlight:active, .footer-banner input[type="reset"].highlight:hover, .footer-banner input[type="reset"].highlight:focus, .footer-banner input[type="reset"].highlight:active, .footer-banner input[type="submit"].highlight:hover, .footer-banner input[type="submit"].highlight:focus, .footer-banner input[type="submit"].highlight:active {
+.call-to-action-bar button.highlight:hover, .call-to-action-bar button.highlight:focus, .call-to-action-bar button.highlight:active, .call-to-action-bar .button.highlight:hover, .call-to-action-bar .button.highlight:focus, .call-to-action-bar .button.highlight:active, .call-to-action-bar input[type="button"].highlight:hover, .call-to-action-bar input[type="button"].highlight:focus, .call-to-action-bar input[type="button"].highlight:active, .call-to-action-bar input[type="reset"].highlight:hover, .call-to-action-bar input[type="reset"].highlight:focus, .call-to-action-bar input[type="reset"].highlight:active, .call-to-action-bar input[type="submit"].highlight:hover, .call-to-action-bar input[type="submit"].highlight:focus, .call-to-action-bar input[type="submit"].highlight:active {
   background-color: #e5695b;
 }
 
-.footer-banner .entry-byline,
-.footer-banner .breadcrumbs {
+.call-to-action-bar .entry-byline,
+.call-to-action-bar .breadcrumbs {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.footer-banner .entry-byline a:hover, .footer-banner .entry-byline a:focus, .footer-banner .entry-byline a:active,
-.footer-banner .breadcrumbs a:hover,
-.footer-banner .breadcrumbs a:focus,
-.footer-banner .breadcrumbs a:active {
+.call-to-action-bar .entry-byline a:hover, .call-to-action-bar .entry-byline a:focus, .call-to-action-bar .entry-byline a:active,
+.call-to-action-bar .breadcrumbs a:hover,
+.call-to-action-bar .breadcrumbs a:focus,
+.call-to-action-bar .breadcrumbs a:active {
   color: white;
 }
 
 @media (min-width: 768px) {
-  .footer-banner {
+  .call-to-action-bar {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
-.footer-banner > .wrap {
+.call-to-action-bar > .wrap {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
@@ -993,12 +993,12 @@ main .entry-footer {
           align-items: center;
 }
 
-.footer-banner .entry-title {
+.call-to-action-bar .entry-title {
   font-size: 1.66667rem;
   margin: 0.25rem 1rem 0.25rem;
 }
 
-.footer-banner .button {
+.call-to-action-bar .button {
   margin: 0 1rem 0;
 }
 

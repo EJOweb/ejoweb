@@ -1,11 +1,11 @@
-/* Footer Banner
+/* Call To Action Bar
 -------------------------------------------------------------------*/
-.footer-banner {
+.call-to-action-bar {
 	@include background-variant(primary);
 	@include site-padding;
 }
 
-.footer-banner > .wrap {
+.call-to-action-bar > .wrap {
 	@include container-max-width;
 	margin-left: auto;
 	margin-right: auto;
@@ -17,7 +17,7 @@
 	align-items: center;
 }
 
-.footer-banner {
+.call-to-action-bar {
 	.entry-title {
 		font-size: font-size(h3plus);
 		margin: 0.25rem 1rem 0.25rem;

@@ -1,4 +1,6 @@
-		<?php locate_template( array( 'sidebar/footer-banner.php' ), true ); // Loads the sidebar/footer-banner.php template. ?>
+			<?php locate_template( array( 'sidebar/call-to-action-bar.php' ), true ); // Loads the sidebar/call-to-action-bar.php template. ?>
+
+		</main><!-- #content -->
 
 		<footer <?php hybrid_attr( 'footer' ); ?>>
 			<div class="wrap">

@@ -1,14 +1,9 @@
 <?php
 
-add_action( 'widgets_init', 'register_ejo_text_widget' );
-
 //* Register Widget
-function register_ejo_text_widget() 
-{ 
-    //* Include Widget Class
+add_action( 'widgets_init', function() { 
     register_widget( 'EJO_Text_Widget' ); 
-}
-
+} );
 
 /**
  * Class used to implement a Text Widget widget.

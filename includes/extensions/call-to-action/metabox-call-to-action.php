@@ -1,10 +1,12 @@
 <?php
 defined('ABSPATH') or die("Direct access to the script does not allowed");
 
+EJO_Call_To_Action_Metabox::init();
+
 /**
  * Call To Action 
  */
-class EJO_Call_To_Action
+class EJO_Call_To_Action_Metabox
 {
     /**
 	 * Instance of this class.
@@ -67,6 +69,7 @@ class EJO_Call_To_Action
          * Then extract variables of this array
          */
         extract( wp_parse_args( $ejo_call_to_action, array( 
+            'enabled' => '1',
             'title' => '',
             'text' => '',
             'post_id' => '',
@@ -91,8 +94,8 @@ class EJO_Call_To_Action
 
         ?>
         <p>
-            <label for="ejo-call-to-action">Link naar pagina:</label>
-            <select id="ejo-call-to-action" class="widefat" name="ejo-call-to-action[post_id]">
+            <label for="ejo-call-to-action-link">Link naar pagina:</label>
+            <select id="ejo-call-to-action-link" class="widefat" name="ejo-call-to-action[post_id]">
                 <option value=''>Default</option>
                 <?php
                 //* Show all pages as an option
@@ -113,7 +116,15 @@ class EJO_Call_To_Action
             <input type="text" class="widefat" id="ejo-call-to-action-link-text" name="ejo-call-to-action[link_text]" value="<?php echo $link_text; ?>" placeholder="Default" />
         </p>
 
-        <p class="description">Laat een veld leeg voor standaard content</p>
+        <p class="description" style="border:1px solid #ddd; padding:8px 10px; background-color:#fafafa;">Niks invullen = standaard content</p>
+
+        <p>
+            <label for="ejo-call-to-action-enabled">Status</label>
+            <select id="ejo-call-to-action-enabled" class="widefat" name="ejo-call-to-action[enabled]">
+                <option value='1'>Ingeschakeld</option>
+                <option value='0' <?php selected($enabled, '0') ?>>Uitgeschakeld</option>
+            </select>
+        </p>
 
         <?php
     }
@@ -146,5 +157,3 @@ class EJO_Call_To_Action
             update_post_meta( $post_id, '_ejo-call-to-action', $_POST['ejo-call-to-action'] );
     }
 }
-
-EJO_Call_To_Action::init();

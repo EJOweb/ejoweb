@@ -24,3 +24,5 @@
 			</div><!-- .wrap -->
 
 		</header><!-- #header -->
+
+		<main <?php hybrid_attr( 'content' ); ?>>

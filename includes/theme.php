@@ -40,9 +40,9 @@ add_filter( 'ejo_tinymce_style_formats', 'ejo_extra_style_formats' );
 // include_once( THEME_LIB_DIR . 'extensions/featured-service-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/recent-posts-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/ejo-text-widget.php' );
-include_once( THEME_LIB_DIR . 'extensions/edited-knowledgebase-widget.php' );
+// include_once( THEME_LIB_DIR . 'extensions/edited-knowledgebase-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/intro-content.php' );
-include_once( THEME_LIB_DIR . 'extensions/call-to-action.php' );
+include_once( THEME_LIB_DIR . 'extensions/call-to-action/index.php' );
 // include_once( THEME_LIB_DIR . 'extensions/columns-shortcode.php' );
 
 /**
@@ -93,29 +93,33 @@ function ejo_register_sidebars()
 {
 	hybrid_register_sidebar(
 		array(
-			'id'          => 'sidebar-primary',
-			'name'        => 'Sidebar - Primary',
+			'id'          => 'home-main-title',
+			'name'        => 'Home - Main Title',
 			'description' => 'Drag widgets to here',
+			'before_widget' => '',
+			'after_widget'  => '',
 		)
 	);
 
 	hybrid_register_sidebar(
 		array(
-			'id'          => 'home-blocks',
-			'name'        => 'Home - Blocks',
+			'id'          => 'home-main',
+			'name'        => 'Home - Main',
 			'description' => 'Drag widgets to here',
-			'before_widget' => '<article id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</article>',
+			'before_widget' => '<div class="column">',
+			'after_widget'  => '</div>',
+			'before_title' => '<h4>',
+			'after_title'  => '</h4>',
 		)
 	);
 
 	hybrid_register_sidebar(
 		array(
-			'id'          => 'home-services',
-			'name'        => 'Home - Services',
+			'id'          => 'call-to-action-bar',
+			'name'        => 'Call To Action Balk',
 			'description' => 'Drag widgets to here',
-			'before_widget' => '<article id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</article>',
+			'before_widget' => '',
+			'after_widget'  => '',
 		)
 	);
 
