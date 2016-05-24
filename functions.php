@@ -78,6 +78,9 @@ function ejo_theme_setup()
 	/* Admin Client Cleanup */
 	add_theme_support( 'ejo-admin-client-cleanup', array() );
 
+	/* Fix paging of categories when no /category/ base and have /front/ */
+	add_theme_support( 'ejo-remove-category-base' );
+
 	/* Yoast Breadcrumbs */
 	add_theme_support( 'yoast-seo-breadcrumbs' );
 

@@ -53,7 +53,7 @@ $content-paddings: (
 //
 // Content container
 //
-@mixin content-container()
+@mixin content-container($context: 'normal')
 {
 	@each $breakpoint, $content-width in $content-widths {
 		@include breakpoint($breakpoint) {
@@ -63,8 +63,14 @@ $content-paddings: (
 	
 	@each $breakpoint, $content-padding in $content-paddings {
 		@include breakpoint($breakpoint) {
-			padding-left: $content-padding;	 
-			padding-right: $content-padding;		
+			@if $context == 'editor' {
+				padding-left: $content-padding !important;
+				padding-right: $content-padding !important;
+			}
+			@else {
+				padding-left: $content-padding;
+				padding-right: $content-padding;
+			}
 		}
 	}
 }

@@ -71,26 +71,26 @@ gulp.task('sass:main', function () {
 //* In case of error, show it only once
 gulp.task('sass:editor', function () {
 
-    // //* Create expanded stylesheet
-    // gulp.src([sass_dir + 'editor-style.scss'])
-    //     .pipe(plumber())
-    //     .pipe(sass({
-    //         outputStyle: 'expanded'
-    //     }))
-    //     .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
-    //     .pipe(gulp.dest('./assets/css/'));
+    //* Create expanded stylesheet
+    gulp.src([sass_dir + 'editor-style.scss'])
+        .pipe(plumber())
+        .pipe(sass({
+            outputStyle: 'expanded'
+        }))
+        .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
+        .pipe(gulp.dest('./assets/css/'));
 
-    // //* Create minified stylesheet
-    // gulp.src([sass_dir + 'editor-style.scss'])
-    //     .pipe(plumber())
-    //     .pipe(sass({
-    //         outputStyle: 'compressed'
-    //     }))
-    //     .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
-    //     .pipe(rename({
-    //         suffix: '.min'
-    //     }))
-    //     .pipe(gulp.dest('./assets/css/'));
+    //* Create minified stylesheet
+    gulp.src([sass_dir + 'editor-style.scss'])
+        .pipe(plumber())
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }))
+        .pipe(autoprefixer({ remove: false, browsers:[browser_support] }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('./assets/css/'));
 });
 
 // Javascript

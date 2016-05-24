@@ -1153,10 +1153,6 @@ main .entry-footer {
   margin-bottom: -1.66667rem;
 }
 
-.home .content-main .columns h3, .home .content-main .columns h4 {
-  margin-top: 0;
-}
-
 /* Archive for Posts & Post Category */
 .taxonomy-category main .content-main > .wrap,
 .blog main .content-main > .wrap {

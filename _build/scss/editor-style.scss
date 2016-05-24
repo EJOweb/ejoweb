@@ -2,9 +2,12 @@
 
 // Abstracts
 @import "abstracts/typography";
+@import "abstracts/structure";
 @import "abstracts/variables";
 @import "abstracts/functions";
-@import "abstracts/mixins";
+@import "abstracts/on-event";
+@import "abstracts/border-radius";
+@import "abstracts/breakpoints";
 
 @import "vendors/icons";
 @import "vendors/social-media";
@@ -22,12 +25,8 @@
 @import "base/tables";
 @import "base/misc";
 @import "base/forms";
-
-// Templates
-@import "templates/home";
-@import "templates/archive";
-@import "templates/singular";
-@import "templates/kennisbank";
+@import "base/buttons";
+@import "base/variants";
 
 // Modules (hapklare brokken)
 @import "modules/image-effects";
@@ -52,9 +51,7 @@ body {
 /* Intro content editor */
 body.content,
 body.introcontent {
-	max-width: $width__content;
-	// padding-left: 4rem !important;
-	// padding-right: 4rem !important;
+	@include content-container(editor);
 	margin: 1rem auto; 
 }
 

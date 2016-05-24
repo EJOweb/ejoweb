@@ -7,7 +7,7 @@
 
 			<header class="entry-header">
 
-				<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php the_title(); ?><?php get_the_subtitle(); ?></h1>
+				<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php the_title(); ?><?php the_subtitle('<span class="subtitle">', '</span>'); ?></h1>
 
 			</header><!-- .entry-header -->
 
