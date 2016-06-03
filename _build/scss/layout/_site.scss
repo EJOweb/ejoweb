@@ -2,6 +2,7 @@
 -------------------------------------------------------------------*/
 #container {
 	overflow: hidden;
+	min-width: $container-min-width;
 }
 
 

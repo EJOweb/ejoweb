@@ -50,7 +50,12 @@ blockquote {
 
 /* Images
 -------------------------------------------------------------------*/
-img {
+img,
+figure {
     max-width: 100%;
     height: auto;
+}
+
+figure {
+    margin: 0 0 vertical-space(1);
 }

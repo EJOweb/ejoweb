@@ -266,9 +266,14 @@ blockquote cite {
 
 /* Images
 -------------------------------------------------------------------*/
-img {
+img,
+figure {
   max-width: 100%;
   height: auto;
+}
+
+figure {
+  margin: 0 0 1.66667rem;
 }
 
 /* Forms
@@ -381,6 +386,7 @@ a.button + br + a.button {
 -------------------------------------------------------------------*/
 #container {
   overflow: hidden;
+  min-width: 320px;
 }
 
 /* Header
@@ -392,6 +398,7 @@ a.button + br + a.button {
   color: #ffffff;
   padding-left: 1.33333rem;
   padding-right: 1.33333rem;
+  min-width: 320px;
 }
 
 @media (min-width: 768px) {
@@ -750,9 +757,10 @@ main .entry-footer {
   color: #ffffff;
   padding-left: 1.33333rem;
   padding-right: 1.33333rem;
-  overflow: auto;
+  overflow: hidden;
   padding-top: 5.22222rem;
-  background-color: #4ca3df;
+  position: relative;
+  z-index: 0;
 }
 
 .content-header h1, .content-header h2, .content-header h3, .content-header h4, .content-header h5, .content-header h6 {
@@ -808,6 +816,49 @@ main .entry-footer {
   .content-header {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+.content-header::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  max-width: 1500px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-filter: grayscale(0.9);
+          filter: grayscale(0.9);
+}
+
+@media (min-width: 544px) {
+  .content-header::before {
+    background-size: cover;
+  }
+}
+
+.content-header::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  max-width: 1500px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: radial-gradient(circle, rgba(76, 163, 223, 0.9) 50%, #4ca3df 70%);
+}
+
+@media (min-width: 544px) {
+  .content-header::after {
+    background-image: linear-gradient(to right, #4ca3df 0%, rgba(76, 163, 223, 0.9) 25%, rgba(76, 163, 223, 0.9) 75%, #4ca3df 100%);
   }
 }
 
@@ -875,7 +926,7 @@ main .entry-footer {
 .content-main {
   padding-left: 1.33333rem;
   padding-right: 1.33333rem;
-  overflow: auto;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -1137,10 +1188,6 @@ main .entry-footer {
 
 #footer .footer-line .textwidget a {
   text-decoration: none;
-}
-
-.home .content-header {
-  background: #4ca3df url("../images/webdesign-header-image.jpg") no-repeat center bottom;
 }
 
 .home .content-main > .wrap {
@@ -2097,24 +2144,19 @@ a.image-wrap:hover img {
   }
 }
 
-.wp-caption {
-  margin-bottom: 1rem;
-  font-size: inherit;
-  max-width: 100%;
-}
-
 .wp-caption img[class*="wp-image-"] {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.wp-caption .wp-caption-text {
-  margin: 0.8075rem 0;
-}
-
 .wp-caption-text {
+  margin: 0.55555rem 0;
+  line-height: 1.11rem;
+  font-size: 0.88889rem;
+  font-style: italic;
   text-align: center;
+  color: rgba(66, 77, 84, 0.6);
 }
 
 .wp-smiley,
@@ -2134,4 +2176,13 @@ a.image-wrap:hover img {
   height: 1px;
   width: 1px;
   overflow: hidden;
+}
+
+/**
+ * Only show admin bar on large screens
+ */
+@media (max-width: 1119px) {
+  #wpadminbar {
+    display: none;
+  }
 }

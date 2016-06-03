@@ -18,7 +18,56 @@ main {
 	@include site-padding;
 	@include margin-collapse-fix;
 	padding-top: rem(94);
-	background-color: $havelock-blue;
+	position: relative;
+	z-index: 0;
+	// background-color: rgba(darken($havelock-blue, 5%), 0.9);
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		right: 0;
+		top: 0;
+		max-width: 1500px;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		background-repeat: no-repeat;
+		background-position: center center;
+		// background-size: 1500px auto;
+		@include breakpoint(sm) {
+			background-size: cover;
+		}
+		filter: grayscale(0.9);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		right: 0;
+		top: 0;
+		max-width: 1500px;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		background-image: radial-gradient(
+			circle,
+			rgba($havelock-blue, 0.9) 50%, 
+			$havelock-blue 70%
+		);
+		@include breakpoint(sm) {
+			background-image: linear-gradient(
+				to right,
+				$havelock-blue 0%,
+				rgba($havelock-blue, 0.9) 25%, 
+				rgba($havelock-blue, 0.9) 75%, 
+				$havelock-blue 100%
+			);
+		}
+	}
 	
 
 	> .wrap {

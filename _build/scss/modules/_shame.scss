@@ -1,0 +1,8 @@
+/**
+ * Only show admin bar on large screens
+ */
+#wpadminbar {
+	@include breakpoint-down(lg) {
+		display: none;
+	}
+}

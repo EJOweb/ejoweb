@@ -1,8 +1,4 @@
 .home { 
-	.content-header {
-		background: $havelock-blue url($path__images + 'webdesign-header-image.jpg') no-repeat center bottom;
-	}	
-
 	.content-main > .wrap {
 		@include container-max-width;
 		padding-left: 0;

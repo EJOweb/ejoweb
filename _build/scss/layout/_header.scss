@@ -7,6 +7,7 @@
 	width: 100%;
 	color: $white;
 	@include site-padding;
+	min-width: $container-min-width;
 }
 
 #header > .wrap {

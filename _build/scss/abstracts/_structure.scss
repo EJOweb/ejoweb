@@ -9,6 +9,8 @@ $breakpoints: (
 	xl: 1120px 		// Extra large screen / wide desktop
 );
 
+$container-min-width: 320px;
+
 // Grid containers
 $container-max-widths: (
 	xs: 1080px
@@ -151,7 +153,10 @@ $content-paddings: (
 
 // Fixes margin overflow of children
 @mixin margin-collapse-fix {
-	overflow: auto;
+	// overflow: auto; // Causes scrollbars in chrome!
+	overflow: hidden;
+
+
 	// &:after {
 	// 	content: "";
 	// 	display: block;

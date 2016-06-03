@@ -1,19 +1,16 @@
 .wp-caption {
-	margin-bottom: 1rem;
-	font-size: inherit;
-	max-width: 100%;
-
 	img[class*="wp-image-"] {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
 	}
-
-	.wp-caption-text {
-		margin: 0.8075rem 0;
-	}
 }
 
 .wp-caption-text {
+	margin: vertical-space(0.33333) 0;
+	line-height: vertical-space(0.666);
+	font-size: font-size(small);
+	font-style: italic;
 	text-align: center;
+	color: rgba($shark, 0.6);
 }

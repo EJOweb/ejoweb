@@ -36,6 +36,14 @@ add_filter( 'excerpt_more', function() { return '...'; } );
 //* Add style formats
 add_filter( 'ejo_tinymce_style_formats', 'ejo_extra_style_formats' );
 
+/* Add custom header style to `head` */
+add_action( 'wp_head', 'ejo_header_image' );
+
+/* Remove Subtitles inline css */
+if ( class_exists( 'Subtitles' ) &&  method_exists( 'Subtitles', 'subtitle_styling' ) ) {
+    remove_action( 'wp_head', array( Subtitles::getInstance(), 'subtitle_styling' ) );
+}
+
 //* Extensions
 // include_once( THEME_LIB_DIR . 'extensions/featured-service-widget.php' );
 include_once( THEME_LIB_DIR . 'extensions/recent-posts-widget.php' );
@@ -189,11 +197,37 @@ function ejo_add_editor_styles()
  */
 function ejo_extra_style_formats($style_formats)
 {
+	/* Subtitle `span` inside heading-tags */
 	$style_formats[] =  array(
         'title' => 'Subtitle',
         'inline' => 'span',
         'classes' => 'subtitle'
     );
 
+	/* Add button-class to anchors */
+    $style_formats[] =  array(
+        'title' => 'Button',
+        'selector' => 'a',
+        'classes' => 'button'
+    );
+
     return $style_formats;
+}
+
+/* Add header image to .content-header */
+function ejo_header_image()
+{
+	?>
+	<style type="text/css">
+		.content-header::before {
+			background-image: url(<?php header_image(); ?>);
+		}
+		
+		<?php 
+		// header_image();
+		// echo get_custom_header()->height;
+		// echo get_custom_header()->width;
+		?>
+	</style>
+	<?php
 }

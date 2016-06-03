@@ -266,9 +266,14 @@ blockquote cite {
 
 /* Images
 -------------------------------------------------------------------*/
-img {
+img,
+figure {
   max-width: 100%;
   height: auto;
+}
+
+figure {
+  margin: 0 0 1.66667rem;
 }
 
 /* Forms
@@ -715,24 +720,19 @@ a.image-wrap:hover img {
   }
 }
 
-.wp-caption {
-  margin-bottom: 1rem;
-  font-size: inherit;
-  max-width: 100%;
-}
-
 .wp-caption img[class*="wp-image-"] {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.wp-caption .wp-caption-text {
-  margin: 0.8075rem 0;
-}
-
 .wp-caption-text {
+  margin: 0.55555rem 0;
+  line-height: 1.11rem;
+  font-size: 0.88889rem;
+  font-style: italic;
   text-align: center;
+  color: rgba(66, 77, 84, 0.6);
 }
 
 .wp-smiley,
@@ -752,6 +752,15 @@ a.image-wrap:hover img {
   height: 1px;
   width: 1px;
   overflow: hidden;
+}
+
+/**
+ * Only show admin bar on large screens
+ */
+@media (max-width: 1119px) {
+  #wpadminbar {
+    display: none;
+  }
 }
 
 /* Editor Style specifics
