@@ -1,6 +1,7 @@
 <article <?php hybrid_attr( 'post' ); ?>>
 
 	<div class="content-header box-colored">
+		<?php locate_template( array( 'misc/header-image.php' ), true ); // Loads the misc/header-image.php template. ?>
 		<div class="wrap">
 
 			<?php locate_template( array( 'menu/breadcrumbs.php' ), true ); // Loads the menu/breadcrumbs.php template. ?>

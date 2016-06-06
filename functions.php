@@ -52,18 +52,8 @@ function ejo_theme_setup()
 
 	/* Custom header image */
 	add_theme_support( 'custom-header', array(
-		// 'default-image'          => '',
-		'width'                  => 0,
-		'height'                 => 0,
-		// 'flex-height'            => false,
-		// 'flex-width'             => false,
 		'uploads'                => true,
-		// 'random-default'         => false,
 		'header-text'            => false,
-		// 'default-text-color'     => '',
-		// 'wp-head-callback'       => '',
-		// 'admin-head-callback'    => '',
-		// 'admin-preview-callback' => '',
 	));
 
 	//* Better image grabbing

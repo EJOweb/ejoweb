@@ -39,6 +39,9 @@ add_filter( 'ejo_tinymce_style_formats', 'ejo_extra_style_formats' );
 /* Add custom header style to `head` */
 add_action( 'wp_head', 'ejo_header_image' );
 
+/* Filter image size for custom header */
+add_filter( 'unique_header_attachment_image_size', function() { return 'header'; } );
+
 /* Remove Subtitles inline css */
 if ( class_exists( 'Subtitles' ) &&  method_exists( 'Subtitles', 'subtitle_styling' ) ) {
     remove_action( 'wp_head', array( Subtitles::getInstance(), 'subtitle_styling' ) );
@@ -64,6 +67,7 @@ function ejo_register_image_sizes()
 {
 	add_image_size( 'banner', 960, 240, true ); 
 	add_image_size( 'featured', 480, 200, true ); 
+	add_image_size( 'header', 1440, 9999, true ); 
 }
 
 /**
@@ -217,17 +221,11 @@ function ejo_extra_style_formats($style_formats)
 /* Add header image to .content-header */
 function ejo_header_image()
 {
-	?>
-	<style type="text/css">
-		.content-header::before {
-			background-image: url(<?php header_image(); ?>);
-		}
-		
-		<?php 
-		// header_image();
-		// echo get_custom_header()->height;
-		// echo get_custom_header()->width;
-		?>
-	</style>
-	<?php
+	// echo '<style type="text/css">';
+	// echo 	'.content-header::before { ';
+	// echo 	'background-image: url("http://localhost/ejoweb/wp-content/uploads/2015/03/webdesign-coffee-tablet-laptop-3-1200x600.jpg"), radial-gradient(circle, rgba(76, 163, 223, 0.9) 50%, #4ca3df 70%);';
+	// echo 		'background-image: url(\'' . get_header_image() . '\'), radial-gradient(circle, rgba(76, 163, 223, 0.9) 50%, #4ca3df 70%);';
+	// echo  	' }';
+	// echo '</style>';
+	/* ?> .content-header::before { background-image: url(<?php header_image(); ?>); } <?php */
 }

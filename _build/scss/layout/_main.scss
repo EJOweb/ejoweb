@@ -22,51 +22,117 @@ main {
 	z-index: 0;
 	// background-color: rgba(darken($havelock-blue, 5%), 0.9);
 
-	&::before {
-		content: '';
+	.header-image {
 		position: absolute;
 		z-index: -1;
 		left: 0;
-		right: 0;
 		top: 0;
-		max-width: 1500px;
+		width: 100%;
 		height: 100%;
-		margin-left: auto;
-		margin-right: auto;
-		background-repeat: no-repeat;
-		background-position: center center;
-		// background-size: 1500px auto;
-		@include breakpoint(sm) {
-			background-size: cover;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+
+		> .wrap { 
+			flex: 0 0 1440px;
+			position: relative;
+			// width: 1320px;
+			// margin-left: auto;
+			// margin-right: auto;
+			// width: 1320px;
+			// position: absolute;
+			// left: 50%;
+			// margin-left: -660px;
 		}
-		filter: grayscale(0.9);
+
+		img {
+			display: block;
+			width: 100%;
+			filter: grayscale(0.9);
+		}
+		
+		.overlay {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			background-image: radial-gradient(
+				// circle,
+				rgba($havelock-blue, 0.9) 50%, 
+				$havelock-blue 70%
+			);
+			// background-image: radial-gradient(
+			// 	// ellipse,
+			// 	rgba(red, 0.9) 50%, 
+			// 	red 70%
+			// );
+			@include breakpoint(xl) {
+				background-image: linear-gradient(
+					to right,
+					$havelock-blue 0%,
+					rgba($havelock-blue, 0.9) 25%, 
+					rgba($havelock-blue, 0.9) 75%, 
+					$havelock-blue 100%
+				);
+			}
+		}
 	}
 
+
+	// &::before {
+	// 	content: '';
+	// 	position: absolute;
+	// 	z-index: -1;
+	// 	left: 0;
+	// 	right: 0;
+	// 	top: 0;
+	// 	max-width: 1500px;
+	// 	height: 100%;
+	// 	margin-left: auto;
+	// 	margin-right: auto;
+	// 	background-repeat: no-repeat;
+	// 	background-position: center center;
+		// background-size: 1500px auto;
+		// @include breakpoint(sm) {
+		// 	background-size: cover;
+		// }
+		// filter: grayscale(0.9);
+		// background-image: 	radial-gradient(circle, rgba(76, 163, 223, 0.9) 50%, #4ca3df 70%),
+							// url('http://localhost/ejoweb/wp-content/uploads/2015/03/webdesign-coffee-tablet-laptop-3-1200x600.jpg');
+	// }
+
 	&::after {
-		content: '';
-		position: absolute;
-		z-index: -1;
-		left: 0;
-		right: 0;
-		top: 0;
-		max-width: 1500px;
-		height: 100%;
-		margin-left: auto;
-		margin-right: auto;
-		background-image: radial-gradient(
-			circle,
-			rgba($havelock-blue, 0.9) 50%, 
-			$havelock-blue 70%
-		);
-		@include breakpoint(sm) {
-			background-image: linear-gradient(
-				to right,
-				$havelock-blue 0%,
-				rgba($havelock-blue, 0.9) 25%, 
-				rgba($havelock-blue, 0.9) 75%, 
-				$havelock-blue 100%
-			);
-		}
+		// content: '';
+		// position: absolute;
+		// z-index: -1;
+		// left: 0;
+		// right: 0;
+		// top: 0;
+		// max-width: 1500px;
+		// height: 100%;
+		// margin-left: auto;
+		// margin-right: auto;
+		// background-image: radial-gradient(
+		// 	circle,
+		// 	rgba($havelock-blue, 0.9) 50%, 
+		// 	$havelock-blue 70%
+		// );
+		// @include breakpoint(sm) {
+		// 	background-image: linear-gradient(
+		// 		to right,
+		// 		$havelock-blue 0%,
+		// 		rgba($havelock-blue, 0.9) 25%, 
+		// 		rgba($havelock-blue, 0.9) 75%, 
+		// 		$havelock-blue 100%
+		// 	);
+		// }
 	}
 	
 

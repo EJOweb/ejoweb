@@ -1,6 +1,7 @@
 <?php get_header(); // Loads the header.php template. ?>
 
 <section class="content-header">
+	<?php locate_template( array( 'misc/header-image.php' ), true ); // Loads the misc/header-image.php template. ?>
 	<div class="wrap">
 
 		<article <?php hybrid_attr( 'post' ); ?>>
